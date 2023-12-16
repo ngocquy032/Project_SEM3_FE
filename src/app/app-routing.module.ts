@@ -5,11 +5,11 @@ import { ComponentBranch2Component } from './component-branch2/component-branch2
 
 const routes: Routes = [
   {
-    path: '', component: ComponentBranch1Component
+    path: 'component1', component: ComponentBranch1Component
   },
 
   {
-    path: '', component: ComponentBranch2Component
+    path: 'component2', component: ComponentBranch2Component
   }
 
 ];

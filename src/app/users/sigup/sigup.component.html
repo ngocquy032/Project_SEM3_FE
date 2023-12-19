@@ -1,1 +1,27 @@
-<p>sigup works!</p>
+<div class="container">
+
+  <div class="form-container sign-in-container">
+    <form>
+      <h1>Sign Up</h1>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fa fa-google-plus" style="color: red;" aria-hidden="true"></i></a>
+        <a href="#" class="social"><i class="fa fa-facebook" style="color: #4267B2;" aria-hidden="true"></i></a>
+        <a href="#" class="social"> <i class='fa fa-linkedin' style="color: #E1306C;"></i></a>
+      </div>
+      <span>or use your account</span>
+      <input type="email" placeholder="UserName" formControlName="email" />
+      <input type="email" placeholder="Email" formControlName="email" />
+      <input type="password" placeholder="Password" formControlName="password" />
+      <input type="password" placeholder="Repassword" formControlName="password" />
+      <!-- <div class="color-p" >
+        <p>{{ message }}</p>
+       </div> -->
+
+      <button type="button">LogIn</button>
+      <div class="sigUp">
+        <p class="">Have already an account? <a routerLink="/login" class="">Login here</a></p>
+      </div>
+    </form>
+
+  </div>
+</div>

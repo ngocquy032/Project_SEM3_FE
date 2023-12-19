@@ -45,7 +45,7 @@ p {
 }
 
 span {
-  font-size: 12px;
+  font-size: 15px;
 }
 
 a {
@@ -239,3 +239,16 @@ footer a {
   color: #3c97bf;
   text-decoration: none;
 }
+
+.sigUp a:hover{
+  color: #FF416C;
+}
+.sigUp a{
+  font-size: 15px;
+}
+
+.sigUp p{
+
+  font-size: 15px;
+}
+

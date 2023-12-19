@@ -2,7 +2,7 @@
 
   <div class="form-container sign-in-container">
     <form  [formGroup]="loginForm" >
-      <h1>Sign in</h1>
+      <h1>Log In</h1>
       <div class="social-container">
         <a href="#" class="social"><i class="fa fa-google-plus" style="color: red;" aria-hidden="true"></i></a>
         <a href="#" class="social"><i class="fa fa-facebook" style="color: #4267B2;" aria-hidden="true"></i></a>
@@ -15,15 +15,16 @@
         <p>{{ message }}</p>
        </div>
 
-      <div class="mg-top">
+      <!-- <div class="mg-top">
         <a href="#">Forgot your password?</a>
-      </div>
+      </div> -->
 
       <button type="button" (click)="onclickLogIn()" >LogIn</button>
-      <div>
-        <!-- <router-link to="/sigUp">
-            <a href="">On Create An Account</a>
-          </router-link> -->
+      <div class="sigUp">
+        <p>
+          Don't have an account?
+          <a routerLink="/sigup"> Register</a>
+        </p>
       </div>
     </form>
 

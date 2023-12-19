@@ -8,12 +8,14 @@ import { ComponentBranch2Component } from './component-branch2/component-branch2
 import { LogInComponent } from './users/log-in/log-in.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { SigupComponent } from './users/sigup/sigup.component';
 @NgModule({
   declarations: [
     AppComponent,
     ComponentBranch1Component,
     ComponentBranch2Component,
     LogInComponent,
+    SigupComponent,
   ],
   imports: [
     BrowserModule,

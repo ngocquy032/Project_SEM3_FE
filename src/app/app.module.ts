@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ComponentBranch1Component } from './component-branch1/component-branch1.component';
 import { ComponentBranch2Component } from './component-branch2/component-branch2.component';
 import { LogInComponent } from './users/log-in/log-in.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +17,10 @@ import { LogInComponent } from './users/log-in/log-in.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

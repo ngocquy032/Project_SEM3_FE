@@ -1,1 +1,31 @@
-<p>log-in works!</p>
+<div class="container">
+
+  <div class="form-container sign-in-container">
+    <form  [formGroup]="loginForm" >
+      <h1>Sign in</h1>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fa fa-google-plus" style="color: red;" aria-hidden="true"></i></a>
+        <a href="#" class="social"><i class="fa fa-facebook" style="color: #4267B2;" aria-hidden="true"></i></a>
+        <a href="#" class="social"> <i class='fa fa-linkedin' style="color: #E1306C;"></i></a>
+      </div>
+      <span>or use your account</span>
+      <input type="email" placeholder="Email" formControlName="email" />
+      <input type="password" placeholder="Password" formControlName="password" />
+      <div class="color-p" >
+        <p>{{ message }}</p>
+       </div>
+
+      <div class="mg-top">
+        <a href="#">Forgot your password?</a>
+      </div>
+
+      <button type="button" (click)="onclickLogIn()" >LogIn</button>
+      <div>
+        <!-- <router-link to="/sigUp">
+            <a href="">On Create An Account</a>
+          </router-link> -->
+      </div>
+    </form>
+
+  </div>
+</div>

@@ -42,6 +42,7 @@ export class LogInComponent {
           // this.router.navigate(['/component1'])
           console.log('true');
           this.message = ''
+          this.loginForm.reset();
 
         }else{
           this.message = 'email hoac mat khau sai'

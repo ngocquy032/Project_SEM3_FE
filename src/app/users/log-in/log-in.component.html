@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="form-container sign-in-container">
-    <form  [formGroup]="loginForm" >
+    <form [formGroup]="loginForm">
       <h1>Log In</h1>
       <div class="social-container">
         <a href="#" class="social"><i class="fa fa-google-plus" style="color: red;" aria-hidden="true"></i></a>
@@ -10,16 +10,19 @@
       </div>
       <span>or use your account</span>
       <input type="email" placeholder="Email" formControlName="email" />
+      <div class="color-p">
+        <p>{{ messageMail }}</p>
+      </div>
       <input type="password" placeholder="Password" formControlName="password" />
-      <div class="color-p" >
+      <div class="color-p">
         <p>{{ message }}</p>
-       </div>
+      </div>
 
       <!-- <div class="mg-top">
         <a href="#">Forgot your password?</a>
       </div> -->
 
-      <button type="button" (click)="onclickLogIn()" >LogIn</button>
+      <button type="button" (click)="onclickLogIn()">LogIn</button>
       <div class="sigUp">
         <p>
           Don't have an account?

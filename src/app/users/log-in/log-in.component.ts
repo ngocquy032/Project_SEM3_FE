@@ -11,6 +11,7 @@ import { UserService } from 'src/service/user';
 export class LogInComponent {
   loginForm: FormGroup;
   message: string = '';
+  messageMail: string = '';
   constructor(
     private formBuilders: FormBuilder,
     private userService: UserService,
@@ -25,26 +26,27 @@ export class LogInComponent {
   }
 
   async onclickLogIn() {
-    if (this.loginForm.valid) {
+   const mailValid = this.checkmail();
+    if (this.loginForm.valid && mailValid) {
       this.message = '';
       try {
         const { email, password } = this.loginForm.value;
         const loginData = { email, password };
         console.log('loginData', loginData);
 
-        const response = await firstValueFrom(this.userService.logIn({ email, password } ));
+        const response = await firstValueFrom(this.userService.logIn({ email, password }));
 
-        const match = response.some((user:any)=>
+        const match = response.some((user: any) =>
           user.email === loginData.email && user.password === loginData.password
         )
 
-        if(match){
+        if (match) {
           // this.router.navigate(['/component1'])
           console.log('true');
           this.message = ''
           this.loginForm.reset();
 
-        }else{
+        } else {
           this.message = 'email hoac mat khau sai'
         }
       } catch (error) {
@@ -55,4 +57,27 @@ export class LogInComponent {
       console.log('false');
     }
   }
+
+  public checkmail(): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailControl = this.loginForm.get('email');
+    if (emailControl) {
+      const emailValue = emailControl?.value;
+      const isEmailValid = emailRegex.test(emailValue);
+
+      if (!isEmailValid) {
+        this.messageMail = "chua dung dinh dang mail";
+        return false;
+      } else {
+        this.messageMail = "";
+        return true;
+      }
+    }
+    return false;
+
+  }
+
+
+
+
 }

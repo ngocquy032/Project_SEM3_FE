@@ -4,3 +4,8 @@ export interface LoginParam{
   email: string;
   password: string
 }
+
+export interface LoginModel {
+  email: string;
+  password: string;
+}

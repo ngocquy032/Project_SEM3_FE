@@ -26,31 +26,27 @@ export class LogInComponent {
   }
 
   async onclickLogIn() {
-   const mailValid = this.checkmail();
-    if (this.loginForm.valid && mailValid) {
+    this.checkmail();
+    if (this.loginForm.valid) {
       this.message = '';
       try {
         const { email, password } = this.loginForm.value;
         const loginData = { email, password };
         console.log('loginData', loginData);
 
-        const response = await firstValueFrom(this.userService.logIn({ email, password }));
+        const response = await firstValueFrom(this.userService.logIn(loginData));
+        console.log('response', response);
 
-        const match = response.some((user: any) =>
-          user.email === loginData.email && user.password === loginData.password
-        )
-
-        if (match) {
+        if (response && response.email === loginData.email && response.password === loginData.password) {
           // this.router.navigate(['/component1'])
           console.log('true');
           this.message = ''
           this.loginForm.reset();
 
-        } else {
-          this.message = 'email hoac mat khau sai'
         }
       } catch (error) {
-        console.error('Lỗi đăng nhập', error);
+        this.message = 'email hoac mat khau sai'
+
       }
     } else {
       this.message = "hay nhap email hoac mat khau"

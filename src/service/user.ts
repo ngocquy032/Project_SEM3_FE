@@ -8,10 +8,10 @@ import { LoginParam, LoginModel } from "src/app/users/log-in/login.model";
 }) export class UserService{
 
   constructor(private http: HttpClient){}
-  private Url = 'https://quyapiandsql.azurewebsites.net/api/Users/Login';
+  private Url = 'https://quyapiandsql.azurewebsites.net/api/Users';
 
   logIn(loginData: LoginModel): Observable<any>{
-    return this.http.post<LoginParam>(this.Url, loginData);
+    return this.http.post<LoginParam>(`${this.Url}/Login`, loginData);
   }
 
 }

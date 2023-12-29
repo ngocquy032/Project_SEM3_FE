@@ -7,12 +7,14 @@ import { LogInComponent } from './fe-user/users/log-in/log-in.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { SigupComponent } from './fe-user/users/sigup/sigup.component';
+import { MasterLayoutComponent } from './fe-user/master-layout/master-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LogInComponent,
     SigupComponent,
+    MasterLayoutComponent,
   ],
   imports: [
     BrowserModule,

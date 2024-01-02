@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { SigupComponent } from './fe-user/users/sigup/sigup.component';
 import { MasterLayoutComponent } from './fe-user/master-layout/master-layout.component';
+import { HomeComponent } from './fe-user/home/home.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { MasterLayoutComponent } from './fe-user/master-layout/master-layout.com
     LogInComponent,
     SigupComponent,
     MasterLayoutComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,33 @@
+a{
+  text-decoration: none;
+}
+/* .header-scroll{
+position: fixed;
+} */
+.topbar-section {
+  background-color: #f4ede7;
+  color: #696969;
+  font-family:Futura;
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
+  z-index: 101;
+}
+
+.cl-icon{
+  color: #696969;
+}
+
+.cl-icon:hover{
+  color: #f8796c;
+}
+.bgr{
+  background-color: #f4ede7;
+}
+.section-padding{
+  background-color: #f4ede7;
+}
+.site-main-menu>ul>li>a>.menu-text{
+  font-family:Futura;
+  font-size: 15px;
+}

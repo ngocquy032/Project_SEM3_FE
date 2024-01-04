@@ -29,7 +29,33 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/js/vendor/jquery-3.4.1.min.js",
+              "src/assets/js/vendor/modernizr-3.6.0.min.js",
+              "src/assets/js/vendor/jquery-migrate-3.1.0.min.js",
+              "src/assets/js/vendor/bootstrap.bundle.min.js",
+              "src/assets/js/plugins/select2.min.js",
+              "src/assets/js/plugins/jquery.nice-select.min.js",
+              "src/assets/js/plugins/perfect-scrollbar.min.js",
+              "src/assets/js/plugins/swiper.min.js",
+              "src/assets/js/plugins/slick.min.js",
+              "src/assets/js/plugins/mo.min.js",
+              "src/assets/js/plugins/jquery.ajaxchimp.min.js",
+              "src/assets/js/plugins/jquery.countdown.min.js",
+              "src/assets/js/plugins/imagesloaded.pkgd.min.js",
+              "src/assets/js/plugins/isotope.pkgd.min.js",
+              "src/assets/js/plugins/jquery.matchHeight-min.js",
+              "src/assets/js/plugins/ion.rangeSlider.min.js",
+              "src/assets/js/plugins/photoswipe.min.js",
+              "src/assets/js/plugins/photoswipe-ui-default.min.js",
+              "src/assets/js/plugins/jquery.zoom.min.js",
+              "src/assets/js/plugins/ResizeSensor.js",
+              "src/assets/js/plugins/jquery.sticky-sidebar.min.js",
+              "src/assets/js/plugins/product360.js",
+              "src/assets/js/plugins/jquery.magnific-popup.min.js",
+              "src/assets/js/plugins/jquery.scrollUp.min.js",
+              "src/assets/js/plugins/scrollax.min.js",
+              "src/assets/js/main.js"
             ]
           },
           "configurations": {

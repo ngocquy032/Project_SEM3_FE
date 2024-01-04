@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('assets/css/vendor/bootstrap.min.css');
+@import url('assets/css/vendor/fontawesome.min.css');
+@import url('assets/css/vendor/themify-icons.css');
+@import url('assets/css/vendor/customFonts.css');
+@import url('assets/css/plugins/select2.min.css');
+@import url('assets/css/plugins/perfect-scrollbar.css');
+@import url('assets/css/plugins/swiper.min.css');
+@import url('assets/css/plugins/nice-select.css');
+@import url('assets/css/plugins/ion.rangeSlider.min.css');
+@import url('assets/css/plugins/photoswipe.css');
+@import url('assets/css/plugins/photoswipe-default-skin.css');
+@import url('assets/css/plugins/magnific-popup.css');
+@import url('assets/css/plugins/slick.css');
+@import url('assets/css/style.min.css');

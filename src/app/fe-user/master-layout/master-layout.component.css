@@ -25,9 +25,20 @@ position: fixed;
   background-color: #f4ede7;
 }
 .section-padding{
+  padding: 50px 0px;
   background-color: #f4ede7;
 }
 .site-main-menu>ul>li>a>.menu-text{
   font-family:Futura;
   font-size: 15px;
+}
+
+.header-logo{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.widget-about img{
+  margin: 0px 15%;
+  width: 200px;
 }

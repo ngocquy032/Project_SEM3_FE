@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 
 @Component({
@@ -7,6 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./master-layout.component.css']
 })
 export class MasterLayoutComponent {
-[x: string]: any;
-
+  [x: string]: any;
 }

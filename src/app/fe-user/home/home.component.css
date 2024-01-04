@@ -1,0 +1,49 @@
+.product-tab-list li a {
+  text-decoration: none;
+}
+.product-info .title a{
+  text-decoration: none;
+}
+.product{
+  margin-top: 35px;
+}
+.bgr-cl{
+  background-color: #f4ede7;
+}
+
+*{
+  text-decoration: none;
+}
+
+.category-banner5 .inner .content .title {
+  color: #696969;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.125;
+  margin: 0 0 15px;
+}
+
+.category-banner5 .inner .content .title:hover{
+  color: #f8796c;
+}
+
+.brand-carousel .slick-track {
+ display: flex;
+}
+
+.brand-item {
+  display: flex;
+}
+
+.section-padding {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.content a{
+  color: #696969;
+}
+.content a:hover{
+  color: #f8796c;
+}
+

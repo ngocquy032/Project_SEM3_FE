@@ -42,3 +42,17 @@ position: fixed;
   margin: 0px 15%;
   width: 200px;
 }
+
+
+.header-section, .topbar-section {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Chọn giá trị z-index phù hợp */
+}
+
+
+
+
+

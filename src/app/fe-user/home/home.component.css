@@ -47,3 +47,8 @@
   color: #f8796c;
 }
 
+.product-tab-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}

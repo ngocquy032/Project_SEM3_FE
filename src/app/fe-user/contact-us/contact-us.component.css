@@ -4,9 +4,14 @@ textarea{
 }
 .bgr-img {
     background-image: url(../../../assets/images/demo/menu/titel3.webp);
-    
+
 }
 .cmt{
     color: red;
     text-align: center;
+}
+
+.page-title-section{
+  background-image: url(../../../assets/images/banner/banner.jpg);
+  padding: 75px 0;
 }

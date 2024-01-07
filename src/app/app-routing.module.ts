@@ -7,6 +7,7 @@ import { HomeComponent } from './fe-user/home/home.component';
 import { AboutUsComponent } from './fe-user/about-us/about-us.component';
 import { ShopComponent } from './fe-user/shop/shop.component';
 import { ContactUsComponent } from './fe-user/contact-us/contact-us.component';
+import { CheckOutComponent } from './fe-user/check-out/check-out.component';
 const routes: Routes = [
   {
     path: '', component: MasterLayoutComponent,
@@ -22,6 +23,9 @@ const routes: Routes = [
       },
       {
         path : 'contactUs', component: ContactUsComponent
+      },
+      {
+        path : 'checkOut', component: CheckOutComponent
       }
 
     ]

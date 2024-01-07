@@ -10,6 +10,7 @@ import { SigupComponent } from './fe-user/users/sigup/sigup.component';
 import { MasterLayoutComponent } from './fe-user/master-layout/master-layout.component';
 import { HomeComponent } from './fe-user/home/home.component';
 import { AboutUsComponent } from './fe-user/about-us/about-us.component';
+import { ShopComponent } from './fe-user/shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AboutUsComponent } from './fe-user/about-us/about-us.component';
     MasterLayoutComponent,
     HomeComponent,
     AboutUsComponent,
+    ShopComponent,
   ],
   imports: [
     BrowserModule,

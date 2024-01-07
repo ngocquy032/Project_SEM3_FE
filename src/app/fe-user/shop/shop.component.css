@@ -1,0 +1,24 @@
+.page-title-section{
+  background-image: url(../../../assets/images/banner/banner.jpg);
+  padding: 75px 0;
+}
+
+.shop-product-filter {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -20px -10px;
+}
+
+.pagination2{
+  font-size: 16px;
+margin-top: 50px;
+justify-content: center;
+}
+
+ul:last-child {
+  margin-bottom: 0;
+  justify-content: center;
+}
+
+

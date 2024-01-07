@@ -5,6 +5,7 @@ import { SigupComponent } from './fe-user/users/sigup/sigup.component';
 import { MasterLayoutComponent } from './fe-user/master-layout/master-layout.component';
 import { HomeComponent } from './fe-user/home/home.component';
 import { AboutUsComponent } from './fe-user/about-us/about-us.component';
+import { ShopComponent } from './fe-user/shop/shop.component';
 const routes: Routes = [
   {
     path: '', component: MasterLayoutComponent,
@@ -14,6 +15,9 @@ const routes: Routes = [
         path: '', component: HomeComponent
       },{
         path:  'aboutUs', component:  AboutUsComponent
+      },
+      {
+        path: 'shop', component : ShopComponent
       }
 
     ]

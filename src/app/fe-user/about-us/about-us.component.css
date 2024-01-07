@@ -1,0 +1,28 @@
+.section .custom-silde{
+    display: flex !important;
+}
+.custom{
+    position: relative;
+}
+.silde{
+    display: none;
+}
+.slide img{
+    width: 100%;
+}
+.active {
+    display: block;
+}
+.section .instafeed {
+    display: flex;
+    justify-content: space-around;
+}
+.instafeed-item img
+{ border-radius: 50%; 
+    width: 200px; 
+    height: 200px;
+    overflow: hidden
+   
+
+
+}

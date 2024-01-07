@@ -4,6 +4,7 @@ import { LogInComponent } from './fe-user/users/log-in/log-in.component';
 import { SigupComponent } from './fe-user/users/sigup/sigup.component';
 import { MasterLayoutComponent } from './fe-user/master-layout/master-layout.component';
 import { HomeComponent } from './fe-user/home/home.component';
+import { ContactUsComponent } from './fe-user/contact-us/contact-us.component';
 const routes: Routes = [
   {
     path: '', component: MasterLayoutComponent,
@@ -11,6 +12,9 @@ const routes: Routes = [
       //layout component trong day
       {
         path: '', component: HomeComponent
+      },
+      {
+        path : 'contactUs', component: ContactUsComponent
       }
     ]
   },

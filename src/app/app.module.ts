@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { SigupComponent } from './fe-user/users/sigup/sigup.component';
 import { MasterLayoutComponent } from './fe-user/master-layout/master-layout.component';
 import { HomeComponent } from './fe-user/home/home.component';
+import { ContactUsComponent } from './fe-user/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HomeComponent } from './fe-user/home/home.component';
     SigupComponent,
     MasterLayoutComponent,
     HomeComponent,
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,3 +6,24 @@
     height: 100px;
     resize: none;
 }
+
+.choose-pay{
+  margin-top: 5%;
+}
+.choose-pay button {
+  margin: 5px 20px;
+    width: 40%;
+    border-radius: 5px;
+}
+
+.choose-pay button.selected {
+  background-color: #f8796c;
+  color: #ffffff;
+}
+
+.choose-pay button:hover {
+  /* background-color: #e6f7ff; */
+}
+.place-oder{
+  margin-top: 10%;
+}

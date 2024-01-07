@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./check-out.component.css']
 })
 export class CheckOutComponent {
+  selectedMethod: string = 'cash'; // Set default selected method to 'cash'
 
+  ngOnInit(): void {
+    // Các thao tác khác có thể được thêm ở đây nếu cần
+  }
+
+  cash(): void {
+    this.selectedMethod = 'cash';
+  }
+
+  pay(): void {
+    this.selectedMethod = 'vnpay';
+  }
 }

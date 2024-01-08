@@ -13,6 +13,7 @@ import { AboutUsComponent } from './fe-user/about-us/about-us.component';
 import { ShopComponent } from './fe-user/shop/shop.component';
 import { ContactUsComponent } from './fe-user/contact-us/contact-us.component';
 import { CheckOutComponent } from './fe-user/check-out/check-out.component';
+import { ProductDetailsComponent } from './fe-user/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CheckOutComponent } from './fe-user/check-out/check-out.component';
     ShopComponent,
     ContactUsComponent,
     CheckOutComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,

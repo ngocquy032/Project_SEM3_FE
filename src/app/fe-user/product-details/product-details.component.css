@@ -1,0 +1,14 @@
+.page-title-section{
+  background-image: url(../../../assets/images/banner/banner.jpg);
+  padding: 75px 0;
+}
+
+.product{
+  display: flex;
+  position: absolute;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}

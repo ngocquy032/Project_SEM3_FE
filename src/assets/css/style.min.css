@@ -3497,7 +3497,7 @@ only screen and (max-width:767px) {
   font-family: "Font Awesome 5 Free";
   font-size: 10px;
   position: absolute;
-  top: 50%;
+  top: 20%;
   right: 10px;
   /* content: ""; */
   -webkit-transform: translateY(-50%);

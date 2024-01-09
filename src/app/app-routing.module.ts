@@ -10,6 +10,7 @@ import { ContactUsComponent } from './fe-user/contact-us/contact-us.component';
 import { CheckOutComponent } from './fe-user/check-out/check-out.component';
 import { ProductDetailsComponent } from './fe-user/product-details/product-details.component';
 import { BlogComponent } from './fe-user/blog/blog.component';
+import { AccountComponent } from './fe-user/account/account.component';
 const routes: Routes = [
   {
     path: '', component: MasterLayoutComponent,
@@ -34,6 +35,9 @@ const routes: Routes = [
       },
       {
         path: 'blog', component: BlogComponent
+      },
+      {
+        path: 'account', component: AccountComponent
       }
 
     ]

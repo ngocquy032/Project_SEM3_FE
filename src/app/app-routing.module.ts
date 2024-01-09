@@ -7,11 +7,12 @@ import { HomeComponent } from './fe-user/home/home.component';
 import { AboutUsComponent } from './fe-user/about-us/about-us.component';
 import { ShopComponent } from './fe-user/shop/shop.component';
 import { WishiftComponent } from './fe-user/wishift/wishift.component';
-
+import { ShoppingCartComponent } from './fe-user/shopping-cart/shopping-cart.component';
 import { ContactUsComponent } from './fe-user/contact-us/contact-us.component';
 import { CheckOutComponent } from './fe-user/check-out/check-out.component';
 import { ProductDetailsComponent } from './fe-user/product-details/product-details.component';
 import { BlogComponent } from './fe-user/blog/blog.component';
+
 
 const routes: Routes = [
   {
@@ -28,6 +29,9 @@ const routes: Routes = [
       },
       {
         path: 'wishift', component : WishiftComponent
+      },
+      { 
+        path: 'shoppingCart', component : ShoppingCartComponent
       },
       {
         path : 'contactUs', component: ContactUsComponent

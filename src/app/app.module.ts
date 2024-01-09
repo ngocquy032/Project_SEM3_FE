@@ -16,6 +16,8 @@ import { ContactUsComponent } from './fe-user/contact-us/contact-us.component';
 import { CheckOutComponent } from './fe-user/check-out/check-out.component';
 import { ProductDetailsComponent } from './fe-user/product-details/product-details.component';
 import { BlogComponent } from './fe-user/blog/blog.component';
+import { ShoppingCartComponent } from './fe-user/shopping-cart/shopping-cart.component'; 
+
 
 @NgModule({
   declarations: [
@@ -27,10 +29,11 @@ import { BlogComponent } from './fe-user/blog/blog.component';
     AboutUsComponent,
     ShopComponent,
     WishiftComponent,
+    ShoppingCartComponent,
     ContactUsComponent,
     CheckOutComponent,
     ProductDetailsComponent,
-    BlogComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,

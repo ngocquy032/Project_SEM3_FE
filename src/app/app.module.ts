@@ -11,6 +11,7 @@ import { MasterLayoutComponent } from './fe-user/master-layout/master-layout.com
 import { HomeComponent } from './fe-user/home/home.component';
 import { AboutUsComponent } from './fe-user/about-us/about-us.component';
 import { ShopComponent } from './fe-user/shop/shop.component';
+import { WishiftComponent } from './fe-user/wishift/wishift.component';
 import { ContactUsComponent } from './fe-user/contact-us/contact-us.component';
 import { CheckOutComponent } from './fe-user/check-out/check-out.component';
 import { ProductDetailsComponent } from './fe-user/product-details/product-details.component';
@@ -26,6 +27,7 @@ import { AccountComponent } from './fe-user/account/account.component';
     HomeComponent,
     AboutUsComponent,
     ShopComponent,
+    WishiftComponent,
     ContactUsComponent,
     CheckOutComponent,
     ProductDetailsComponent,

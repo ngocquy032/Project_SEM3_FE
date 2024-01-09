@@ -11,6 +11,7 @@ import { MasterLayoutComponent } from './fe-user/master-layout/master-layout.com
 import { HomeComponent } from './fe-user/home/home.component';
 import { AboutUsComponent } from './fe-user/about-us/about-us.component';
 import { ShopComponent } from './fe-user/shop/shop.component';
+import { WishiftComponent } from './fe-user/wishift/wishift.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ShopComponent } from './fe-user/shop/shop.component';
     HomeComponent,
     AboutUsComponent,
     ShopComponent,
+    WishiftComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LogInComponent } from './fe-user/users/log-in/log-in.component';
@@ -16,7 +15,8 @@ import { ContactUsComponent } from './fe-user/contact-us/contact-us.component';
 import { CheckOutComponent } from './fe-user/check-out/check-out.component';
 import { ProductDetailsComponent } from './fe-user/product-details/product-details.component';
 import { BlogComponent } from './fe-user/blog/blog.component';
-import { ShoppingCartComponent } from './fe-user/shopping-cart/shopping-cart.component'; 
+import { AccountComponent } from './fe-user/account/account.component';
+import { ShoppingCartComponent } from './fe-user/shopping-cart/shopping-cart.component';
 
 
 @NgModule({
@@ -33,6 +33,8 @@ import { ShoppingCartComponent } from './fe-user/shopping-cart/shopping-cart.com
     ContactUsComponent,
     CheckOutComponent,
     ProductDetailsComponent,
+    BlogComponent,
+    AccountComponent,
     BlogComponent
   ],
   imports: [

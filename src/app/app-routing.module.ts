@@ -52,13 +52,14 @@ const routes: Routes = [
       {
         path: 'login', component: LogInComponent
       },
+      {
+        path: 'register', component: SigupComponent
+      }
 
     ]
   },
 
-  {
-    path: 'sigup', component: SigupComponent
-  }
+
 
 
 ];

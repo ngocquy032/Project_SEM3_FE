@@ -31,7 +31,7 @@ const routes: Routes = [
       {
         path: 'wishift', component : WishiftComponent
       },
-      { 
+      {
         path: 'shoppingCart', component : ShoppingCartComponent
       },
       {
@@ -48,13 +48,14 @@ const routes: Routes = [
       },
       {
         path: 'account', component: AccountComponent
-      }
+      },
+      {
+        path: 'login', component: LogInComponent
+      },
 
     ]
   },
-  {
-    path: 'login', component: LogInComponent
-  },
+
   {
     path: 'sigup', component: SigupComponent
   }

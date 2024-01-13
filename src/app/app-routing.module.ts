@@ -49,6 +49,12 @@ const routes: Routes = [
       },
       {
         path: 'account', component: AccountComponent
+      },
+      {
+        path: 'login', component: LogInComponent
+      },
+      {
+        path: 'sigup', component: SigupComponent
       }
 
     ]
@@ -59,12 +65,7 @@ const routes: Routes = [
 
     ]
   },
-  {
-    path: 'login', component: LogInComponent
-  },
-  {
-    path: 'sigup', component: SigupComponent
-  }
+
 
 
 ];

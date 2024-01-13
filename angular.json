@@ -53,16 +53,7 @@
               "src/assets/js/plugins/jquery.magnific-popup.min.js",
               "src/assets/js/plugins/jquery.scrollUp.min.js",
               "src/assets/js/plugins/scrollax.min.js",
-              "src/assets/js/main.js",
-              "src/assets/admin/libs/lucide/umd/lucide.min.js",
-              "src/assets/admin/libs/simplebar/simplebar.min.js",
-              "src/assets/admin/libs/flatpickr/flatpickr.min.js",
-              "src/assets/admin/libs/@frostui/tailwindcss/frostui.js",
-              "src/assets/admin/libs/filepond/filepond.min.js",
-              "src/assets/admin/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js",
-              "src/assets/admin/libs/vanillajs-datepicker/js/datepicker-full.min.js",
-              "src/assets/admin/libs/mobius1-selectr/selectr.min.js",
-              "src/assets/admin/js/app.js"
+              "src/assets/js/main.js"
             ]
           },
           "configurations": {

@@ -13,7 +13,6 @@ import { CheckOutComponent } from './fe-user/check-out/check-out.component';
 import { ProductDetailsComponent } from './fe-user/product-details/product-details.component';
 import { BlogComponent } from './fe-user/blog/blog.component';
 import { AccountComponent } from './fe-user/account/account.component';
-import { LayoutAdminComponent } from './fe-admin/layout-admin/layout-admin.component';
 
 
 const routes: Routes = [
@@ -59,12 +58,7 @@ const routes: Routes = [
 
     ]
   },
-  {
-    path: "admin", component: LayoutAdminComponent,
-    children: [
 
-    ]
-  },
 
 
 

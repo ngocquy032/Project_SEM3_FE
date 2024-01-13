@@ -13,10 +13,3 @@
 @import url('assets/css/plugins/magnific-popup.css');
 @import url('assets/css/plugins/slick.css');
 @import url('assets/css/style.min.css');
-@import url('assets/admin/css/tailwind.min.css');
-@import url('assets/admin/libs/filepond/filepond.min.css');
-@import url('assets/admin/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css');
-@import url('assets/admin/libs/vanillajs-datepicker/css/datepicker.min.css');
-@import url('assets/admin/libs/mobius1-selectr/selectr.min.css');
-@import url('assets/admin/libs/icofont/icofont.min.css');
-@import url('assets/admin/libs/flatpickr/flatpickr.min.css');

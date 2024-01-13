@@ -45,11 +45,11 @@ export class LogInComponent {
 
         }
       } catch (error) {
-        this.message = 'email hoac mat khau sai'
+        this.message = 'Incorrect email or password'
 
       }
     } else {
-      this.message = "hay nhap email hoac mat khau"
+      this.message = "Please enter Email or password"
       console.log('false');
     }
   }
@@ -62,7 +62,7 @@ export class LogInComponent {
       const isEmailValid = emailRegex.test(emailValue);
 
       if (!isEmailValid) {
-        this.messageMail = "chua dung dinh dang mail";
+        this.messageMail = "Email format is incorrect, please try again";
         return false;
       } else {
         this.messageMail = "";

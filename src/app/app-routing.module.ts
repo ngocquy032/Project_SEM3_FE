@@ -53,7 +53,7 @@ const routes: Routes = [
         path: 'login', component: LogInComponent
       },
       {
-        path: 'sigup', component: SigupComponent
+        path: 'register', component: SigupComponent
       }
 
     ]

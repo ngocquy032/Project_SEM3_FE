@@ -13,6 +13,7 @@ import { CheckOutComponent } from './fe-user/check-out/check-out.component';
 import { ProductDetailsComponent } from './fe-user/product-details/product-details.component';
 import { BlogComponent } from './fe-user/blog/blog.component';
 import { AccountComponent } from './fe-user/account/account.component';
+import { LayoutAdminComponent } from './fe-admin/layout-admin/layout-admin.component';
 
 
 const routes: Routes = [
@@ -22,23 +23,23 @@ const routes: Routes = [
       //layout component trong day
       {
         path: '', component: HomeComponent
-      },{
-        path:  'aboutUs', component:  AboutUsComponent
+      }, {
+        path: 'aboutUs', component: AboutUsComponent
       },
       {
-        path: 'shop', component : ShopComponent
+        path: 'shop', component: ShopComponent
       },
       {
-        path: 'wishift', component : WishiftComponent
+        path: 'wishift', component: WishiftComponent
       },
       {
-        path: 'shoppingCart', component : ShoppingCartComponent
+        path: 'shoppingCart', component: ShoppingCartComponent
       },
       {
-        path : 'contactUs', component: ContactUsComponent
+        path: 'contactUs', component: ContactUsComponent
       },
       {
-        path : 'checkOut', component: CheckOutComponent
+        path: 'checkOut', component: CheckOutComponent
       },
       {
         path: 'productDetails', component: ProductDetailsComponent
@@ -48,18 +49,22 @@ const routes: Routes = [
       },
       {
         path: 'account', component: AccountComponent
-      },
-      {
-        path: 'login', component: LogInComponent
-      },
-      {
-        path: 'register', component: SigupComponent
       }
 
     ]
   },
+  {
+    path: "admin", component: LayoutAdminComponent,
+    children: [
 
-
+    ]
+  },
+  {
+    path: 'login', component: LogInComponent
+  },
+  {
+    path: 'sigup', component: SigupComponent
+  }
 
 
 ];

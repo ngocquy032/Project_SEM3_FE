@@ -1,76 +1,36 @@
-<!-- Page Title/Header Start -->
-<div class="page-title-section section" data-bg-image="assets/images/bg/page-title-1.webp">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="page-title">
-          <h1 class="title">Login & Register</h1>
-          <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a routerLink="">Home</a></li>
-            <li class="breadcrumb-item active">Login & Register</li>
-          </ul>
-        </div>
+<div class="container">
+
+  <div class="form-container sign-in-container">
+    <form [formGroup]="signupForm">
+      <h1>Sign Up</h1>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fa fa-google-plus" style="color: red;" aria-hidden="true"></i></a>
+        <a href="#" class="social"><i class="fa fa-facebook" style="color: #4267B2;" aria-hidden="true"></i></a>
+        <a href="#" class="social"> <i class='fa fa-linkedin' style="color: #E1306C;"></i></a>
       </div>
-    </div>
-  </div>
-</div>
-<!-- Page Title/Header End -->
+      <span>or use your account</span>
+      <input type="text" placeholder="UserName" formControlName="userName" />
+      <div class="color-p" >
+        <p>{{ msgName }}</p>
+       </div>
+      <input type="email" placeholder="Email" formControlName="email" />
+       <div class="color-p" >
+        <p>{{ msgMail }}</p>
+       </div>
+      <input type="password" placeholder="Password" formControlName="password" />
+         <div class="color-p" >
+        <p>{{ msgPassword }}</p>
+       </div>
+      <input type="password" placeholder="Repassword" formControlName="repassword" />
+      <div class="color-p" >
+        <p>{{ msgRepassword }}</p>
+       </div>
 
-<div class="mg">
-  <div class="user-login-register">
-    <div class="login-register-title">
-      <h1 class="title">Register</h1>
-      <p class="desc">If you don’t have an account, register now!</p>
-    </div>
-    <div class="login-register-form">
-      <form [formGroup]="signupForm">
-        <div class="row learts-mb-n50">
-          <div class="col-12 learts-mb-20">
-            <label for="registerName">UserName <abbr class="required">*</abbr></label>
-            <input type="text" formControlName="userName">
-            <div class="color-p">
-              <p>{{ msgName }}</p>
-            </div>
-          </div>
-          <div class="col-12 learts-mb-20">
-            <label for="registerEmail">Email address <abbr class="required">*</abbr></label>
-            <input type="email" formControlName="email">
-            <div class="color-p">
-              <p>{{ msgMail }}</p>
-            </div>
-          </div>
-          <div class="col-12 learts-mb-20">
-            <label for="registerPassword">Password <abbr class="required">*</abbr></label>
-            <input type="password" formControlName="password">
-            <div class="color-p">
-              <p>{{ msgPassword }}</p>
-            </div>
-          </div>
-          <div class="col-12 learts-mb-20">
-            <label for="registerRepassword">Repassword<abbr class="required">*</abbr></label>
-            <input type="password" formControlName="repassword">
-            <div class="color-p">
-              <p>{{ msgRepassword }}</p>
-            </div>
-          </div>
-
-          <!-- <div class="col-12 learts-mb-50">
-            <div class="check">
-              <input type="checkbox">
-              <p>
-                I agree all statements in Terms of service
-              </p>
-            </div>
-          </div> -->
-          <div class="col-12 text-center learts-mb-50">
-            <button type="button" class="btn btn-dark btn-outline-hover-dark"
-              (click)="onClickSignUp()">Register</button>
-          </div>
-        </div>
-      </form>
-      <div class="login">
+      <button type="button" (click)="onClickSignUp()">LogIn</button>
+      <div class="sigUp">
         <p class="">Have already an account? <a routerLink="/login" class="">Login here</a></p>
       </div>
-    </div>
+    </form>
+
   </div>
 </div>

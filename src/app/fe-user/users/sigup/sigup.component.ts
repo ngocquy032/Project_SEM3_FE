@@ -34,7 +34,7 @@ export class SigupComponent {
   public checkInputName() {
     const nameControl = this.signupForm.get('userName')?.value;
     if(!nameControl){
-      this.msgName = "Please enter complete information"
+      this.msgName = "vui long nhap vao truong nay"
     }else{
       this.msgName = '';
     }
@@ -46,9 +46,9 @@ export class SigupComponent {
     const emailControl = this.signupForm.get('email')?.value;
     const isEmailValid = emailRegex.test(emailControl);
     if (!emailControl) {
-      this.msgMail = "Please enter complete information"
+      this.msgMail = "vui long nhap vao truong nay"
     } else if (!isEmailValid) {
-      this.msgMail = "Email format is incorrect, please try again";
+      this.msgMail = "chua dung dinh dang mail";
     } else {
       this.msgMail = "";
     }
@@ -61,21 +61,21 @@ export class SigupComponent {
     const passwordValid = passwordRegex.test(passwordControl);
     //check input password
     if (!passwordControl) {
-      this.msgPassword = "Please enter complete information";
+      this.msgPassword = "vui long nhap vao truong nay";
     } else if (passwordControl.length < 8) {
-      this.msgPassword = "Please enter 8 characters or more";
+      this.msgPassword = "vui long nhap tren 8 ky tu";
     } else if (!passwordValid) {
-      this.msgPassword = "Please enter at least 1 uppercase letter, 1 lowercase letter and 1 number"
+      this.msgPassword = "Vui long nhap it nhat 1 chu hoa, 1 chu thuong va 1 so"
     } else {
       this.msgPassword = ''
     }
     //check input repassword
     if(!repasswordControl){
-      this.msgRepassword = 'Please enter complete information'
+      this.msgRepassword = 'vui long nhap vao truong nay'
     }else if(passwordControl !== repasswordControl){
-      this.msgRepassword = "Password does not match the password entered, please try again";
+      this.msgRepassword = "mat khau kh khop voi mat khau da nhap";
     }else{
-      this.msgRepassword = ''
+      this.msgRepassword = 'dung'
     }
 
     //check confim

@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 .mg-top{
   margin-top: 20px;
@@ -103,7 +103,8 @@ input {
 
 .container {
   margin: 20px 33%;
-
+  /* margin-top: 5%;
+  margin-bottom: 5%; */
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
@@ -250,38 +251,4 @@ footer a {
 
   font-size: 15px;
 }
- */
-
- .page-title-section{
-  background-image: url(../../../../assets/images/banner/banner.jpg);
-  padding: 75px 0;
-}
-
- .mg{
-  margin: 10px 30%;
- }
-
- .color-p {
-  color: #FF4B2B;
-  text-align: center;
-}
-
-.sigUp a:hover{
-  color: #FF416C;
-}
-.sigUp a{
-  font-size: 18px;
-}
-
-.sigUp p{
-  margin-top: 20px;
-  text-align: center;
-  font-size: 18px;
-}
-
-.user-login-register {
-  font-weight: 400;
-  padding: 40px;
-}
-
 

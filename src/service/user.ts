@@ -12,7 +12,7 @@ import { LoginModel, LoginParam } from "src/app/fe-user/users/log-in/login.model
   private Url = 'https://arts-be1.azurewebsites.net/api/Users';
 
   logIn(loginData: LoginModel): Observable<any>{
-    return this.http.post<LoginParam>(`${this.Url}/Login`, loginData);
+    return this.http.post<LoginParam>(`${this.Url}/LoginUsers`, loginData);
   }
 
 }

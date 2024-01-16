@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductService } from 'src/service/products';
 
 @Component({
@@ -11,10 +12,13 @@ export class HomeComponent implements OnInit {
   productSales: any[] = [];
   productBestSallers: any[] = [];
   productImages: any[] = [];
-  constructor(private productService: ProductService) { }
+  constructor(
+    private productService: ProductService,
+    private router: Router
+    ) { }
   ngOnInit(): void {
     this.getProduct();
-    // this.getImages();
+    this.getImages();
   }
 
   getProduct() {
@@ -27,12 +31,14 @@ export class HomeComponent implements OnInit {
       console.log('productSales: ', this.productSales);
     });
   }
-
   getImages(){
-    this.productService.getImages().subscribe( image => {
-      this.productImages = image.slice(0,8);
-      console.log('getImages', this.productImages);
-
-    })
+    this.productService.getImagetProductImagesges().subscribe( productImage =>{
+      this.productImages = productImage;
+    });
   }
+
+  productDetails(productId: string): void{
+    this.router.navigate(['/productDetails', productId]);
+  }
+
 }

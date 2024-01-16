@@ -82,7 +82,6 @@
 <!-- Product Section Start -->
 <div class="section section-padding">
   <div class="container">
-
     <!-- Product Tab Start -->
     <div class="row">
       <div class="col-12">
@@ -100,15 +99,12 @@
               <div class="col" *ngFor="let product of newProducts">
                 <div class="product">
                   <div class="product-thumb">
-                    <a href="product-details.html" class="image">
-                      <span class="product-badges" *ngIf="product.sale !== null" >
+                    <a (click)="productDetails(product.productId)" class="image">
+                      <span class="product-badges" *ngIf="product.sale !== null">
                         <span class="onsale">-{{ product.sale }}%</span>
                       </span>
 
-                        <!-- Hiển thị ảnh đầu tiên từ mảng 'product_images' -->
-                        <img src="../../../assets/images/imgProject/{{   product.product_images }}" alt="Product Image">
-
-                      <!-- <img src="../../../assets/img/{{  }}" alt="Product Image"> -->
+                      <img src="../../../assets/images/imgProject/{{ product.product_images }}" alt="Product Image">
                     </a>
                     <a href="wishlist.html" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
                         class="far fa-heart"></i></a>
@@ -120,17 +116,16 @@
                       <span class="new">{{ product.price }}$</span>
                     </span>
                     <div class="product-buttons">
-                      <a href="#quickViewModal" data-bs-toggle="modal" class="product-button hintT-top"
-                        data-hint="Quick View"><i class="fas fa-search"></i></a>
-                      <a href="#" class="product-button hintT-top" data-hint="Add to Cart"><i
-                          class="fas fa-shopping-cart"></i></a>
-                      <a href="#" class="product-button hintT-top" data-hint="Compare"><i class="fas fa-random"></i></a>
+
+                      <a data-bs-toggle="modal" class="product-button hintT-top"
+                        data-hint="Add To Cart"><i class="fas fa-shopping-cart"></i></a>
+                      <a  (click)="productDetails(product.productId)" class="product-button hintT-top" data-hint="Quick View"><i
+                          class="fas fa-search"></i></a>
+                      <a href="#" class="product-button hintT-top" data-hint="Add to wishlist"><i class="far fa-heart"></i></a>
                     </div>
                   </div>
                 </div>
               </div>
-
-
 
             </div>
             <!-- Products End -->
@@ -139,17 +134,14 @@
           <div class="tab-pane fade" id="tab-sale-items">
             <!-- Products Start -->
             <div class="products row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
-
               <div class="col" *ngFor="let productSale of productSales">
                 <div class="product">
                   <div class="product-thumb">
-                    <a href="product-details.html" class="image">
+                    <a class="image" (click)="productDetails(productSale.productId)">
                       <span class="product-badges" *ngIf="productSale.sale !== null">
                         <span class="onsale">-{{ productSale.sale }}%</span>
                       </span>
                       <img src="assets/images/product/s270/product-4.webp" alt="Product Image">
-                      <img class="image-hover " src="assets/images/product/s270/product-4-hover.webp"
-                        alt="Product Image">
                     </a>
                     <a href="wishlist.html" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
                         class="far fa-heart"></i></a>
@@ -161,29 +153,27 @@
                       <span class="new">{{ productSale.price }}$</span>
                     </span>
                     <div class="product-buttons">
-                      <a href="#quickViewModal" data-bs-toggle="modal" class="product-button hintT-top"
-                        data-hint="Quick View"><i class="fas fa-search"></i></a>
-                      <a href="#" class="product-button hintT-top" data-hint="Add to Cart"><i
-                          class="fas fa-shopping-cart"></i></a>
-                      <a href="#" class="product-button hintT-top" data-hint="Compare"><i class="fas fa-random"></i></a>
+                      <a data-bs-toggle="modal" class="product-button hintT-top"
+                        data-hint="Add To Cart"><i class="fas fa-shopping-cart"></i></a>
+                      <a  (click)="productDetails(productSale.productId)" class="product-button hintT-top" data-hint="Quick View"><i
+                          class="fas fa-search"></i></a>
+                      <a href="#" class="product-button hintT-top" data-hint="Add to wishlist"><i class="far fa-heart"></i></a>
                     </div>
                   </div>
                 </div>
               </div>
-
-
             </div>
             <!-- Products End -->
           </div>
+
           <!-- Best sellers -->
           <div class="tab-pane fade" id="tab-best-sellers">
             <!-- Products Start -->
             <div class="products row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
-
               <div class="col" *ngFor="let productBestSaller of productBestSallers">
                 <div class="product">
                   <div class="product-thumb">
-                    <a href="product-details.html" class="image">
+                    <a (click)="productDetails(productBestSaller.productId)" class="image">
                       <span class="product-badges" *ngIf="productBestSaller.sale !== null">
                         <span class="onsale">-{{ productBestSaller.sale }}%</span>
                       </span>
@@ -201,16 +191,16 @@
                       <span class="new">{{ productBestSaller.price }}$</span>
                     </span>
                     <div class="product-buttons">
-                      <a href="#quickViewModal" data-bs-toggle="modal" class="product-button hintT-top"
-                        data-hint="Quick View"><i class="fas fa-search"></i></a>
-                      <a href="#" class="product-button hintT-top" data-hint="Add to Cart"><i
-                          class="fas fa-shopping-cart"></i></a>
-                      <a href="#" class="product-button hintT-top" data-hint="Compare"><i class="fas fa-random"></i></a>
+
+                      <a data-bs-toggle="modal" class="product-button hintT-top"
+                        data-hint="Add To Cart"><i class="fas fa-shopping-cart"></i></a>
+                      <a  (click)="productDetails(productBestSaller.productId)" class="product-button hintT-top" data-hint="Quick View"><i
+                          class="fas fa-search"></i></a>
+                      <a href="#" class="product-button hintT-top" data-hint="Add to wishlist"><i class="far fa-heart"></i></a>
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
             <!-- Products End -->
           </div>
@@ -218,8 +208,6 @@
       </div>
     </div>
     <!-- Product Tab End -->
-
-
   </div>
 </div>
 <!-- Product Section End -->

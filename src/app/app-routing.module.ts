@@ -41,7 +41,7 @@ const routes: Routes = [
         path: 'checkOut', component: CheckOutComponent
       },
       {
-        path: 'productDetails', component: ProductDetailsComponent
+        path: 'productDetails/:id', component: ProductDetailsComponent
       },
       {
         path: 'blog', component: BlogComponent

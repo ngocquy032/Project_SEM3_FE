@@ -1,233 +1,225 @@
-<!-- Page Title/Header Start -->
-<div class="page-title-section section" data-bg-image="assets/images/bg/page-title-1.webp">
-  <div class="container">
-    <div class="row">
-      <div class="col">
+<div *ngIf="product">
 
-        <div class="page-title">
-          <h1 class="title">Shop</h1>
-          <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a routerLink="">Home</a></li>
-            <li class="breadcrumb-item"><a routerLink="/shop">Products</a></li>
-            <li class="breadcrumb-item active">Product Details</li>
-          </ul>
+
+  <!-- Page Title/Header Start -->
+  <div class="page-title-section section" data-bg-image="assets/images/bg/page-title-1.webp">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+
+          <div class="page-title">
+            <h1 class="title">Shop</h1>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a routerLink="">Home</a></li>
+              <li class="breadcrumb-item"><a routerLink="/shop">Products</a></li>
+              <li class="breadcrumb-item active">Product Details</li>
+            </ul>
+          </div>
+
         </div>
-
       </div>
     </div>
   </div>
-</div>
-<!-- Page Title/Header End -->
+  <!-- Page Title/Header End -->
 
-<!-- Single Products Section Start -->
-<div class="section section-padding border-bottom">
-  <div class="container">
-    <div class="row learts-mb-n40">
+  <!-- Single Products Section Start -->
+  <div class="section section-padding border-bottom">
+    <div class="container">
+      <div class="row learts-mb-n40">
 
-      <!-- Product Images Start -->
-      <div class="col-lg-6 col-12 learts-mb-40">
-        <div class="product-images">
+        <!-- Product Images Start -->
+        <div class="col-lg-6 col-12 learts-mb-40">
+          <div class="product-images">
 
-          <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <div id="carouselExampleIndicators" class="carousel slide">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="assets/images/product/single/7/product-1.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/images/product/single/7/product-2.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/images/product/single/7/product-3.webp" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="assets/images/product/single/7/product-1.webp" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="assets/images/product/single/7/product-2.webp" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="assets/images/product/single/7/product-3.webp" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
           </div>
-        </div>
-        <div class="modal fade" id="product-360-viewer">
-          <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-body">
-                <div class="cd-product-viewer-wrapper" data-frame="16" data-friction="0.33">
-                  <button class="close" data-bs-dismiss="modal">&times;</button>
-                  <figure class="product-viewer">
-                    <img src="assets/images/product/single/7/frame-review.webp" alt="Product Preview">
-                    <div class="product-sprite" data-image="assets/images/product/single/7/frame-total.webp"></div>
-                  </figure>
+          <div class="modal fade" id="product-360-viewer">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="cd-product-viewer-wrapper" data-frame="16" data-friction="0.33">
+                    <button class="close" data-bs-dismiss="modal">&times;</button>
+                    <figure class="product-viewer">
+                      <img src="assets/images/product/single/7/frame-review.webp" alt="Product Preview">
+                      <div class="product-sprite" data-image="assets/images/product/single/7/frame-total.webp"></div>
+                    </figure>
 
-                  <div class="cd-product-viewer-handle">
-                    <span class="fill"></span>
-                    <span class="handle">Handle</span>
+                    <div class="cd-product-viewer-handle">
+                      <span class="fill"></span>
+                      <span class="handle">Handle</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- Product Images End -->
+        <!-- Product Images End -->
 
-      <!-- Product Summery Start -->
-      <div class="col-lg-6 col-12 learts-mb-40">
-        <div class="product-summery">
+        <!-- Product Summery Start -->
+        <div class="col-lg-6 col-12 learts-mb-40">
+          <div class="product-summery">
+            <h3 class="product-title">{{ product.title }}</h3>
 
-          <div class="product-ratings">
-            <span class="star-rating">
-              <span class="rating-active" style="width: 100%;">ratings</span>
-            </span>
-            <a href="#reviews" class="review-link">(<span class="count">3</span> customer reviews)</a>
-          </div>
-          <h3 class="product-title">Motorized Tricycle</h3>
-          <div class="product-price">£35.00</div>
-          <div class="product-description">
-            <p>With the stability and safety of having a three wheels；durable 6061 aluminum alloy frame; suspension fork
-              cushions the ride when you encounter bumps. The 750w motor has excellent power to reach speeds up to 23
-              mph and with a single charge of the battery the bike can run up to 40-55 miles using level one pedal
-              assist.</p>
-            <p>Due to the controllability of electric trike is stronger than the normal electric bike. Please test the
-              bike in the secure room, garden, or square for 2 hours before rode it on the road, pavement, hills, and
-              beach etc.</p>
-          </div>
-          <div class="product-variations">
-            <table>
-              <tbody>
-                <tr>
-                  <td class="label"><span>Quantity</span></td>
-                  <td class="value">
-                    <div class="product-quantity">
-                      <span class="qty-btn minus"><i class="ti-minus"></i></span>
-                      <input type="text" class="input-qty" value="1">
-                      <span class="qty-btn plus"><i class="ti-plus"></i></span>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="product-buttons">
-            <a href="#" class="btn btn-icon btn-outline-body btn-hover-dark hintT-top" data-hint="Add to Wishlist"><i
-                class="far fa-heart"></i></a>
-            <a href="#" class="btn btn-dark btn-outline-hover-dark"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-            <a href="#" class="btn btn-icon btn-outline-body btn-hover-dark hintT-top" data-hint="Compare"><i
-                class="fas fa-random"></i></a>
-          </div>
-          <div class="product-brands">
-            <span class="title">Brands</span>
-            <div class="brands">
-              <a href="#"><img src="assets/images/brands/brand-4.webp" alt=""></a>
-              <a href="#"><img src="assets/images/brands/brand-6.webp" alt=""></a>
+            <div class="product-price">{{ product.price }}.00$</div>
+            <div class="product-description">
+              <p>With the stability and safety of having a three wheels；durable 6061 aluminum alloy frame; suspension
+                fork
+                cushions the ride when you encounter bumps. The 750w motor has excellent power to reach speeds up to 23
+                mph and with a single charge of the battery the bike can run up to 40-55 miles using level one pedal
+                assist.</p>
+              <p>Due to the controllability of electric trike is stronger than the normal electric bike. Please test the
+                bike in the secure room, garden, or square for 2 hours before rode it on the road, pavement, hills, and
+                beach etc.</p>
+            </div>
+            <div class="product-variations">
+              <table>
+                <tbody>
+                  <tr>
+                    <td class="label"><span>Quantity</span></td>
+                    <td class="value">
+                      <div class="product-quantity">
+                        <span class="qty-btn minus"><i class="fa fa-minus"></i></span>
+                        <input type="number" class="input-qty" value="1">
+                        <span class="qty-btn plus"><i class="fa fa-plus"></i></span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="product-buttons">
+              <a href="#" class="btn btn-icon btn-outline-body btn-hover-dark hintT-top" data-hint="Add to Wishlist"><i
+                  class="far fa-heart"></i></a>
+              <a href="#" class="btn btn-dark btn-outline-hover-dark"><i class="fas fa-shopping-cart"></i> Add to
+                Cart</a>
+            </div>
+
+            <div class="product-meta">
+              <table>
+                <tbody>
+                  <tr>
+                    <td class="label"><span>Product Code</span></td>
+                    <td class="value">
+                      <ul class="product-category">
+                        <li>{{ product.productCode }}</li>
+
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="label"><span>Category</span></td>
+                    <td class="value">
+                      <ul class="product-category">
+                        <li>{{ product.productCategoryId.nameCategory }}</li>
+
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="label"><span>QTY</span></td>
+                    <td class="value">
+                      <ul class="product-tags">
+                        <li>{{ product.quantity }}</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="label"><span>Availability</span></td>
+                    <td class="va">
+                      <div class="product-share">
+                        {{ product.availability }}
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
-          <div class="product-meta">
-            <table>
-              <tbody>
-                <tr>
-                  <td class="label"><span>SKU</span></td>
-                  <td class="value">04042192</td>
-                </tr>
-                <tr>
-                  <td class="label"><span>Category</span></td>
-                  <td class="value">
-                    <ul class="product-category">
-                      <li><a href="#">Gift ideas</a></li>
-                      <li><a href="#">Home Decors</a></li>
-                      <li><a href="#">Kids & Babies</a></li>
-                      <li><a href="#">Toys</a></li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="label"><span>Tags</span></td>
-                  <td class="value">
-                    <ul class="product-tags">
-                      <li><a href="#">handmade</a></li>
-                      <li><a href="#">learts</a></li>
-                      <li><a href="#">mug</a></li>
-                      <li><a href="#">product</a></li>
-                      <li><a href="#">learts</a></li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="label"><span>Share on</span></td>
-                  <td class="va">
-                    <div class="product-share">
-                      <a href="#"><i class="fab fa-facebook-f"></i></a>
-                      <a href="#"><i class="fab fa-twitter"></i></a>
-                      <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                      <a href="#"><i class="fab fa-pinterest"></i></a>
-                      <a href="#"><i class="far fa-envelope"></i></a>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
-      </div>
-      <!-- Product Summery End -->
+        <!-- Product Summery End -->
 
+      </div>
     </div>
+
   </div>
+  <!-- Single Products Section End -->
 
-</div>
-<!-- Single Products Section End -->
+  <!-- Single Products Infomation Section Start -->
+  <div class="section section-padding border-bottom">
+    <div class="container">
 
-<!-- Single Products Infomation Section Start -->
-<div class="section section-padding border-bottom">
-  <div class="container">
-
-    <ul class="nav product-info-tab-list">
-      <li><a class="active" data-bs-toggle="tab" href="#tab-description">Description</a></li>
-      <li><a data-bs-toggle="tab" href="#tab-pwb_tab">Brand</a></li>
-      <li><a data-bs-toggle="tab" href="#tab-additional_information">Additional information</a></li>
-      <li><a data-bs-toggle="tab" href="#tab-reviews">Reviews (3)</a></li>
-    </ul>
-    <div class="tab-content product-infor-tab-content">
-      <div class="tab-pane fade show active" id="tab-description">
-        <div class="row">
-          <div class="col-lg-10 col-12 mx-auto">
-            <p>With the stability and safety of having a three wheels；durable 6061 aluminum alloy frame; suspension fork
-              cushions the ride when you encounter bumps. The 750w motor has excellent power to reach speeds up to 23
-              mph and with a single charge of the battery the bike can run up to 40-55 miles using level one pedal
-              assist.</p>
-            <p>It can carry adults weighing close to 350 lbs, making it an ideal option for larger riders. Oversized
-              rear basket cargo is perfect for picnics, storing your groceries and shopping duties or giving your
-              favorite pet a ride. Make your trips more convenient. The front basket gives you more places to put more
-              items, and you can more easily take out items from the front basket while riding, making your trip more
-              perfect.</p>
-            <p>Due to the controllability of electric trike is stronger than the normal electric bike. Please test the
-              bike in the secure room, garden, or square for 2 hours before rode it on the road, pavement, hills, and
-              beach etc.</p>
-          </div>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="tab-pwb_tab">
-        <div class="row learts-mb-n30">
-          <div class="col-12 learts-mb-30">
-            <div class="row learts-mb-n10">
-              <div class="col-lg-2 col-md-3 col-12 learts-mb-10"><img src="assets/images/brands/brand-4.webp" alt="">
-              </div>
-              <div class="col learts-mb-10">
-                <p>Most people are not ready to immediately buy upon seeing an online ad or visiting a new website about
-                  eCommerce. But that’s not the story with us. We are here to take the lead and tackle all challenges.
-                  By retargeting the subject, we’ve been able to reach out to more customers worldwide and become one of
-                  the most favored brands in the industry.</p>
-              </div>
+      <ul class="nav product-info-tab-list">
+        <li><a class="active" data-bs-toggle="tab" href="#tab-description">Description</a></li>
+        <li><a data-bs-toggle="tab" href="#tab-pwb_tab">Brand</a></li>
+        <li><a data-bs-toggle="tab" href="#tab-additional_information">Additional information</a></li>
+        <li><a data-bs-toggle="tab" href="#tab-reviews">Reviews</a></li>
+      </ul>
+      <div class="tab-content product-infor-tab-content">
+        <!-- depcrition -->
+        <div class="tab-pane fade show active" id="tab-description">
+          <div class="row">
+            <div class="col-lg-10 col-12 mx-auto">
+              <p>With the stability and safety of having a three wheels；durable 6061 aluminum alloy frame; suspension
+                fork
+                cushions the ride when you encounter bumps. The 750w motor has excellent power to reach speeds up to 23
+                mph and with a single charge of the battery the bike can run up to 40-55 miles using level one pedal
+                assist.</p>
+              <p>It can carry adults weighing close to 350 lbs, making it an ideal option for larger riders. Oversized
+                rear basket cargo is perfect for picnics, storing your groceries and shopping duties or giving your
+                favorite pet a ride. Make your trips more convenient. The front basket gives you more places to put more
+                items, and you can more easily take out items from the front basket while riding, making your trip more
+                perfect.</p>
+              <p>Due to the controllability of electric trike is stronger than the normal electric bike. Please test the
+                bike in the secure room, garden, or square for 2 hours before rode it on the road, pavement, hills, and
+                beach etc.</p>
             </div>
           </div>
-          <div class="col-12 learts-mb-30">
+        </div>
+        <!-- Brand -->
+        <div class="tab-pane fade" id="tab-pwb_tab">
+          <div class="row learts-mb-n30">
+            <div class="col-12 learts-mb-30">
+              <div class="row learts-mb-n10">
+                <div class="col-lg-2 col-md-3 col-12 learts-mb-10"><img src="assets/images/brands/brand-4.webp" alt="">
+                </div>
+                <div class="col learts-mb-10">
+                  <p>{{ product.commentBrands }}.</p>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-12 learts-mb-30">
             <div class="row learts-mb-n10">
               <div class="col-lg-2 col-md-3 col-12 learts-mb-10"><img src="assets/images/brands/brand-6.webp" alt="">
               </div>
@@ -238,112 +230,109 @@
                   sales in the fashion industry.</p>
               </div>
             </div>
+          </div> -->
           </div>
         </div>
-      </div>
-      <div class="tab-pane fade" id="tab-additional_information">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 col-12 mx-auto">
-            <div class="table-responsive">
-              <table class="table table-bordered">
-                <tbody>
-                  <tr>
-                    <td>Size</td>
-                    <td>Large, Medium, Small</td>
-                  </tr>
-                  <tr>
-                    <td>Color</td>
-                    <td>Black, White</td>
-                  </tr>
-                </tbody>
-              </table>
+        <!-- information -->
+        <div class="tab-pane fade" id="tab-additional_information">
+          <div class="row">
+            <div class="col-lg-8 col-md-10 col-12 mx-auto">
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <td>Sku</td>
+                      <td>{{ product.sku }}</td>
+                    </tr>
+                    <tr>
+                      <td>Tags</td>
+                      <td>{{ product.tags }}</td>
+                    </tr>
+                    <tr>
+                      <td>Weight</td>
+                      <td>{{ product.weight }}kg</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- product comment -->
+        <div class="tab-pane fade" id="tab-reviews">
+          <div class="product-review-wrapper">
+            <span class="title">Reviews for {{ product.title }}</span>
+            <ul class="product-review-list">
+              <li>
+                <div class="product-review">
+                  <div class="thumb"><img src="assets/images/review/review-1.webp" alt=""></div>
+                  <div class="content">
+
+                    <div class="meta">
+                      <h5 class="title">Edna Watson</h5>
+                    </div>
+                    <p>Thanks for always keeping your WordPress themes up to date. Your level of support and dedication
+                      is
+                      second to none.</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="product-review">
+                  <div class="thumb"><img src="assets/images/review/review-2.webp" alt=""></div>
+                  <div class="content">
+
+                    <div class="meta">
+                      <h5 class="title">Scott James</h5>
+                    </div>
+                    <p>Thanks for always keeping your WordPress themes up to date. Your level of support and dedication
+                      is
+                      second to none.</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="product-review">
+                  <div class="thumb"><img src="assets/images/review/review-3.webp" alt=""></div>
+                  <div class="content">
+                    <div class="ratings">
+                      <span class="star-rating">
+                        <span class="rating-active" style="width: 60%;">ratings</span>
+                      </span>
+                    </div>
+                    <div class="meta">
+                      <h5 class="title">Owen Christ</h5>
+                      <span class="date">November 27, 2020</span>
+                    </div>
+                    <p>Good Product!</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <span class="title">Add a review</span>
+            <div class="review-form">
+              <p class="note">Your email address will not be published. Required fields are marked *</p>
+              <form action="#">
+                <div class="row learts-mb-n30">
+                  <div class="col-md-6 col-12 learts-mb-30"><input type="text" placeholder="Name *"></div>
+                  <div class="col-md-6 col-12 learts-mb-30"><input type="email" placeholder="Email *"></div>
+                  <div class="col-12 learts-mb-10">
+                    <div class="form-rating">
+                      <span class="title">Your rating</span>
+                      <span class="rating"><span class="star"></span></span>
+                    </div>
+                  </div>
+                  <div class="col-12 learts-mb-30"><textarea placeholder="Your Review *"></textarea></div>
+                  <div class="col-12 text-center learts-mb-30"><button
+                      class="btn btn-dark btn-outline-hover-dark">Submit</button></div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="tab-reviews">
-        <div class="product-review-wrapper">
-          <span class="title">3 reviews for Motorized Tricycle</span>
-          <ul class="product-review-list">
-            <li>
-              <div class="product-review">
-                <div class="thumb"><img src="assets/images/review/review-1.webp" alt=""></div>
-                <div class="content">
-                  <div class="ratings">
-                    <span class="star-rating">
-                      <span class="rating-active" style="width: 100%;">ratings</span>
-                    </span>
-                  </div>
-                  <div class="meta">
-                    <h5 class="title">Edna Watson</h5>
-                    <span class="date">November 27, 2020</span>
-                  </div>
-                  <p>Thanks for always keeping your WordPress themes up to date. Your level of support and dedication is
-                    second to none.</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="product-review">
-                <div class="thumb"><img src="assets/images/review/review-2.webp" alt=""></div>
-                <div class="content">
-                  <div class="ratings">
-                    <span class="star-rating">
-                      <span class="rating-active" style="width: 80%;">ratings</span>
-                    </span>
-                  </div>
-                  <div class="meta">
-                    <h5 class="title">Scott James</h5>
-                    <span class="date">November 27, 2020</span>
-                  </div>
-                  <p>Thanks for always keeping your WordPress themes up to date. Your level of support and dedication is
-                    second to none.</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="product-review">
-                <div class="thumb"><img src="assets/images/review/review-3.webp" alt=""></div>
-                <div class="content">
-                  <div class="ratings">
-                    <span class="star-rating">
-                      <span class="rating-active" style="width: 60%;">ratings</span>
-                    </span>
-                  </div>
-                  <div class="meta">
-                    <h5 class="title">Owen Christ</h5>
-                    <span class="date">November 27, 2020</span>
-                  </div>
-                  <p>Good Product!</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <span class="title">Add a review</span>
-          <div class="review-form">
-            <p class="note">Your email address will not be published. Required fields are marked *</p>
-            <form action="#">
-              <div class="row learts-mb-n30">
-                <div class="col-md-6 col-12 learts-mb-30"><input type="text" placeholder="Name *"></div>
-                <div class="col-md-6 col-12 learts-mb-30"><input type="email" placeholder="Email *"></div>
-                <div class="col-12 learts-mb-10">
-                  <div class="form-rating">
-                    <span class="title">Your rating</span>
-                    <span class="rating"><span class="star"></span></span>
-                  </div>
-                </div>
-                <div class="col-12 learts-mb-30"><textarea placeholder="Your Review *"></textarea></div>
-                <div class="col-12 text-center learts-mb-30"><button
-                    class="btn btn-dark btn-outline-hover-dark">Submit</button></div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+
     </div>
-
   </div>
+  <!-- Single Products Infomation Section End -->
 </div>
-<!-- Single Products Infomation Section End -->
-
-

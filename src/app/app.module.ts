@@ -17,6 +17,7 @@ import { ProductDetailsComponent } from './fe-user/product-details/product-detai
 import { BlogComponent } from './fe-user/blog/blog.component';
 import { AccountComponent } from './fe-user/account/account.component';
 import { ShoppingCartComponent } from './fe-user/shopping-cart/shopping-cart.component';
+import { BlogDetailsComponent } from './fe-user/blog-details/blog-details.component';
 
 
 
@@ -37,6 +38,7 @@ import { ShoppingCartComponent } from './fe-user/shopping-cart/shopping-cart.com
     BlogComponent,
     AccountComponent,
     BlogComponent,
+    BlogDetailsComponent,
 
   ],
   imports: [

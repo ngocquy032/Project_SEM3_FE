@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
@@ -8,13 +8,11 @@ import { Observable } from "rxjs";
   constructor(
     private http: HttpClient
   ) { }
+  private urlProduct =  "https://arts-be1.azurewebsites.net/api/Products"
   private UrlCategories = "https://arts-be1.azurewebsites.net/api/Categories";
   getCategorie(): Observable<any[]> {
     return this.http.get<any[]>(this.UrlCategories);
   }
-  getProductById(productId: string): Observable<any> {
-    const productUrl = `${this.UrlCategories}/${productId}`;
-    return this.http.get<any>(productUrl);
-  }
+
 
 }

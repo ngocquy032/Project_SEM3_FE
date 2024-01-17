@@ -8,6 +8,7 @@ import { ProductService } from 'src/service/products';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+[x: string]: any;
   newProducts: any[] = [];
   productSales: any[] = [];
   productBestSallers: any[] = [];
@@ -18,22 +19,14 @@ export class HomeComponent implements OnInit {
     ) { }
   ngOnInit(): void {
     this.getProduct();
-    this.getImages();
   }
 
   getProduct() {
     this.productService.getProduct().subscribe(product => {
-
       this.newProducts = product.slice(0,8);
       this.productSales = product.slice(18,26);
       this.productBestSallers = product.slice(9,17);
-      console.log('newProducts: ', this.newProducts);
-      console.log('productSales: ', this.productSales);
-    });
-  }
-  getImages(){
-    this.productService.getImagetProductImagesges().subscribe( productImage =>{
-      this.productImages = productImage;
+
     });
   }
 

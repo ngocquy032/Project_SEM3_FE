@@ -1,5 +1,5 @@
-import { Component, ElementRef, ViewChild, Renderer2, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { CategorierService } from 'src/service/categories';
 import { ProductService } from 'src/service/products';
 
@@ -11,10 +11,14 @@ import { ProductService } from 'src/service/products';
 export class ShopComponent implements OnInit {
   categories: any[] = [];
   products: any[] = [];
+  currentPage: number = 1;
+  itemsPerPage: number = 8;
+  selectedCategory: string | null = null;
   constructor(
     private categoriService: CategorierService,
     private productService: ProductService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
 
   }
@@ -26,16 +30,13 @@ export class ShopComponent implements OnInit {
   getCategorie() {
     this.categoriService.getCategorie().subscribe(getCategori => {
       this.categories = getCategori;
-      console.log('categori', this.categories);
-
     })
   }
 
   getProduct() {
     this.productService.getProduct().subscribe(product => {
-      this.products = product.splice(0,12);
+      this.products = product;
       console.log('product',this.products);
-
     });
   }
 
@@ -43,5 +44,8 @@ export class ShopComponent implements OnInit {
     this.router.navigate(['/productDetails', productId]);
   }
 
+  pageChanged(newPage: number) {
+    this.currentPage = newPage;
+  }
 
 }

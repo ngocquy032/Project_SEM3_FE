@@ -13,6 +13,7 @@ import { CheckOutComponent } from './fe-user/check-out/check-out.component';
 import { ProductDetailsComponent } from './fe-user/product-details/product-details.component';
 import { BlogComponent } from './fe-user/blog/blog.component';
 import { AccountComponent } from './fe-user/account/account.component';
+import { BlogDetailsComponent } from './fe-user/blog-details/blog-details.component';
 
 
 const routes: Routes = [
@@ -54,6 +55,9 @@ const routes: Routes = [
       },
       {
         path: 'register', component: SigupComponent
+      },
+      {
+        path: 'blog-details', component: BlogDetailsComponent
       }
 
     ]

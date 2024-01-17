@@ -19,7 +19,9 @@ import { Observable } from "rxjs";
 
   getImagetProductImagesges():Observable<any[]>{
     return this.http.get<any[]>(this.UrlImages);
+  
   }
+  
 
 
 }

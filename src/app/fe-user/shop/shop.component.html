@@ -18,316 +18,54 @@
 </div>
 <!-- Page Title/Header End -->
 
-
 <!-- Shop Products Section Start -->
 <div class="section section-padding pt-0">
-
-  <!-- Shop Toolbar Start -->
-  <div class="shop-toolbar section-fluid border-bottom">
-    <div class="container">
-      <div class="row learts-mb-n20">
-
-        <!-- Isotop Filter Start -->
-        <div class="col-md col-12 align-self-center learts-mb-20">
-          <div class="isotope-filter shop-product-filter" data-target="#shop-products">
-            <button class="active" data-filter="*">all</button>
-            <button data-filter=".featured">Hot Products</button>
-            <button data-filter=".new">New Products</button>
-            <button data-filter=".sales">Sales Products</button>
-          </div>
-        </div>
-        <!-- Isotop Filter End -->
-
-
-
-      </div>
-    </div>
-  </div>
-  <!-- Shop Toolbar End -->
-
-
 
   <div class="section section-fluid learts-mt-70">
     <div class="container">
       <div class="row learts-mb-n50">
-
         <div class="col-lg-9 col-12 learts-mb-50 order-lg-2">
           <!-- Products Start -->
           <div id="shop-products"
             class="products isotope-grid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
-
-            <div class="grid-item col featured">
+            <div class="grid-item col featured"
+              *ngFor="let product of products | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
               <div class="product">
                 <div class="product-thumb">
-                  <a href="product-details.html" class="image">
-                    <span class="product-badges">
-                      <span class="onsale">-20%</span>
+                  <a (click)="productDetails(product.productId)" class="image">
+                    <span class="product-badges" *ngIf="product.sale !== null">
+                      <span class="onsale">-{{ product.sale }}%</span>
                     </span>
-                    <img src="assets/images/product/s328/product-17.webp" alt="Product Image">
-                    <img class="image-hover " src="assets/images/product/s328/product-17-hover.webp"
-                      alt="Product Image">
+                    <img src="../../../assets/images/imgProject/{{ product.path }}" alt="Product Image">
                   </a>
                   <a href="wishlist.html" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
                       class="far fa-heart"></i></a>
                 </div>
                 <div class="product-info">
-                  <h6 class="title"><a href="product-details.html">3D Attractive Pot</a></h6>
+                  <h6 class="title"><a>{{ product.title }}</a></h6>
                   <span class="price">
-                    $90.00
+                    {{ product.price }}.00$
                   </span>
                   <div class="product-buttons">
-                    <a href="#quickViewModal" data-bs-toggle="modal" class="product-button hintT-top"
-                      data-hint="Quick View"><i class="fas fa-search"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Add to Cart"><i
+                    <a data-bs-toggle="modal" class="product-button hintT-top" data-hint="Add To Cart"><i
                         class="fas fa-shopping-cart"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Compare"><i class="fas fa-random"></i></a>
+                    <a (click)="productDetails(product.productId)" class="product-button hintT-top"
+                      data-hint="Quick View"><i class="fas fa-search"></i></a>
+                    <a href="#" class="product-button hintT-top" data-hint="Add to wishlist"><i
+                        class="far fa-heart"></i></a>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="grid-item col new">
-              <div class="product">
-                <div class="product-thumb">
-                  <a href="product-details.html" class="image">
-                    <!-- <span class="product-badges">
-                      <span class="outofstock"><i class="far fa-frown"></i></span>
-                    </span> -->
-
-                    <img src="assets/images/product/s328/product-14.webp" alt="Product Image">
-                    <img class="image-hover " src="assets/images/product/s328/product-14-hover.webp"
-                      alt="Product Image">
-                  </a>
-                  <a href="wishlist.html" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
-                      class="far fa-heart"></i></a>
-                </div>
-                <div class="product-info">
-                  <h6 class="title"><a href="product-details.html">Abstract Folded Pots</a></h6>
-                  <span class="price">
-                    $50.00 - $55.00
-                  </span>
-                  <div class="product-buttons">
-                    <a href="#quickViewModal" data-bs-toggle="modal" class="product-button hintT-top"
-                      data-hint="Quick View"><i class="fas fa-search"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Add to Cart"><i
-                        class="fas fa-shopping-cart"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Compare"><i class="fas fa-random"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="grid-item col sales featured">
-              <div class="product">
-                <div class="product-thumb">
-                  <a href="product-details.html" class="image">
-                    <span class="product-badges">
-                      <span class="onsale">-20%</span>
-                    </span>
-                    <img src="assets/images/product/s328/product-25.webp" alt="Product Image">
-                    <img class="image-hover " src="assets/images/product/s328/product-25-hover.webp"
-                      alt="Product Image">
-                  </a>
-                  <a href="wishlist.html" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
-                      class="far fa-heart"></i></a>
-                </div>
-                <div class="product-info">
-                  <h6 class="title"><a href="product-details.html">Antique Sewing Scissors</a></h6>
-                  <span class="price">
-                    <span class="old">$15.00</span>
-                    <span class="new">$12.00</span>
-                  </span>
-                  <div class="product-buttons">
-                    <a href="#quickViewModal" data-bs-toggle="modal" class="product-button hintT-top"
-                      data-hint="Quick View"><i class="fas fa-search"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Add to Cart"><i
-                        class="fas fa-shopping-cart"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Compare"><i class="fas fa-random"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="grid-item col sales featured">
-              <div class="product">
-                <div class="product-thumb">
-                  <a href="product-details.html" class="image">
-                    <span class="product-badges">
-                      <span class="onsale">-20%</span>
-                    </span>
-                    <img src="assets/images/product/s328/product-25.webp" alt="Product Image">
-                    <img class="image-hover " src="assets/images/product/s328/product-25-hover.webp"
-                      alt="Product Image">
-                  </a>
-                  <a href="wishlist.html" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
-                      class="far fa-heart"></i></a>
-                </div>
-                <div class="product-info">
-                  <h6 class="title"><a href="product-details.html">Antique Sewing Scissors</a></h6>
-                  <span class="price">
-                    <span class="old">$15.00</span>
-                    <span class="new">$12.00</span>
-                  </span>
-                  <div class="product-buttons">
-                    <a href="#quickViewModal" data-bs-toggle="modal" class="product-button hintT-top"
-                      data-hint="Quick View"><i class="fas fa-search"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Add to Cart"><i
-                        class="fas fa-shopping-cart"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Compare"><i class="fas fa-random"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="grid-item col sales featured">
-              <div class="product">
-                <div class="product-thumb">
-                  <a href="product-details.html" class="image">
-                    <span class="product-badges">
-                      <span class="onsale">-20%</span>
-                    </span>
-                    <img src="assets/images/product/s328/product-25.webp" alt="Product Image">
-                    <img class="image-hover " src="assets/images/product/s328/product-25-hover.webp"
-                      alt="Product Image">
-                  </a>
-                  <a href="wishlist.html" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
-                      class="far fa-heart"></i></a>
-                </div>
-                <div class="product-info">
-                  <h6 class="title"><a href="product-details.html">Antique Sewing Scissors</a></h6>
-                  <span class="price">
-                    <span class="old">$15.00</span>
-                    <span class="new">$12.00</span>
-                  </span>
-                  <div class="product-buttons">
-                    <a href="#quickViewModal" data-bs-toggle="modal" class="product-button hintT-top"
-                      data-hint="Quick View"><i class="fas fa-search"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Add to Cart"><i
-                        class="fas fa-shopping-cart"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Compare"><i class="fas fa-random"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="grid-item col sales featured">
-              <div class="product">
-                <div class="product-thumb">
-                  <a href="product-details.html" class="image">
-                    <span class="product-badges">
-                      <span class="onsale">-20%</span>
-                    </span>
-                    <img src="assets/images/product/s328/product-25.webp" alt="Product Image">
-                    <img class="image-hover " src="assets/images/product/s328/product-25-hover.webp"
-                      alt="Product Image">
-                  </a>
-                  <a href="wishlist.html" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
-                      class="far fa-heart"></i></a>
-                </div>
-                <div class="product-info">
-                  <h6 class="title"><a href="product-details.html">Antique Sewing Scissors</a></h6>
-                  <span class="price">
-                    <span class="old">$15.00</span>
-                    <span class="new">$12.00</span>
-                  </span>
-                  <div class="product-buttons">
-                    <a href="#quickViewModal" data-bs-toggle="modal" class="product-button hintT-top"
-                      data-hint="Quick View"><i class="fas fa-search"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Add to Cart"><i
-                        class="fas fa-shopping-cart"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Compare"><i class="fas fa-random"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="grid-item col sales featured">
-              <div class="product">
-                <div class="product-thumb">
-                  <a href="product-details.html" class="image">
-                    <span class="product-badges">
-                      <span class="onsale">-20%</span>
-                    </span>
-                    <img src="assets/images/product/s328/product-25.webp" alt="Product Image">
-                    <img class="image-hover " src="assets/images/product/s328/product-25-hover.webp"
-                      alt="Product Image">
-                  </a>
-                  <a href="wishlist.html" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
-                      class="far fa-heart"></i></a>
-                </div>
-                <div class="product-info">
-                  <h6 class="title"><a href="product-details.html">Antique Sewing Scissors</a></h6>
-                  <span class="price">
-                    <span class="old">$15.00</span>
-                    <span class="new">$12.00</span>
-                  </span>
-                  <div class="product-buttons">
-                    <a href="#quickViewModal" data-bs-toggle="modal" class="product-button hintT-top"
-                      data-hint="Quick View"><i class="fas fa-search"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Add to Cart"><i
-                        class="fas fa-shopping-cart"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Compare"><i class="fas fa-random"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="grid-item col sales featured">
-              <div class="product">
-                <div class="product-thumb">
-                  <a href="product-details.html" class="image">
-                    <span class="product-badges">
-                      <span class="onsale">-20%</span>
-                    </span>
-                    <img src="assets/images/product/s328/product-25.webp" alt="Product Image">
-                    <img class="image-hover " src="assets/images/product/s328/product-25-hover.webp"
-                      alt="Product Image">
-                  </a>
-                  <a href="wishlist.html" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
-                      class="far fa-heart"></i></a>
-                </div>
-                <div class="product-info">
-                  <h6 class="title"><a href="product-details.html">Antique Sewing Scissors</a></h6>
-                  <span class="price">
-                    <span class="old">$15.00</span>
-                    <span class="new">$12.00</span>
-                  </span>
-                  <div class="product-buttons">
-                    <a href="#quickViewModal" data-bs-toggle="modal" class="product-button hintT-top"
-                      data-hint="Quick View"><i class="fas fa-search"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Add to Cart"><i
-                        class="fas fa-shopping-cart"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Compare"><i class="fas fa-random"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
           <!-- Products End -->
           <div class="pagination2">
-            <nav aria-label="...">
-              <ul class="pagination">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" tabindex="-1">Previous</a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="page-item ">
-                  <a class="page-link" href="#">2 </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#">Next</a>
-                </li>
-              </ul>
-            </nav>
+            <pagination-controls (pageChange)="pageChanged($event)" class="my-pagination" previousLabel="Previous"
+              nextLabel="Next"></pagination-controls>
           </div>
-
         </div>
 
         <div class="col-lg-3 col-12 learts-mb-10 order-lg-1">
-
           <!-- Search Start -->
           <div class="single-widget learts-mb-40">
             <div class="widget-search">
@@ -343,13 +81,9 @@
           <div class="single-widget learts-mb-40">
             <h3 class="widget-title product-filter-widget-title">Product categories</h3>
             <ul class="widget-list">
-              <li><a href="#">Gift ideas</a> <span class="count">16</span></li>
-              <li><a href="#">Home Decor</a> <span class="count">16</span></li>
-              <li><a href="#">Kids &amp; Babies</a> <span class="count">6</span></li>
-              <li><a href="#">Kitchen</a> <span class="count">15</span></li>
-              <li><a href="#">Kniting &amp; Sewing</a> <span class="count">4</span></li>
-              <li><a href="#">Pots</a> <span class="count">4</span></li>
-              <li><a href="#">Toys</a> <span class="count">6</span></li>
+              <li *ngFor="let categori of categories">
+                <a  >{{ categori.nameCategory }}</a>
+              </li>
             </ul>
           </div>
           <!-- Categories End -->
@@ -364,67 +98,6 @@
 
           </div>
           <!-- Price Range End -->
-
-          <!-- List Product Widget Start -->
-          <div class="single-widget learts-mb-40">
-            <h3 class="widget-title product-filter-widget-title">Products</h3>
-            <ul class="widget-products">
-              <li class="product">
-                <div class="thumbnail">
-                  <a href="product-details.html"><img src="assets/images/product/widget-1.webp" alt="List product"></a>
-                </div>
-                <div class="content">
-                  <h6 class="title"><a href="product-details.html">Walnut Cutting Board</a></h6>
-                  <span class="price">
-                    $100.00
-                  </span>
-                  <div class="ratting">
-                    <span class="rate" style="width: 80%;"></span>
-                  </div>
-                </div>
-              </li>
-              <li class="product">
-                <div class="thumbnail">
-                  <a href="product-details.html"><img src="assets/images/product/widget-2.webp" alt="List product"></a>
-                </div>
-                <div class="content">
-                  <h6 class="title"><a href="product-details.html">Decorative Christmas Fox</a></h6>
-                  <span class="price">
-                    $50.00
-                  </span>
-                  <div class="ratting">
-                    <span class="rate" style="width: 80%;"></span>
-                  </div>
-                </div>
-              </li>
-              <li class="product">
-                <div class="thumbnail">
-                  <a href="product-details.html"><img src="assets/images/product/widget-3.webp" alt="List product"></a>
-                </div>
-                <div class="content">
-                  <h6 class="title"><a href="product-details.html">Lucky Wooden Elephant</a></h6>
-                  <span class="price">
-                    $35.00
-                  </span>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <!-- List Product Widget End -->
-
-          <!-- Tags Start -->
-          <div class="single-widget learts-mb-40">
-            <h3 class="widget-title product-filter-widget-title">Product Tags</h3>
-            <div class="widget-tags">
-              <a href="#">handmade</a>
-              <a href="#">learts</a>
-              <a href="#">mug</a>
-              <a href="#">product</a>
-              <a href="#">learts</a>
-            </div>
-          </div>
-          <!-- Tags End -->
-
         </div>
 
       </div>

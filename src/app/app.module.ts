@@ -20,6 +20,7 @@ import { ShoppingCartComponent } from './fe-user/shopping-cart/shopping-cart.com
 import { BlogDetailsComponent } from './fe-user/blog-details/blog-details.component';
 
 
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { BlogDetailsComponent } from './fe-user/blog-details/blog-details.compon
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

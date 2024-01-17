@@ -14,7 +14,9 @@ import { Observable } from "rxjs";
 
   getImages():Observable<any[]>{
     return this.http.get<any[]>(this.UrlImages);
+  
   }
+  
 
 
 }

@@ -121,7 +121,7 @@
                         data-hint="Add To Cart"><i class="fas fa-shopping-cart"></i></a>
                       <a  (click)="productDetails(product.productId)" class="product-button hintT-top" data-hint="Quick View"><i
                           class="fas fa-search"></i></a>
-                      <a href="#" class="product-button hintT-top" data-hint="Add to wishlist"><i class="far fa-heart"></i></a>
+                      <a (click)="addWishift(product.productId)" class="product-button hintT-top" data-hint="Add to wishlist"><i class="far fa-heart"></i></a>
                     </div>
                   </div>
                 </div>

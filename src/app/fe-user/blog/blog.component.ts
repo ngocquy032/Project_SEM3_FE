@@ -17,8 +17,7 @@ export class BlogComponent implements OnInit{
   getBlog(){
      this.blogService.getBlog().subscribe(blog =>{
        this.getBlogs = blog;
-       console.log('getBlog:' , this.getBlogs);
      })
-     
+
   }
 }

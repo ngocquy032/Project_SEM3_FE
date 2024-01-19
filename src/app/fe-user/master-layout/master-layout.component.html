@@ -70,8 +70,8 @@
         <div class="col-auto d-none d-xl-block">
           <div class="header2-search">
             <form action="#">
-              <input type="text" placeholder="Search...">
-              <button class="btn"><i class="fas fa-search"></i></button>
+              <button class="btn" (click)="searchByName()" ><i class="fas fa-search"></i></button>
+              <input type="text"  [(ngModel)]="searchProduct"  placeholder="Search..." name="searchProduct">
             </form>
           </div>
         </div>

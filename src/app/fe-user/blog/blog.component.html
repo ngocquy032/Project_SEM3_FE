@@ -1,59 +1,42 @@
- <!-- Page Title/Header Start -->
- <div class="page-title-section section" data-bg-image="assets/images/bg/page-title-1.webp">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-
-                <div class="page-title">
-                    <h1 class="title">Blog</h1>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a routerLink="">Home</a></li>
-                        <li class="breadcrumb-item active">Blog</li>
-                    </ul>
-                </div>
-
-            </div>
+<!-- Page Title/Header Start -->
+<div class="page-title-section section" data-bg-image="assets/images/bg/page-title-1.webp">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="page-title">
+          <h1 class="title">Blog</h1>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="">Home</a></li>
+            <li class="breadcrumb-item active">Blog</li>
+          </ul>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <!-- Page Title/Header End -->
 
 <!-- Blog Section Start -->
 <div class="section section-padding">
-    <div class="container">
-        <div class="row learts-mb-n40" >
-            <div class="col-lg-4 col-md-6 col-12 learts-mb-40"  *ngFor="let blog of getBlogs">
-                <div class="blog" >
-                    <div class="image">
-                        <a routerLink=""><img src="assets/images/imgProject/{{blog.images}}" alt="Blog Image" width="370px" height="250px"></a>
-                    </div>
-                    <div class="content">
-                        <ul class="meta">
-                            <li><i class="far fa-calendar"></i><a href="#">{{ blog.created_at }}</a></li>
-                        </ul>
-           
-                        <h5 class="title"><a>{{ blog.nameBlog }}</a></h5>
-                        <h5 class="title"><a></a></h5>
-                        <div class="desc">
-                            <p>{{blog.content}}</p>
-                        </div>
-                        <a routerLink="" class="link">Read More</a>
-                    </div>
-                </div>
+  <div class="container">
+    <div class="row learts-mb-n40">
+      <div class="col-lg-4 col-md-6 col-12 learts-mb-40" *ngFor="let blog of getBlogs">
+        <div class="blog">
+          <div class="image">
+            <a routerLink=""><img src="assets/images/imgProject/{{blog.images}}" alt="Blog Image" width="370px"
+                height="250px"></a>
+          </div>
+          <div class="content">
+            <ul class="meta">
+              <li><i class="far fa-calendar"></i><a href="#">{{ blog.created_at }}</a></li>
+            </ul>
+            <h5 class="title"><a>{{ blog.nameBlog }}</a></h5>
+            <div class="desc">
+              <p>{{blog.content}}</p>
             </div>
-            <!-- <img src="assets/images/blog/s370/blog-2.webp" alt="Blog Image">
-            <img src="assets/images/blog/s370/blog-3.webp" alt="Blog Image">
-            <img src="assets/images/blog/s370/blog-4.webp" alt="Blog Image">
-            <img src="assets/images/blog/s370/blog-5.webp" alt="Blog Image">
-            <img src="assets/images/blog/s370/blog-6.webp" alt="Blog Image"> -->
-
+            <a routerLink="" class="link">Read More</a>
+          </div>
         </div>
-
-        <div class="row learts-mt-50">
-            <div class="col text-center">
-                <a href="#" class="btn btn-dark btn-outline-hover-dark">Load More</a>
-            </div>
-        </div>
-
+      </div>
     </div>
-</div>
+  </div>

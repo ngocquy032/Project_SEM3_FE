@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 
 @Component({
@@ -6,6 +6,8 @@ import { Component, HostListener } from '@angular/core';
   templateUrl: './master-layout.component.html',
   styleUrls: ['./master-layout.component.css']
 })
-export class MasterLayoutComponent {
+export class MasterLayoutComponent{
   [x: string]: any;
+  wishList: any[] = [];
+
 }

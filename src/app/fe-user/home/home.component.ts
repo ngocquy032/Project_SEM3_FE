@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   productSales: any[] = [];
   productBestSallers: any[] = [];
   productImages: any[] = [];
-  Wishift: any[] = [];
+  wishift: any[] = [];
   constructor(
     private productService: ProductService,
     private router: Router
@@ -35,19 +35,27 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/productDetails', productId]);
   }
   addWishift(productId: any) {
-    if (productId ) {
-      console.log('san pham dc them', productId);
-      // this.Wishift.push({
-      //   product_id: product.productId,
-      //   price: product.price,
-      //   title: product.title,
-      //   path: product.path
-      // });
-    }
+    this.productService.getProductById(productId).subscribe(productToAdd => {
+      if (productToAdd) {
+        const localStorageData = localStorage.getItem('wishlist');
+        let currentWishlist: any[] = [];
 
-    // Thêm sản phẩm vào danh sách mong muốn
+        if (localStorageData) {
+          // Nếu LocalStorage có dữ liệu, chuyển đổi thành mảng
+          currentWishlist = JSON.parse(localStorageData);
+        }
 
-    // Lưu danh sách mong muốn đã cập nhật trở lại LocalStorage
-    localStorage.setItem('wishlist', JSON.stringify(this.Wishift));
+        const isProductInWishlist = currentWishlist.some(product => product.productId === productId);
+        if (!isProductInWishlist) {
+          currentWishlist.push(productToAdd);
+          console.log('Sản phẩm đã được thêm vào wishlist:', productToAdd);
+          alert(`Your product ${productToAdd.title} has been added to favorites`);
+          // Lưu danh sách mong muốn đã cập nhật trở lại LocalStorage
+          localStorage.setItem('wishlist', JSON.stringify(currentWishlist));
+        } else {
+          alert(`Your product ${productToAdd.title} is already in favorites`);
+        }
+      }
+    });
   }
 }

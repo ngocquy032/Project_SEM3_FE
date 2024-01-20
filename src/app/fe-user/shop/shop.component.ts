@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { CategorierService } from 'src/service/categories';
 import { ProductService } from 'src/service/products';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Options } from 'ngx-slider-v2';
 
 @Component({
   selector: 'app-shop',
@@ -13,6 +15,12 @@ export class ShopComponent implements OnInit {
   products: any[] = [];
   currentPage: number = 1;
   itemsPerPage: number = 8;
+  value: number = 40;
+  highValue: number = 60;
+  options: Options = {
+    floor: 0,
+    ceil: 100
+  };
   selectedCategory: string | null = null;
   constructor(
     private categoriService: CategorierService,

@@ -117,7 +117,7 @@
                     </span>
                     <div class="product-buttons">
 
-                      <a data-bs-toggle="modal" class="product-button hintT-top"
+                      <a (click)="addToCart(product.productId)"  data-bs-toggle="modal"  class="product-button hintT-top"
                         data-hint="Add To Cart"><i class="fas fa-shopping-cart"></i></a>
                       <a  (click)="productDetails(product.productId)" class="product-button hintT-top" data-hint="Quick View"><i
                           class="fas fa-search"></i></a>

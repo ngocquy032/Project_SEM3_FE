@@ -21,6 +21,8 @@ import { BlogDetailsComponent } from './fe-user/blog-details/blog-details.compon
 
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxSliderModule } from 'ngx-slider-v2';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

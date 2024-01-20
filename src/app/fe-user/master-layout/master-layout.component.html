@@ -70,8 +70,8 @@
         <div class="col-auto d-none d-xl-block">
           <div class="header2-search">
             <form action="#">
-              <input type="text" placeholder="Search...">
-              <button class="btn"><i class="fas fa-search"></i></button>
+              <button class="btn" (click)="searchByName()" ><i class="fas fa-search"></i></button>
+              <input type="text"  [(ngModel)]="searchProduct"  placeholder="Search..." name="searchProduct">
             </form>
           </div>
         </div>
@@ -84,11 +84,11 @@
               <a routerLink="/account"><i class="far fa-user"></i></a>
             </div>
             <div class="header-wishlist">
-              <a routerLink="wishift" class="offcanvas-toggle"><span class="wishlist-count">3</span><i
+              <a routerLink="/wishift" class="offcanvas-toggle"><i
                   class="far fa-heart"></i></a>
             </div>
             <div class="header-shoppingCart">
-              <a routerLink="shoppingCart" class="offcanvas-toggle"><span class="cart-count">3</span><i
+              <a routerLink="/shoppingCart" class="offcanvas-toggle"><span class="cart-count">3</span><i
                   class="fas fa-shopping-cart"></i></a>
             </div>
           </div>

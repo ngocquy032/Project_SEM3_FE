@@ -49,5 +49,7 @@ ul:last-child {
 .widget-price-range .ngx-slider-pointer-max {
   background-color: #f39c12 !important; /* Màu sắc của nút trượt */
 }
+/* Add your custom styles for price range widget here */
+
 
 

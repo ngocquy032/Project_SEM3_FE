@@ -8,7 +8,7 @@
           <h1 class="title">Shop</h1>
           <ul class="breadcrumb">
             <li class="breadcrumb-item"><a routerLink="">Home</a></li>
-            <li class="breadcrumb-item active">Products</li>
+            <li class="breadcrumb-item active"><a routerLink="/shop">Product</a></li>
           </ul>
         </div>
 
@@ -26,10 +26,10 @@
       <div class="row learts-mb-n50">
         <div class="col-lg-9 col-12 learts-mb-50 order-lg-2">
           <!-- Products Start -->
-          <div id="shop-products"
+          <div id="shop-products" *ngIf="!noResultsFound"
             class="products isotope-grid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
             <div class="grid-item col featured"
-              *ngFor="let product of products | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+              *ngFor="let product of filteredProducts  | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
               <div class="product">
                 <div class="product-thumb">
                   <a (click)="productDetails(product.productId)" class="image">
@@ -58,8 +58,9 @@
               </div>
             </div>
           </div>
+
           <!-- Products End -->
-          <div class="pagination2">
+          <div class="pagination2" style="text-align: center;">
             <pagination-controls (pageChange)="pageChanged($event)" class="my-pagination" previousLabel="Previous"
               nextLabel="Next"></pagination-controls>
           </div>
@@ -70,8 +71,8 @@
           <div class="single-widget learts-mb-40">
             <div class="widget-search">
               <form action="#">
-                <input type="text" placeholder="Search products....">
-                <button><i class="fas fa-search"></i></button>
+                <input type="text" placeholder="Search products...." [(ngModel)]="searchTerm" name="searchTerm">
+                <button (click)="searchProductByName()"><i class="fas fa-search"></i></button>
               </form>
             </div>
           </div>
@@ -81,8 +82,8 @@
           <div class="single-widget learts-mb-40">
             <h3 class="widget-title product-filter-widget-title">Product categories</h3>
             <ul class="widget-list">
-              <li *ngFor="let categori of categories">
-                <a  >{{ categori.nameCategory }}</a>
+              <li *ngFor="let category of categories">
+                <a (click)="searchCategories(category.categoryId)">{{ category.nameCategory }}</a>
               </li>
             </ul>
           </div>
@@ -95,6 +96,7 @@
               <ngx-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ngx-slider>
             </div>
               <p>Price : {{value}}$ - {{highValue}}$</p>
+              <button>Filters</button>
           </div>
           <!-- Price Range End -->
         </div>

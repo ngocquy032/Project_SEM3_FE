@@ -17,7 +17,4 @@ import { Observable } from "rxjs";
     return this.http.get<any>(productUrl);
   }
 
-
-
-
 }

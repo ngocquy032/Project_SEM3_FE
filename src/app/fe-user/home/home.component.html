@@ -103,17 +103,15 @@
                       <span class="product-badges" *ngIf="product.sale !== null">
                         <span class="onsale">-{{ product.sale }}%</span>
                       </span>
-
                       <img src="../../../assets/images/imgProject/{{ product.path }}" alt="Product Image">
                     </a>
-                    <a href="wishlist.html" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
+                    <a (click)="addWishift(product.productId)" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
                         class="far fa-heart"></i></a>
                   </div>
                   <div class="product-info">
-                    <h6 class="title"><a href="product-details.html">{{ product.title }}</a></h6>
+                    <h6 class="title"  ><a>{{ product.title }}</a></h6>
                     <span class="price">
-                      <span class="old">$45.00</span>
-                      <span class="new">{{ product.price }}$</span>
+                      <span class="new">{{ product.price }}.00$</span>
                     </span>
                     <div class="product-buttons">
 
@@ -122,6 +120,12 @@
                       <a  (click)="productDetails(product.productId)" class="product-button hintT-top" data-hint="Quick View"><i
                           class="fas fa-search"></i></a>
                       <a href="#" class="product-button hintT-top" data-hint="Add to wishlist"><i class="far fa-heart"></i></a>
+                      <a data-bs-toggle="modal" class="product-button hintT-top" data-hint="Add To Cart"><i
+                          class="fas fa-shopping-cart"></i></a>
+                      <a (click)="productDetails(product.productId)" class="product-button hintT-top"
+                        data-hint="Quick View"><i class="fas fa-search"></i></a>
+                      <a (click)="addWishift(product.productId)" class="product-button hintT-top"
+                        data-hint="Add to wishlist"><i class="far fa-heart"></i></a>
                     </div>
                   </div>
                 </div>
@@ -141,23 +145,24 @@
                       <span class="product-badges" *ngIf="productSale.sale !== null">
                         <span class="onsale">-{{ productSale.sale }}%</span>
                       </span>
-                      <img src="../../../assets/images/imgProject/{{ productSale.path }}" width="270px" height="359,73px" alt="Product Image">
+                      <img src="../../../assets/images/imgProject/{{ productSale.path }}" width="270px"
+                        height="359,73px" alt="Product Image">
                     </a>
-                    <a href="wishlist.html" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
+                    <a (click)="addWishift(productSale.productId)" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
                         class="far fa-heart"></i></a>
                   </div>
                   <div class="product-info">
                     <h6 class="title"><a>{{ productSale.title }}</a></h6>
                     <span class="price">
-                      <span class="old">$30.00</span>
-                      <span class="new">{{ productSale.price }}$</span>
+                      <span class="new">{{ productSale.price }}.00$</span>
                     </span>
                     <div class="product-buttons">
-                      <a data-bs-toggle="modal" class="product-button hintT-top"
-                        data-hint="Add To Cart"><i class="fas fa-shopping-cart"></i></a>
-                      <a  (click)="productDetails(productSale.productId)" class="product-button hintT-top" data-hint="Quick View"><i
-                          class="fas fa-search"></i></a>
-                      <a href="#" class="product-button hintT-top" data-hint="Add to wishlist"><i class="far fa-heart"></i></a>
+                      <a data-bs-toggle="modal" class="product-button hintT-top" data-hint="Add To Cart"><i
+                          class="fas fa-shopping-cart"></i></a>
+                      <a (click)="productDetails(productSale.productId)" class="product-button hintT-top"
+                        data-hint="Quick View"><i class="fas fa-search"></i></a>
+                      <a (click)="addWishift(productSale.productId)" class="product-button hintT-top"
+                        data-hint="Add to wishlist"><i class="far fa-heart"></i></a>
                     </div>
                   </div>
                 </div>
@@ -165,7 +170,6 @@
             </div>
             <!-- Products End -->
           </div>
-
           <!-- Best sellers -->
           <div class="tab-pane fade" id="tab-best-sellers">
             <!-- Products Start -->
@@ -177,26 +181,24 @@
                       <span class="product-badges" *ngIf="productBestSaller.sale !== null">
                         <span class="onsale">-{{ productBestSaller.sale }}%</span>
                       </span>
-                      <img src="../../../assets/images/imgProject/{{ productBestSaller.path }}" width="270px" height="359,73px" alt="Product Image">
-                      <!-- <img class="image-hover " src="assets/images/product/s270/product-4-hover.webp"
-                        alt="Product Image"> -->
+                      <img src="../../../assets/images/imgProject/{{ productBestSaller.path }}" width="270px"
+                        height="359,73px" alt="Product Image">
                     </a>
-                    <a href="wishlist.html" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
-                        class="far fa-heart"></i></a>
+                    <a (click)="addWishift(productBestSaller.productId)" class="add-to-wishlist hintT-left"
+                      data-hint="Add to wishlist"><i class="far fa-heart"></i></a>
                   </div>
                   <div class="product-info">
-                    <h6 class="title"><a href="product-details.html">{{ productBestSaller.title }}</a></h6>
+                    <h6 class="title"><a>{{ productBestSaller.title }}</a></h6>
                     <span class="price">
-                      <span class="old">$30.00</span>
-                      <span class="new">{{ productBestSaller.price }}$</span>
+                      <span class="new">{{ productBestSaller.price }}.00$</span>
                     </span>
                     <div class="product-buttons">
-
-                      <a data-bs-toggle="modal" class="product-button hintT-top"
-                        data-hint="Add To Cart"><i class="fas fa-shopping-cart"></i></a>
-                      <a  (click)="productDetails(productBestSaller.productId)" class="product-button hintT-top" data-hint="Quick View"><i
-                          class="fas fa-search"></i></a>
-                      <a href="#" class="product-button hintT-top" data-hint="Add to wishlist"><i class="far fa-heart"></i></a>
+                      <a data-bs-toggle="modal" class="product-button hintT-top" data-hint="Add To Cart"><i
+                          class="fas fa-shopping-cart"></i></a>
+                      <a (click)="productDetails(productBestSaller.productId)" class="product-button hintT-top"
+                        data-hint="Quick View"><i class="fas fa-search"></i></a>
+                      <a (click)="addWishift(productBestSaller.productId)" class="product-button hintT-top"
+                        data-hint="Add to wishlist"><i class="far fa-heart"></i></a>
                     </div>
                   </div>
                 </div>
@@ -225,7 +227,6 @@
           <img src="assets/images/product/deal-product-1.webp" alt="">
         </div>
       </div>
-
       <div class="col-lg-6 col-12 learts-mb-30">
         <div class="product-deal-content">
           <h2 class="title">Deal of the day</h2>
@@ -237,7 +238,6 @@
           <a routerLink="shop" class="btn btn-dark btn-hover-primary">Shop Now</a>
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -247,7 +247,6 @@
 <!-- Shop By Category Section Start -->
 <div class="section section-fluid section-padding bg-white">
   <div class="container">
-
     <!-- Section Title Start -->
     <div class="section-title text-center">
       <h3 class="sub-title">Shop by categories</h3>
@@ -256,14 +255,12 @@
     <!-- Section Title End -->
 
     <div class="row row-cols-xl-5 row-cols-lg-3 row-cols-sm-2 row-cols-1 learts-mb-n40">
-
       <div class="col learts-mb-40">
         <div class="category-banner5">
           <a routerLink="shop" class="inner">
             <div class="image"><img src="assets/images/banner/category/banner-s5-1.webp" alt=""></div>
             <div class="content">
               <h3 class="title"> Gift articles</h3>
-
             </div>
           </a>
         </div>
@@ -413,11 +410,8 @@
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
-
   </div>
 </div>
 <!-- Team Section End -->
@@ -425,15 +419,12 @@
 <!-- Blog Section Start -->
 <div class="section section-fluid section-padding bg-white">
   <div class="container">
-
     <!-- Section Title Start -->
     <div class="section-title text-center">
       <h2 class="title title-icon-both">Our blog update</h2>
     </div>
     <!-- Section Title End -->
-
     <div class="row row-cols-xl-4 row-cols-md-2 row-cols-1 learts-mb-n40">
-
       <div class="col learts-mb-40">
         <div class="blog">
           <div class="image">
@@ -511,8 +502,6 @@
       </div>
 
     </div>
-
-
   </div>
 </div>
 <!-- Blog Section End -->

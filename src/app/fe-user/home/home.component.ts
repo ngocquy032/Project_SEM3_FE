@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   productImages: any[] = [];
   ToCart: any[] = [];
   wishift: any[] = [];
+  quantity: number = 1;
   constructor(
     private productService: ProductService,
     private router: Router
@@ -77,5 +78,38 @@ export class HomeComponent implements OnInit {
         }
       }
     });
+  }
+
+  addCart(productId: string) {
+    this.productService.getProductById(productId).subscribe(productToAdd => {
+      if (productToAdd) {
+        const localStorageData = localStorage.getItem('cart');
+        let currentCart: any[] = [];
+
+        if (localStorageData) {
+          // Nếu LocalStorage có dữ liệu, chuyển đổi thành mảng
+          currentCart = JSON.parse(localStorageData);
+        }
+        const existingProductIndex = currentCart.findIndex(item => item.productId === productId);
+        if (existingProductIndex !== -1) {
+          currentCart[existingProductIndex].quantity += this.quantity;
+          currentCart[existingProductIndex].subTotal = currentCart[existingProductIndex].quantity * productToAdd.price;
+
+          alert(`Product ${productToAdd.title} quantity updated in the cart`);
+        } else {
+          const productToCart = {
+            productId: productId,
+            productCart: productToAdd,
+            quantity: this.quantity,
+            subTotal: this.quantity * productToAdd.price
+          };
+          currentCart.push(productToCart);
+          alert(`Product ${productToAdd.title} has been added to the cart`);
+        }
+        // Lưu giỏ hàng đã cập nhật trở lại LocalStorage
+        localStorage.setItem('cart', JSON.stringify(currentCart));
+      }
+    });
+
   }
 }

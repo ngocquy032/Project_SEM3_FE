@@ -36,25 +36,6 @@ export class HomeComponent implements OnInit {
   productDetails(productId: string): void {
     this.router.navigate(['/productDetails', productId]);
   }
-  addToCart(product: any) {
-    if (!product || !product.productId) {
-      console.error('Product không hợp lệ!', product);
-      let a = this.ToCart.push({
-        product_id: product.productId,
-        price: product.price,
-        title: product.title,
-        path: product.path
-      });
-      console.log('a',a)
-    }
-
-    // Thêm sản phẩm vào danh sách mong muốn
-    
-    // Lưu danh sách mong muốn đã cập nhật trở lại LocalStorage
-    localStorage.setItem('wishlist', JSON.stringify(this.ToCart));
-    console.log('Sản phẩm được thêm vào mong muốn:', product.title);
-  }
-
   addWishift(productId: any) {
     this.productService.getProductById(productId).subscribe(productToAdd => {
       if (productToAdd) {

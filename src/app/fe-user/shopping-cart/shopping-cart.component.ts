@@ -15,9 +15,7 @@ export class ShoppingCartComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthService
-  ){
-
-  }
+  ){}
 
   ngOnInit(): void {
     this.getProductToCart();
@@ -30,6 +28,7 @@ export class ShoppingCartComponent implements OnInit {
       this.cartList = JSON.parse(localStorageData);
     }
   }
+
   deleteItem(productId: string){
     if(confirm(`Are you sure you want to delete`)){
       this.cartList = this.cartList.filter(item => item.productId !== productId);
@@ -38,7 +37,6 @@ export class ShoppingCartComponent implements OnInit {
       this.updateCartTotals();
     }
   }
-
 
   decreaseQuantity(index: number) {
     if (this.cartList[index].quantity > 1) {
@@ -74,7 +72,6 @@ export class ShoppingCartComponent implements OnInit {
   updateCartTotals() {
     this.total = this.calculateCartTotal();
     this.totalPrice = this.calculateCartTotal();
-    console.log('total',this.totalPrice );
   }
 
   updateLocalStorage() {

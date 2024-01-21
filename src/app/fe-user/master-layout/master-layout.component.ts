@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SearchService } from 'src/app/search.service';
+import { AuthService } from 'src/service/auth.service';
 import { ProductService } from 'src/service/products';
 
 
@@ -18,7 +19,8 @@ export class MasterLayoutComponent{
   filteredProducts: any[] = [];
   constructor(
     private searchService: SearchService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) { }
 
   searchByName(): void {
@@ -26,5 +28,14 @@ export class MasterLayoutComponent{
 
     // Chuyển hướng đến trang shop với query parameter 'search'
     //  this.router.navigate(['/shop']);
+  }
+
+  account(){
+    if(this.authService.isLoggedIn()){
+      this.router.navigate(['/account'])
+    }else{
+      alert('You are not logged in, please log in to continue');
+      this.router.navigate(['/login']);
+    }
   }
 }

@@ -14,29 +14,30 @@ export class CheckOutComponent {
   dataUser: any = {};
   orderForm: FormGroup;
   discountAmount: number = 0;
+
   constructor(
     private userService: UserService,
     private formBuilder: FormBuilder
-    ) {
-      this.orderForm = this.formBuilder.group({
-        couponCode: ['']
-      });
-     }
+  ) {
+    this.orderForm = this.formBuilder.group({
+      couponCode: ['']
+    });
+  }
 
   ngOnInit(): void {
     this.getLocalData();
     this.getInfo();
+    this.updateCartTotals(); // Gọi hàm cập nhật tổng giỏ hàng
   }
+
   order(): void {
     if (this.selectedMethod != 'vnpay') {
       console.log('thanh toan tien mat');
-
-    } else{
+    } else {
       console.log('thanh toan vn pay');
-
     }
-
   }
+
   checkCode(): void {
     const couponCode = this.orderForm.get('couponCode');
     const code = couponCode?.value;
@@ -48,12 +49,20 @@ export class CheckOutComponent {
       alert('Current discount code is not activated')
       this.discountAmount = 0;
     }
+    this.updateCartTotals(); // Cập nhật tổng giỏ hàng sau khi áp dụng mã giảm giá
   }
 
   getLocalData() {
     const localStorageData = localStorage.getItem('cart');
     if (localStorageData) {
       this.cartList = JSON.parse(localStorageData);
+
+      // Kiểm tra và tính toán subtotal cho các sản phẩm chưa có subtotal
+      this.cartList.forEach(item => {
+        if (!item.subtotal) {
+          item.subtotal = this.calculateSubtotal(item);
+        }
+      });
     }
   }
 
@@ -63,8 +72,13 @@ export class CheckOutComponent {
       this.dataUser = JSON.parse(userInfo);
     }
   }
+
+  calculateSubtotal(item: any): number {
+    return item.productCart.price * item.quantity;
+  }
+
   calculateCartSubtotal(): number {
-    return this.cartList.reduce((total, item) => total + (item.subtotal || 0), 0);
+    return this.cartList.reduce((total, item) => total + this.calculateSubtotal(item), 0);
   }
 
   calculateCartTotal(): number {
@@ -79,5 +93,11 @@ export class CheckOutComponent {
 
   pay() {
     this.selectedMethod = 'vnpay';
+  }
+
+  updateCartTotals() {
+    this.cartList.forEach(item => {
+      item.subtotal = this.calculateSubtotal(item);
+    });
   }
 }

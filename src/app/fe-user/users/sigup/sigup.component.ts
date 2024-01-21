@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { RegisterModel } from '../log-in/login.model';
+import { UserService } from 'src/service/user';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-sigup',
   templateUrl: './sigup.component.html',
@@ -14,7 +16,9 @@ export class SigupComponent {
   msgRepassword: string = '';
 
   constructor(
-    private FormBuilder: FormBuilder
+    private FormBuilder: FormBuilder,
+    private userService: UserService,
+    private router: Router
   ) {
     this.signupForm = FormBuilder.group({
       userName: ['', Validators.required],
@@ -22,23 +26,40 @@ export class SigupComponent {
       password: ['', Validators.required],
       repassword: ['', Validators.required],
     })
-
   }
 
   onClickSignUp() {
     this.checkInputName();
     this.checkInputMail();
     this.checkInputPassword();
-
+    if (!this.msgName && !this.msgMail && !this.msgPassword && !this.msgRepassword) {
+      const registerData: RegisterModel = {
+        name: this.signupForm.get('userName')?.value,
+        email: this.signupForm.get('email')?.value,
+        password: this.signupForm.get('password')?.value,
+        level: 'user'
+      };
+      this.userService.register(registerData).subscribe(
+        (response) => {
+          this.signupForm.reset();
+          alert('Successful registration, please log in to continue.');
+          this.router.navigate(['/login']);
+        },
+        (error) => {
+          // Xử lý lỗi đăng ký
+          console.error('Lỗi đăng ký', error);
+          // Có thể hiển thị thông báo lỗi cho người dùng hoặc thực hiện các tác vụ khác
+        }
+      );
+    }
   }
   public checkInputName() {
     const nameControl = this.signupForm.get('userName')?.value;
-    if(!nameControl){
+    if (!nameControl) {
       this.msgName = "Please enter complete information"
-    }else{
+    } else {
       this.msgName = '';
     }
-
   }
 
   public checkInputMail() {
@@ -70,23 +91,12 @@ export class SigupComponent {
       this.msgPassword = ''
     }
     //check input repassword
-    if(!repasswordControl){
+    if (!repasswordControl) {
       this.msgRepassword = 'Please enter complete information'
-    }else if(passwordControl !== repasswordControl){
+    } else if (passwordControl !== repasswordControl) {
       this.msgRepassword = "Password does not match the password entered, please try again";
-    }else{
+    } else {
       this.msgRepassword = ''
     }
-
-    //check confim
-    // if(passwordControl.value === repasswordControl.value){
-
-    // }else{
-    //   this.msgRepassword = 'mat khau kh khop voi mat khau da nhap'
-    // }
-
   }
-
-
-
 }

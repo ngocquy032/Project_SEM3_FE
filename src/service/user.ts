@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { LoginModel, LoginParam } from "src/app/fe-user/users/log-in/login.model";
+import { LoginModel, LoginParam, RegisterModel } from "src/app/fe-user/users/log-in/login.model";
 
 
 @Injectable({
@@ -13,6 +13,10 @@ import { LoginModel, LoginParam } from "src/app/fe-user/users/log-in/login.model
 
   logIn(loginData: LoginModel): Observable<any>{
     return this.http.post<LoginParam>(`${this.Url}/LoginUsers`, loginData);
+  }
+
+  register(registerData: RegisterModel): Observable<any>{
+    return this.http.post(this.Url, registerData);
   }
 
 

@@ -16,8 +16,8 @@ export class ShopComponent implements OnInit {
   filteredProducts: any[] = [];
   currentPage: number = 1;
   itemsPerPage: number = 8;
-  value: number = 40;
-  highValue: number = 60;
+  value: number = 0;
+  highValue: number = 100;
   options: Options = {
     floor: 0,
     ceil: 100
@@ -32,7 +32,7 @@ export class ShopComponent implements OnInit {
     private productService: ProductService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
   ngOnInit(): void {
 
     this.getCategorie();
@@ -45,11 +45,9 @@ export class ShopComponent implements OnInit {
         this.searchCategories(Number(categoryId));
       } else if (searchTerm) {
         this.searchProductByName();
-      }else{
+      } else {
         this.getProduct();
       }
-
-
     });
   }
 
@@ -91,6 +89,22 @@ export class ShopComponent implements OnInit {
     });
   }
 
+  searchPrice() {
+    // Lọc danh sách sản phẩm dựa trên giá
+    this.filteredProducts = this.products.filter(product => {
+      const price = product.price || 0;
+      return price >= this.value && price <= this.highValue;
+    });
+
+     // Cập nhật đường dẫn (URL) với query parameter 'price'
+     this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { price: `${this.value}-${this.highValue}` },
+      queryParamsHandling: 'merge',
+    });
+    this.currentPage = 1;
+  }
+
   addWishift(productId: any) {
     this.productService.getProductById(productId).subscribe(productToAdd => {
       if (productToAdd) {
@@ -116,7 +130,7 @@ export class ShopComponent implements OnInit {
     });
   }
 
-  addCart(productId: string){
+  addCart(productId: string) {
     this.productService.getProductById(productId).subscribe(productToAdd => {
       if (productToAdd) {
         const localStorageData = localStorage.getItem('cart');

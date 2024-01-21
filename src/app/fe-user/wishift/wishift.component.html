@@ -31,20 +31,20 @@
             <th class="add-to-cart">&nbsp;</th>
             <th class="remove">&nbsp; Action</th>
           </tr>
-        </thead>
-        <tbody>
+        </thead>        <tbody>
           <tr *ngFor="let item of wishList">
             <td class="thumbnail"><a><img src="../../../assets/images/imgProject/{{ item.path }}" alt="wishlist-product"></a></td>
             <td class="name"><a href="product-details.html">{{ item.title }}</a></td>
-            <td class="price"><span>{{ item.price }}.00$</span></td>
+            <td class="price"><span>{{ item.price | currency:'USD':'symbol' }}</span></td>
             <td class="add-to-cart">
-              <a href="#" class="btn btn-light btn-hover-dark">
-                <i class="fas fa-shopping-cart mr-2"></i>Add to Cart
+              <a (click)="addToCart(item.productId)"  class="btn btn-light btn-hover-dark">
+                <i  class="fas fa-shopping-cart mr-2" ></i>Add to Cart
               </a>
             </td>
             <td class="remove"><a (click)="deleteItem(item.productId)" class="btn">×</a></td>
           </tr>
         </tbody>
+
       </table>
       <div class="row">
         <div class="col text-center mb-n3">

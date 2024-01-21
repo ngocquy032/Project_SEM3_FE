@@ -38,20 +38,20 @@
                     </span>
                     <img src="../../../assets/images/imgProject/{{ product.path }}" alt="Product Image">
                   </a>
-                  <a href="wishlist.html" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
+                  <a (click)="addWishift(product.productId)" class="add-to-wishlist hintT-left" data-hint="Add to wishlist"><i
                       class="far fa-heart"></i></a>
                 </div>
                 <div class="product-info">
                   <h6 class="title"><a>{{ product.title }}</a></h6>
                   <span class="price">
-                    {{ product.price }}.00$
+                    {{ product.price | currency:'USD':'symbol'  }}
                   </span>
                   <div class="product-buttons">
-                    <a data-bs-toggle="modal" class="product-button hintT-top" data-hint="Add To Cart"><i
+                    <a (click)="addCart(product.productId)"  data-bs-toggle="modal" class="product-button hintT-top" data-hint="Add To Cart"><i
                         class="fas fa-shopping-cart"></i></a>
                     <a (click)="productDetails(product.productId)" class="product-button hintT-top"
                       data-hint="Quick View"><i class="fas fa-search"></i></a>
-                    <a href="#" class="product-button hintT-top" data-hint="Add to wishlist"><i
+                    <a (click)="addWishift(product.productId)"  class="product-button hintT-top" data-hint="Add to wishlist"><i
                         class="far fa-heart"></i></a>
                   </div>
                 </div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
+import { AuthService, UserInfo  } from 'src/service/auth.service';
 import { UserService } from 'src/service/user';
 @Component({
   selector: 'app-log-in',
@@ -15,9 +16,8 @@ export class LogInComponent {
   constructor(
     private formBuilders: FormBuilder,
     private userService: UserService,
-    private router: Router
-
-
+    private router: Router,
+    private authService: AuthService
   ) {
     this.loginForm = formBuilders.group({
       email: ['', Validators.required],
@@ -32,25 +32,28 @@ export class LogInComponent {
       try {
         const { email, password } = this.loginForm.value;
         const loginData = { email, password };
-        console.log('loginData', loginData);
-
         const response = await firstValueFrom(this.userService.logIn(loginData));
-        console.log('response', response);
 
         if (response && response.email === loginData.email && response.password === loginData.password) {
-          // this.router.navigate(['/component1'])
-          console.log('true');
-          this.message = ''
-          this.loginForm.reset();
+          // Lưu thông tin đăng nhập vào AuthService
+          const userInfo: UserInfo = {
+            userId: response.userId,
+            firstName: response.firstName,
+            lastName: response.lastName,
+            email: response.email,
+            // Thêm các thông tin khác của người dùng nếu cần
+          };
+          this.authService.login(userInfo);
 
+          this.router.navigate(['']);
+          this.message = '';
+          this.loginForm.reset();
         }
       } catch (error) {
-        this.message = 'Incorrect email or password'
-
+        this.message = 'Incorrect email or password';
       }
     } else {
-      this.message = "Please enter Email or password"
-      console.log('false');
+      this.message = 'Please enter Email or password';
     }
   }
 

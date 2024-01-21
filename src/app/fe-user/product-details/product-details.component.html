@@ -91,7 +91,7 @@
           <div class="product-summery">
             <h3 class="product-title">{{ product.title }}</h3>
 
-            <div class="product-price">{{ product.price }}.00$</div>
+            <div class="product-price">{{ product.price | currency:'USD':'symbol'  }}</div>
             <div class="product-description">
               <p>With the stability and safety of having a three wheels；durable 6061 aluminum alloy frame; suspension
                 fork
@@ -109,9 +109,9 @@
                     <td class="label"><span>Quantity</span></td>
                     <td class="value">
                       <div class="product-quantity">
-                        <span class="qty-btn minus"><i class="fa fa-minus"></i></span>
-                        <input type="number" class="input-qty" value="1">
-                        <span class="qty-btn plus"><i class="fa fa-plus"></i></span>
+                        <span class="qty-btn minus" (click)="decreaseQuantity()"><i class="fa fa-minus"></i></span>
+                        <input type="text" class="input-qty" [(ngModel)]="quantity" name="quantity">
+                        <span class="qty-btn plus" (click)="increaseQuantity()"><i class="fa fa-plus"></i></span>
                       </div>
                     </td>
                   </tr>
@@ -119,9 +119,9 @@
               </table>
             </div>
             <div class="product-buttons">
-              <a href="#" class="btn btn-icon btn-outline-body btn-hover-dark hintT-top" data-hint="Add to Wishlist"><i
+              <a (click)="addToWishift(product.productId)" class="btn btn-icon btn-outline-body btn-hover-dark hintT-top" data-hint="Add to Wishlist"><i
                   class="far fa-heart"></i></a>
-              <a href="#" class="btn btn-dark btn-outline-hover-dark"><i class="fas fa-shopping-cart"></i> Add to
+              <a (click)="addToCart(product.productId)" class="btn btn-dark btn-outline-hover-dark"><i class="fas fa-shopping-cart"></i> Add to
                 Cart</a>
             </div>
 

@@ -111,10 +111,10 @@
                   <div class="product-info">
                     <h6 class="title"  ><a>{{ product.title }}</a></h6>
                     <span class="price">
-                      <span class="new">{{ product.price }}.00$</span>
+                      <span class="new">{{ product.price | currency:'USD':'symbol'  }}</span>
                     </span>
                     <div class="product-buttons">
-                      <a data-bs-toggle="modal" class="product-button hintT-top" data-hint="Add To Cart"><i
+                      <a (click)="addCart(product.productId)" data-bs-toggle="modal" class="product-button hintT-top" data-hint="Add To Cart"><i
                           class="fas fa-shopping-cart"></i></a>
                       <a (click)="productDetails(product.productId)" class="product-button hintT-top"
                         data-hint="Quick View"><i class="fas fa-search"></i></a>
@@ -148,10 +148,10 @@
                   <div class="product-info">
                     <h6 class="title"><a>{{ productSale.title }}</a></h6>
                     <span class="price">
-                      <span class="new">{{ productSale.price }}.00$</span>
+                      <span class="new">{{ productSale.price | currency:'USD':'symbol'  }}</span>
                     </span>
                     <div class="product-buttons">
-                      <a data-bs-toggle="modal" class="product-button hintT-top" data-hint="Add To Cart"><i
+                      <a (click)="addCart(productSale.productId)" data-bs-toggle="modal" class="product-button hintT-top" data-hint="Add To Cart"><i
                           class="fas fa-shopping-cart"></i></a>
                       <a (click)="productDetails(productSale.productId)" class="product-button hintT-top"
                         data-hint="Quick View"><i class="fas fa-search"></i></a>
@@ -184,10 +184,10 @@
                   <div class="product-info">
                     <h6 class="title"><a>{{ productBestSaller.title }}</a></h6>
                     <span class="price">
-                      <span class="new">{{ productBestSaller.price }}.00$</span>
+                      <span class="new">{{ productBestSaller.price | currency:'USD':'symbol'  }}</span>
                     </span>
                     <div class="product-buttons">
-                      <a data-bs-toggle="modal" class="product-button hintT-top" data-hint="Add To Cart"><i
+                      <a (click)="addCart(productBestSaller.productId)" data-bs-toggle="modal" class="product-button hintT-top" data-hint="Add To Cart"><i
                           class="fas fa-shopping-cart"></i></a>
                       <a (click)="productDetails(productBestSaller.productId)" class="product-button hintT-top"
                         data-hint="Quick View"><i class="fas fa-search"></i></a>

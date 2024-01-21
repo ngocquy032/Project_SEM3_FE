@@ -114,7 +114,13 @@
                       <span class="new">{{ product.price | currency:'USD':'symbol'  }}</span>
                     </span>
                     <div class="product-buttons">
-                      <a (click)="addCart(product.productId)" data-bs-toggle="modal" class="product-button hintT-top" data-hint="Add To Cart"><i
+
+                      <a (click)="addToCart(product.productId)"  data-bs-toggle="modal"  class="product-button hintT-top"
+                        data-hint="Add To Cart"><i class="fas fa-shopping-cart"></i></a>
+                      <a  (click)="productDetails(product.productId)" class="product-button hintT-top" data-hint="Quick View"><i
+                          class="fas fa-search"></i></a>
+                      <a href="#" class="product-button hintT-top" data-hint="Add to wishlist"><i class="far fa-heart"></i></a>
+                      <a data-bs-toggle="modal" class="product-button hintT-top" data-hint="Add To Cart"><i
                           class="fas fa-shopping-cart"></i></a>
                       <a (click)="productDetails(product.productId)" class="product-button hintT-top"
                         data-hint="Quick View"><i class="fas fa-search"></i></a>

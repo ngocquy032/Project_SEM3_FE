@@ -19,6 +19,8 @@ import { AccountComponent } from './fe-user/account/account.component';
 import { ShoppingCartComponent } from './fe-user/shopping-cart/shopping-cart.component';
 import { BlogDetailsComponent } from './fe-user/blog-details/blog-details.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxSliderModule } from 'ngx-slider-v2';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

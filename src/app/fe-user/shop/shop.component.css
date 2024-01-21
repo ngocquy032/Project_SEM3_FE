@@ -20,6 +20,35 @@ ul:last-child {
   margin-bottom: 0;
   /* justify-content: center; */
 }
+/* price-slider.component.css */
+::ng-deep .widget-price-range .ngx-slider{
+  width: 70%;
+}
+::ng-deep .widget-price-range .ngx-slider .ngx-slider-bar{
+  color: black !important;
+}
+
+::ng-deep .widget-price-range .ngx-slider .ngx-slider-selection {
+  background-color: black !important /* Màu sắc của đoạn đã chọn */
+}
+
+::ng-deep .widget-price-range .ngx-slider-pointer {
+  background-color: black !important; /* Màu sắc của đoạn chưa chọn */
+  width: 20px !important;
+  height: 20px !important;
+  top: -12px !important;
+}
+::ng-deep .widget-price-range .ngx-slider .ngx-slider-pointer.ngx-slider-active::after {
+ content: none !important;
+
+}
+::ng-deep .widget-price-range .ngx-slider .ngx-slider-pointer:after{
+  content: none !important;
+}
+.widget-price-range .ngx-slider-pointer-min,
+.widget-price-range .ngx-slider-pointer-max {
+  background-color: #f39c12 !important; /* Màu sắc của nút trượt */
+}
 /* Add your custom styles for price range widget here */
 
 

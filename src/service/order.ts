@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
-}) export class UserService{
+}) export class OrdersService{
   constructor(private http: HttpClient){}
   private Url = 'https://arts-be1.azurewebsites.net/api/Orders';
   sendOrder(order: any): Observable<any> {

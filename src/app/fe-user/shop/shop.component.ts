@@ -96,13 +96,14 @@ export class ShopComponent implements OnInit {
       return price >= this.value && price <= this.highValue;
     });
 
-     // Cập nhật đường dẫn (URL) với query parameter 'price'
-     this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: { price: `${this.value}-${this.highValue}` },
-      queryParamsHandling: 'merge',
-    });
-    this.currentPage = 1;
+    // Cập nhật đường dẫn (URL) với query parameter 'price'
+    // this.router.navigate([], {
+    //   relativeTo: this.route,
+    //   queryParams: { price: `${this.value}-${this.highValue}` },
+    //   queryParamsHandling: 'merge',
+    // }
+    // );
+    // this.currentPage = 1;
   }
 
   addWishift(productId: any) {

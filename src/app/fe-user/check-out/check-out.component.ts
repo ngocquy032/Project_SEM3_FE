@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { OrdersService } from 'src/service/order';
 import { UserService } from 'src/service/user';
 
 @Component({
@@ -17,7 +18,8 @@ export class CheckOutComponent {
 
   constructor(
     private userService: UserService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private orderService: OrdersService
   ) {
     this.orderForm = this.formBuilder.group({
       couponCode: ['']
@@ -33,6 +35,29 @@ export class CheckOutComponent {
   order(): void {
     if (this.selectedMethod != 'vnpay') {
       console.log('thanh toan tien mat');
+      const orderData = {
+        user: this.dataUser,
+        items: this.cartList,
+        paymentMethod: this.selectedMethod,
+        totalAmount: this.calculateCartTotal(),
+        discountAmount: this.discountAmount,
+        couponCode: this.orderForm.get('couponCode')?.value
+      };
+       // Gọi phương thức sendOrder từ UserService để lưu đơn hàng qua API
+       this.orderService.sendOrder(orderData).subscribe(
+        response => {
+          console.log('Đặt hàng thành công:', response);
+          // Tùy chọn, bạn có thể xóa giỏ hàng và thực hiện các hành động khác sau khi đặt hàng thành công
+          // Xóa dữ liệu giỏ hàng local
+          // localStorage.removeItem('cart');
+          // Các hành động bổ sung có thể được thực hiện ở đây
+        },
+        error => {
+          console.error('Lỗi khi đặt hàng:', error);
+          // Xử lý các tình huống lỗi theo cách phù hợp
+        }
+      );
+
     } else {
       console.log('thanh toan vn pay');
     }

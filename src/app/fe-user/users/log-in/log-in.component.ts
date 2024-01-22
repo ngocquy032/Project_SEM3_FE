@@ -36,13 +36,9 @@ export class LogInComponent {
 
         if (response && response.email === loginData.email && response.password === loginData.password) {
           // Lưu thông tin đăng nhập vào AuthService
-          const userInfo: UserInfo = {
-            userId: response.userId,
-            firstName: response.firstName,
-            lastName: response.lastName,
-            email: response.email,
-            // Thêm các thông tin khác của người dùng nếu cần
-          };
+          const userInfo: UserInfo = response;
+          console.log('UserInfo', userInfo);
+
           this.authService.login(userInfo);
 
           this.router.navigate(['']);

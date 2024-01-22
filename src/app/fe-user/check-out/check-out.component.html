@@ -41,19 +41,19 @@
         </div>
         <div class="col-md-6 col-12 learts-mb-30">
           <label for="bdPhone">Phone <abbr class="required">*</abbr></label>
-          <input type="text" id="bdPhone">
+          <input type="text" [(ngModel)]="dataUser.phone" name="phone" >
         </div>
         <div class="col-md-6 col-12 learts-mb-20">
           <label for="bdEmail">Country <abbr class="required">*</abbr></label>
-          <input type="text" >
+          <input type="text" [(ngModel)]="dataUser.country" name="country" >
         </div>
         <div class="col-md-6 col-12 learts-mb-30">
           <label for="bdPhone">City <abbr class="required">*</abbr></label>
-          <input type="text">
+          <input type="text" [(ngModel)]="dataUser.town" name="city" >
         </div>
         <div class="col-12 learts-mb-20">
           <label for="bdAddress1">Street address <abbr class="required">*</abbr></label>
-          <input type="text" placeholder="House number and street name">
+          <input type="text" placeholder="House number and street name" [(ngModel)]="dataUser.streetAddress" name="streetAddress">
         </div>
         <div class="col-12 learts-mb-20">
           <label for="bdAddress2" class="sr-only">Apartment, suite, unit etc. (optional)</label>

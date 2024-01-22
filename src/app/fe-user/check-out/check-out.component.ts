@@ -24,13 +24,16 @@ export class CheckOutComponent {
     this.orderForm = this.formBuilder.group({
       couponCode: ['']
     });
+
   }
 
   ngOnInit(): void {
     this.getLocalData();
     this.getInfo();
     this.updateCartTotals(); // Gọi hàm cập nhật tổng giỏ hàng
+    window.scrollTo(0,0);
   }
+
 
   order(): void {
     if (this.selectedMethod != 'vnpay') {
@@ -81,7 +84,6 @@ export class CheckOutComponent {
     const localStorageData = localStorage.getItem('cart');
     if (localStorageData) {
       this.cartList = JSON.parse(localStorageData);
-
       // Kiểm tra và tính toán subtotal cho các sản phẩm chưa có subtotal
       this.cartList.forEach(item => {
         if (!item.subtotal) {

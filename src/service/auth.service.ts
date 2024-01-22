@@ -47,8 +47,17 @@ export class AuthService {
 
 export interface UserInfo {
   userId: string;
+  name: string,
   firstName: string;
   lastName: string;
   email: string;
-  // Thêm các thông tin khác của người dùng nếu cần
+  streetAddress: string;
+  phone: string,
+  description: string;
+  postcodeZip: string;
+  country: string;
+  town: string;
+  district: string;
+  password: string;
+
 }

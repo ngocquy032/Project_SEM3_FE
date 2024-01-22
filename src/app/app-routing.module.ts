@@ -14,7 +14,7 @@ import { ProductDetailsComponent } from './fe-user/product-details/product-detai
 import { BlogComponent } from './fe-user/blog/blog.component';
 import { AccountComponent } from './fe-user/account/account.component';
 import { LayoutAdminComponent } from './fe-admin/layout-admin/layout-admin.component';
-
+import { ProductListComponent } from './fe-admin/product-list/product-list.component';
 const routes: Routes = [
   {
     path: '', component: MasterLayoutComponent,
@@ -61,9 +61,11 @@ const routes: Routes = [
 
   // router admin
   {
-    path: 'admin', component: LayoutAdminComponent,
+    path: '', component: LayoutAdminComponent,
     children: [
-
+      {
+          path: 'productList', component: ProductListComponent
+      }
     ]
   }
 

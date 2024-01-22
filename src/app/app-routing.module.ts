@@ -15,6 +15,9 @@ import { BlogComponent } from './fe-user/blog/blog.component';
 import { AccountComponent } from './fe-user/account/account.component';
 import { LayoutAdminComponent } from './fe-admin/layout-admin/layout-admin.component';
 import { ProductListComponent } from './fe-admin/product-list/product-list.component';
+import { BlogDetailsComponent } from './fe-user/blog-details/blog-details.component';
+
+
 const routes: Routes = [
   {
     path: '', component: MasterLayoutComponent,
@@ -41,7 +44,7 @@ const routes: Routes = [
         path: 'checkOut', component: CheckOutComponent
       },
       {
-        path: 'productDetails', component: ProductDetailsComponent
+        path: 'productDetails/:id', component: ProductDetailsComponent
       },
       {
         path: 'blog', component: BlogComponent
@@ -54,6 +57,9 @@ const routes: Routes = [
       },
       {
         path: 'register', component: SigupComponent
+      },
+      {
+        path: 'blog-details', component: BlogDetailsComponent
       }
 
     ]
@@ -61,7 +67,7 @@ const routes: Routes = [
 
   // router admin
   {
-    path: '', component: LayoutAdminComponent,
+    path: 'admin', component: LayoutAdminComponent,
     children: [
       {
           path: 'productList', component: ProductListComponent

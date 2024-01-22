@@ -20,6 +20,9 @@ import { ShoppingCartComponent } from './fe-user/shopping-cart/shopping-cart.com
 import { LayoutAdminComponent } from './fe-admin/layout-admin/layout-admin.component';
 import { ProductListComponent } from './fe-admin/product-list/product-list.component';
 
+import { BlogDetailsComponent } from './fe-user/blog-details/blog-details.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxSliderModule } from 'ngx-slider-v2';
 
 
 @NgModule({
@@ -41,6 +44,7 @@ import { ProductListComponent } from './fe-admin/product-list/product-list.compo
     BlogComponent,
     LayoutAdminComponent,
     ProductListComponent,
+    BlogDetailsComponent,
 
   ],
   imports: [
@@ -48,7 +52,9 @@ import { ProductListComponent } from './fe-admin/product-list/product-list.compo
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    NgxSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

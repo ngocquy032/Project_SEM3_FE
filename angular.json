@@ -25,7 +25,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/admin/vendor/css/rtl/core.css"
             ],
             "scripts": [
               "src/assets/js/vendor/jquery-3.4.1.min.js",

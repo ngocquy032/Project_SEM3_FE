@@ -19,6 +19,7 @@ import { AccountComponent } from './fe-user/account/account.component';
 import { ShoppingCartComponent } from './fe-user/shopping-cart/shopping-cart.component';
 import { LayoutAdminComponent } from './fe-admin/layout-admin/layout-admin.component';
 import { ProductListComponent } from './fe-admin/product-list/product-list.component';
+import { ProductAddComponent } from './fe-admin/product-add/product-add.component';
 
 
 
@@ -41,6 +42,7 @@ import { ProductListComponent } from './fe-admin/product-list/product-list.compo
     BlogComponent,
     LayoutAdminComponent,
     ProductListComponent,
+    ProductAddComponent,
 
   ],
   imports: [

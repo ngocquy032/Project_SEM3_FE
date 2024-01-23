@@ -13,7 +13,8 @@ import { Component } from '@angular/core';
   '../../../assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.css',
   '../../../assets/admin/vendor/libs/typeahead-js/typeahead.css',
   '../../../assets/admin/vendor/libs/apex-charts/apex-charts.css',
-  '../../../assets/admin/vendor/css/pages/card-analytics.css'
+  '../../../assets/admin/vendor/css/pages/card-analytics.css',
+  './layout-admin.component.css',
 ]
 })
 export class LayoutAdminComponent {

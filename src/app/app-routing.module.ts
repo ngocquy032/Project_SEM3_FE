@@ -18,6 +18,7 @@ import { ProductListComponent } from './fe-admin/product-list/product-list.compo
 import { BlogDetailsComponent } from './fe-user/blog-details/blog-details.component';
 
 
+import { ProductAddComponent } from './fe-admin/product-add/product-add.component';
 const routes: Routes = [
   {
     path: '', component: MasterLayoutComponent,
@@ -71,6 +72,9 @@ const routes: Routes = [
     children: [
       {
           path: 'productList', component: ProductListComponent
+      },
+      {
+        path: 'productAdd', component: ProductAddComponent
       }
     ]
   }

@@ -19,6 +19,7 @@ import { AccountComponent } from './fe-user/account/account.component';
 import { ShoppingCartComponent } from './fe-user/shopping-cart/shopping-cart.component';
 import { LayoutAdminComponent } from './fe-admin/layout-admin/layout-admin.component';
 import { ProductListComponent } from './fe-admin/product-list/product-list.component';
+import { ProductAddComponent } from './fe-admin/product-add/product-add.component';
 
 import { BlogDetailsComponent } from './fe-user/blog-details/blog-details.component';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -45,6 +46,7 @@ import { NgxSliderModule } from 'ngx-slider-v2';
     LayoutAdminComponent,
     ProductListComponent,
     BlogDetailsComponent,
+    ProductAddComponent,
 
   ],
   imports: [

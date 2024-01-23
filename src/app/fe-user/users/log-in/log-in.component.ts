@@ -40,6 +40,8 @@ export class LogInComponent {
           console.log('UserInfo', userInfo);
 
           this.authService.login(userInfo);
+          localStorage.removeItem('wishlist');
+          localStorage.removeItem('cart');
 
           this.router.navigate(['']);
           this.message = '';

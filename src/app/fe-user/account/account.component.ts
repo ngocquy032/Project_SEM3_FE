@@ -107,6 +107,8 @@ export class AccountComponent implements OnInit {
     if (confirmLogout) {
       this.authService.logout();
       this.router.navigate(['']);
+      localStorage.removeItem('wishlist');
+      localStorage.removeItem('cart');
     }
   }
 }

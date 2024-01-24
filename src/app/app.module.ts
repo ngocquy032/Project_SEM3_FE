@@ -25,6 +25,7 @@ import { BlogDetailsComponent } from './fe-user/blog-details/blog-details.compon
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSliderModule } from 'ngx-slider-v2';
 import { LoginAdminComponent } from './fe-admin/login-admin/login-admin.component';
+import { CategoryListComponent } from './fe-admin/category-list/category-list.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { LoginAdminComponent } from './fe-admin/login-admin/login-admin.componen
     BlogDetailsComponent,
     ProductAddComponent,
     LoginAdminComponent,
+    CategoryListComponent,
 
   ],
   imports: [

@@ -35,3 +35,69 @@ ql-bold button {
 .ql-bold svg path {
   color: black; /* Change to your desired color */
 }
+.image-container {
+  max-width: 100px; /* Đặt chiều rộng tối đa của container */
+  overflow: hidden; /* Ẩn bất kỳ nội dung nào vượt quá kích thước container */
+  border: 1px solid #ccc;
+  padding: 10px;
+  position: relative;
+}
+/* Thêm viền trên nút xóa */
+.delete-button {
+  border-top: 1px solid #ccc;
+  margin-top: 5px;
+  padding-top: 5px;
+  position: relative;
+}
+
+/* Định dạng nút xóa để có màu nền đỏ và văn bản trắng */
+.delete-button button {
+  background-color: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
+
+}
+.delete-button button:hover {
+  background-color: #ccc;
+  color: #000; /* Màu chữ khi hover */
+}
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.text-muted {
+  color: #888;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.position-relative {
+  margin-bottom: 20px; /* Thay đổi khoảng cách giữa các div position-relative */
+}

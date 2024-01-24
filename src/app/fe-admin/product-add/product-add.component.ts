@@ -24,5 +24,32 @@ import { Component } from '@angular/core';
 ]
 })
 export class ProductAddComponent {
+  selectedFiles: any[] = [];
 
+  handleFileSelect(event: any): void {
+    const fileInput = event.target;
+    if (fileInput.files && fileInput.files.length > 0) {
+      const files = fileInput.files;
+
+      for (let i = 0; i < files.length; i++) {
+        const selectedFile = files[i];
+
+        // Sử dụng FileReader để đọc hình ảnh từ tệp đã chọn
+        const reader = new FileReader();
+        reader.onload = (e: any) => {
+          this.selectedFiles.push({
+            name: selectedFile.name,
+            dataUrl: e.target.result
+          });
+        };
+        reader.readAsDataURL(selectedFile);
+      }
+    }
+  }
+  removeFile(file: any): void {
+    const index = this.selectedFiles.indexOf(file);
+    if (index !== -1) {
+      this.selectedFiles.splice(index, 1);
+    }
+  }
 }

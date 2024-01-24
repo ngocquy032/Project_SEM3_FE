@@ -24,6 +24,7 @@ import { ProductAddComponent } from './fe-admin/product-add/product-add.componen
 import { BlogDetailsComponent } from './fe-user/blog-details/blog-details.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSliderModule } from 'ngx-slider-v2';
+import { CategoryListComponent } from './fe-admin/category-list/category-list.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { NgxSliderModule } from 'ngx-slider-v2';
     ProductListComponent,
     BlogDetailsComponent,
     ProductAddComponent,
+    CategoryListComponent,
 
   ],
   imports: [

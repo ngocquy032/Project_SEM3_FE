@@ -16,16 +16,16 @@
         <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
           <div class="card-header d-flex border-top rounded-0 flex-wrap py-md-0">
             <div class="me-5 ms-n2 pe-5">
-              <div id="DataTables_Table_0_filter" class="dataTables_filter"><label><input type="search"
-                    class="form-control" placeholder="Search Product" aria-controls="DataTables_Table_0"></label></div>
+              <div id="DataTables_Table_0_filter" class="dataTables_filter"><label></label></div>
             </div>
             <div class="d-flex justify-content-start justify-content-md-end align-items-baseline">
               <div
                 class="dt-action-buttons d-flex align-items-start align-items-md-center justify-content-sm-center mb-3 mb-sm-0">
-                <div class="dt-buttons d-flex flex-wrap"> <button class="dt-button add-new btn btn-primary" tabindex="0"
+                <div class="dt-buttons d-flex flex-wrap">
+                   <button class="dt-button add-new btn btn-primary" tabindex="0"
+                   routerLink="/admin/productAdd"
                     aria-controls="DataTables_Table_0" type="button"><span><i class="bx bx-plus me-0 me-sm-1"></i><span
-                        class="d-none d-sm-inline-block">Add
-                        Product</span></span>
+                        class="d-none d-sm-inline-block">Add Product</span></span>
                   </button>
                 </div>
               </div>
@@ -35,29 +35,29 @@
             id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" style="width: 1211px;">
             <thead>
               <tr>
-                <th class="sorting sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                   style="width: 387px;" aria-label="product: activate to sort column descending" aria-sort="ascending">
                   product</th>
-                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                   style="width: 119px;" aria-label="category: activate to sort column ascending">category</th>
-                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                   style="width: 41px;" aria-label="sku: activate to sort column ascending">sku</th>
-                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                   style="width: 69px;" aria-label="price: activate to sort column ascending">price</th>
-                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                   style="width: 31px;" aria-label="qty: activate to sort column ascending">qty</th>
-                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                   style="width: 89px;" aria-label="status: activate to sort column ascending">status</th>
-                <th class="sorting" rowspan="1" colspan="1" style="width: 0px;" aria-label="Actions">Actions</th>
+                <th rowspan="1" colspan="1" style="width: 0px;" aria-label="Actions">Actions</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="odd" *ngFor="let product of products">
+              <tr class="odd" *ngFor="let product of products | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
                 <td class="sorting_1">
                   <div class="d-flex justify-content-start align-items-center product-name">
                     <div class="avatar-wrapper">
                       <div class="avatar avatar me-2 rounded-2 bg-label-secondary"><img
-                          src="../../../assets/admin/img/products/imac-pro.png" alt="Product-9" class="rounded-2"></div>
+                          src="../../../assets/images/imgProject/{{ product.path }}" alt="Product-9" class="rounded-2"></div>
                     </div>
                     <div class="d-flex flex-column">
                       <h6 class="text-body text-nowrap mb-0">{{ product.title }}</h6>
@@ -65,9 +65,9 @@
                   </div>
                 </td>
                 <td>
-                    {{ product.categoryName }}</td>
+                  {{ product.categoryName }}</td>
                 <td><span>{{ product.sku }}</span></td>
-                <td><span>{{ product.price | currency:'USD':'symbol'  }}</span></td>
+                <td><span>{{ product.price | currency:'USD':'symbol' }}</span></td>
                 <td><span>{{ product.quantity }}</span></td>
                 <td>{{ product.availability }}</td>
                 <td class="dtr-hidden">
@@ -84,7 +84,10 @@
           <div class="row mx-2">
 
             <!-- phan trang -->
-
+            <div class="pagination2" style="text-align: center;">
+              <pagination-controls (pageChange)="pageChanged($event)" class="my-pagination" previousLabel="Previous"
+                nextLabel="Next"></pagination-controls>
+            </div>
           </div>
         </div>
       </div>

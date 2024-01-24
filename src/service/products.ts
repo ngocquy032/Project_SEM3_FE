@@ -16,5 +16,8 @@ import { Observable } from "rxjs";
     const productUrl = `${this.Url}/${productId}`;
     return this.http.get<any>(productUrl);
   }
+  addProduct(){
+
+  }
 
 }

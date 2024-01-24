@@ -8,8 +8,6 @@
 <!--Content-->
 <div class="container-xxl flex-grow-1 container-p-y">
 
-
-
   <h4 class="py-3 mb-4">
     <span class="text-muted fw-light">eCommerce /</span><span> Add Product</span>
   </h4>
@@ -25,8 +23,8 @@
       </div>
       <div class="d-flex align-content-center flex-wrap gap-3">
         <button class="btn btn-label-secondary">Discard</button>
-        <button class="btn btn-label-primary">Save draft</button>
-        <button type="submit" class="btn btn-primary">Publish product</button>
+
+        <button (click)="addProduct()" type="submit" class="btn btn-primary">Publish product</button>
       </div>
 
     </div>
@@ -47,9 +45,20 @@
                 name="productTitle" aria-label="Product title">
             </div>
             <div class="row mb-3">
+              <div class="col"><label class="form-label" for="ecommerce-product-barcode">Weigth</label>
+                <input type="number" class="form-control" aria-label="Product Weigth" id="ecommerce-product-sku"
+                  placeholder="Quantity Product" min="0">
+              </div>
+              <div class="col"><label class="form-label" for="ecommerce-product-barcode">Quantity</label>
+                <input type="number" class="form-control" aria-label="Product SKU" id="ecommerce-product-sku"
+                  placeholder="Quantity Product" min="0">
+
+              </div>
+            </div>
+            <div class="row mb-3">
               <div class="col"><label class="form-label" for="ecommerce-product-sku">SKU</label>
                 <input type="number" class="form-control" id="ecommerce-product-sku" placeholder="SKU" name="productSku"
-                  aria-label="Product SKU">
+                  aria-label="Product SKU" min="0">
               </div>
               <div class="col"><label class="form-label" for="ecommerce-product-barcode">Barcode</label>
                 <input type="text" class="form-control" id="ecommerce-product-barcode" placeholder="0123-4567"
@@ -68,15 +77,16 @@
         <div class="card mb-4">
           <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="mb-0 card-title">Media</h5>
-            <a href="javascript:void(0);" class="fw-medium">Add media from URL</a>
           </div>
           <div class="card-body">
             <form action="/upload" class="dropzone needsclick dz-clickable" id="dropzone-basic">
-              <input class="addProduct" type="file" id="fileInput" style="display: none;" (change)="handleFileSelect($event)" #fileInputRef>
+              <input class="addProduct" type="file" id="fileInput" style="display: none;"
+                (change)="handleFileSelect($event)" #fileInputRef>
               <div class="dz-message needsclick my-5">
                 <p class="fs-4 note needsclick my-2">Drag and drop your image here</p>
                 <small class="text-muted d-block fs-6 my-2">or</small>
-                <span class="note needsclick btn bg-label-primary d-inline" (click)="fileInputRef.click()">Browse image</span>
+                <span class="note needsclick btn bg-label-primary d-inline" (click)="fileInputRef.click()">Browse
+                  image</span>
                 <!-- Hiển thị danh sách hình ảnh và tên tệp đã chọn -->
                 <div *ngIf="selectedFiles.length > 0" class="d-flex flex-wrap">
                   <div *ngFor="let file of selectedFiles" class="m-2">
@@ -109,21 +119,28 @@
             <div class="mb-3">
               <label class="form-label" for="ecommerce-product-price">Base Price</label>
               <input type="number" class="form-control" id="ecommerce-product-price" placeholder="Price"
-                name="productPrice" aria-label="Product price">
+                name="productPrice" aria-label="Product price" min="1">
             </div>
             <!-- Discounted Price -->
             <div class="mb-3">
               <label class="form-label" for="ecommerce-product-discount-price">Discounted Price</label>
               <input type="number" class="form-control" id="ecommerce-product-discount-price"
-                placeholder="Discounted Price" name="productDiscountedPrice" aria-label="Product discounted price">
+                placeholder="Discounted Price" name="productDiscountedPrice" aria-label="Product discounted price"
+                min="0">
             </div>
-            <!-- Charge tax check box -->
-            <div class="form-check mb-2">
-              <input class="form-check-input" type="checkbox" value="" id="price-charge-tax" checked="">
-              <label class="form-label" for="price-charge-tax">
-                Charge tax on this product
+
+            <!-- Category -->
+            <div class="position-relative">
+              <label class="form-label mb-1 d-flex justify-content-between align-items-center" for="category-org">
+                <span>Category</span><a routerLink="/admin/categoryList" class="fw-medium">Add new category</a>
               </label>
+              <select  id="category" class="form-select" data-placeholder="Select Category" >
+                <option  value="" disabled selected>Select Category</option>
+                <option  *ngFor="let category of categoriList">{{ category.nameCategory }}</option>
+
+              </select>
             </div>
+
             <!-- Instock switch -->
             <div class="d-flex justify-content-between align-items-center border-top pt-3">
               <span class="mb-0 h6">In stock</span>
@@ -142,23 +159,15 @@
         </div>
         <!-- /Pricing Card -->
         <!-- Organize Card -->
-        <div class="card mb-4">
+        <!-- <div class="card mb-4">
           <div class="card-header">
             <h5 class="card-title mb-0">Organize</h5>
           </div>
           <div class="card-body">
-            <!-- Vendor -->
+
             <div class="mb-3 col ecommerce-select2-dropdown">
-              <div class="position-relative">
-                <label class="form-label" for="vendor">Vendor</label>
-                <select id="vendor" class="form-select" data-placeholder="Select Vendor">
-                  <option value="" disabled selected>Select Vendor</option>
-                  <option value="men-clothing">Men's Clothing</option>
-                  <option value="women-clothing">Women's Clothing</option>
-                  <option value="kid-clothing">Kid's Clothing</option>
-                </select>
-              </div>
-               <!-- Category -->
+
+
               <div class="position-relative">
                 <label class="form-label mb-1 d-flex justify-content-between align-items-center" for="category-org">
                   <span>Category</span><a routerLink="/admin/categoryList" class="fw-medium">Add new category</a>
@@ -172,7 +181,7 @@
                   <option value="Automotive">Automotive</option>
                 </select>
               </div>
-              <!-- Collection -->
+
               <div class="position-relative">
                 <label class="form-label" for="collection">Collection</label>
                 <select id="vendor" class="form-select" data-placeholder="Collection">
@@ -182,7 +191,7 @@
                   <option value="kid-clothing">Kid's Clothing</option>
                 </select>
               </div>
-                <!-- Status -->
+
               <div class="position-relative">
                 <label class="form-label mb-1" for="status-org">Status</label>
                 <select id="status-org" class="select2 form-select" data-placeholder="Published">
@@ -195,7 +204,7 @@
 
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- /Organize Card -->
       </div>
       <!-- /Second column -->

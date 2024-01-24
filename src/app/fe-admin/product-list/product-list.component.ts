@@ -22,7 +22,8 @@ import { ProductService } from 'src/service/products';
 })
 export class ProductListComponent implements OnInit {
   products: any[] = [];
-
+  currentPage: number = 1;
+  itemsPerPage: number = 5;
   constructor(
     private productService: ProductService,
     private router: Router
@@ -37,6 +38,10 @@ export class ProductListComponent implements OnInit {
       this.products = product;
       console.log('products', this.products);
     });
+  }
+
+  pageChanged(newPage: number) {
+    this.currentPage = newPage;
   }
 
 

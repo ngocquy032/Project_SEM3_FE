@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CategorierService } from 'src/service/categories';
 
 @Component({
   selector: 'app-product-add',
@@ -23,8 +24,28 @@ import { Component } from '@angular/core';
   '../../../assets/admin/vendor/css/boostrap/boostrap.css'
 ]
 })
-export class ProductAddComponent {
+export class ProductAddComponent  implements OnInit{
   selectedFiles: any[] = [];
+  categoriList: any[] = [];
+  constructor(
+    private categoriService: CategorierService
+  ){}
+
+  ngOnInit(): void {
+      this.getCategory();
+  }
+
+  getCategory(){
+    this.categoriService.getCategorie().subscribe(category =>{
+      this.categoriList = category
+    })
+  }
+
+  addProduct(){
+
+  }
+
+
 
   handleFileSelect(event: any): void {
     const fileInput = event.target;

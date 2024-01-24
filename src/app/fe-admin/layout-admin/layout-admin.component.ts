@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthAdminService } from 'src/service/authAdmin.service';
 
 @Component({
   selector: 'app-layout-admin',
@@ -18,6 +20,10 @@ import { Component } from '@angular/core';
 ]
 })
 export class LayoutAdminComponent {
+  constructor(
+    private router: Router,
+    private authAdminService: AuthAdminService
+  ){}
   isProductsMenuOpen = false;
   toggleProductsMenu() {
     this.isProductsMenuOpen = !this.isProductsMenuOpen;
@@ -40,5 +46,16 @@ export class LayoutAdminComponent {
 
   toggleSearch() {
     this.isSearchVisible = !this.isSearchVisible;
+  }
+
+
+  logOut() {
+    if (confirm('are you sure you want to logOut')) {
+
+      this.authAdminService.logout();
+      this.router.navigate([''])
+    }
+
+
   }
 }

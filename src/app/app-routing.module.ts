@@ -16,9 +16,10 @@ import { AccountComponent } from './fe-user/account/account.component';
 import { LayoutAdminComponent } from './fe-admin/layout-admin/layout-admin.component';
 import { ProductListComponent } from './fe-admin/product-list/product-list.component';
 import { BlogDetailsComponent } from './fe-user/blog-details/blog-details.component';
-
-
 import { ProductAddComponent } from './fe-admin/product-add/product-add.component';
+import { LoginAdminComponent } from './fe-admin/login-admin/login-admin.component';
+import { AuthService } from 'src/service/auth.service';
+import { AuthAdminService } from 'src/service/authAdmin.service';
 const routes: Routes = [
   {
     path: '', component: MasterLayoutComponent,
@@ -68,17 +69,19 @@ const routes: Routes = [
 
   // router admin
   {
-    path: 'admin', component: LayoutAdminComponent,
+    path: 'admin', component: LayoutAdminComponent, canActivate: [AuthAdminService],
     children: [
       {
-          path: 'productList', component: ProductListComponent
+          path: 'productList', component: ProductListComponent, pathMatch: 'full'
       },
       {
         path: 'productAdd', component: ProductAddComponent
       }
     ]
+  },
+  {
+    path: 'loginAdmin', component: LoginAdminComponent
   }
-
 
 
 ];

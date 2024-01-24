@@ -52,7 +52,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="odd">
+              <tr class="odd" *ngFor="let product of products">
                 <td class="sorting_1">
                   <div class="d-flex justify-content-start align-items-center product-name">
                     <div class="avatar-wrapper">
@@ -60,208 +60,16 @@
                           src="../../../assets/admin/img/products/imac-pro.png" alt="Product-9" class="rounded-2"></div>
                     </div>
                     <div class="d-flex flex-column">
-                      <h6 class="text-body text-nowrap mb-0">Air Jordan</h6><small
-                        class="text-muted text-truncate d-none d-sm-block">Air Jordan is a line of basketball shoes
-                        produced by Nike</small>
+                      <h6 class="text-body text-nowrap mb-0">{{ product.title }}</h6>
                     </div>
                   </div>
                 </td>
-                <td><span class="text-truncate d-flex align-items-center"><span
-                      class="avatar-sm rounded-circle d-flex justify-content-center align-items-center bg-label-info me-2"><i
-                        class="bx bx-walk"></i></span>Shoes</span></td>
-                <td><span>31063</span></td>
-                <td><span>$125</span></td>
-                <td><span>942</span></td>
-                <td><span class="badge bg-label-danger" text-capitalized="">Inactive</span></td>
-                <td class="dtr-hidden">
-                  <div class="d-inline-block text-nowrap"><button class="btn btn-sm btn-icon"><i
-                        class="bx bx-edit"></i></button><button class="btn btn-sm btn-icon dropdown-toggle hide-arrow"
-                      data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded me-2"></i></button>
-                    <div class="dropdown-menu dropdown-menu-end m-0"><a href="javascript:0;"
-                        class="dropdown-item">View</a><a href="javascript:0;" class="dropdown-item">Suspend</a></div>
-                  </div>
-                </td>
-              </tr>
-              <tr class="even">
-                <td class="sorting_1">
-                  <div class="d-flex justify-content-start align-items-center product-name">
-                    <div class="avatar-wrapper">
-                      <div class="avatar avatar me-2 rounded-2 bg-label-secondary"><img
-                          src="../../../assets/admin/img/ecommerce-images/product-13.png" alt="Product-13"
-                          class="rounded-2">
-                      </div>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="text-body text-nowrap mb-0">Amazon Fire TV</h6><small
-                        class="text-muted text-truncate d-none d-sm-block">4K UHD smart TV, stream live TV without
-                        cable</small>
-                    </div>
-                  </div>
-                </td>
-                <td><span class="text-truncate d-flex align-items-center"><span
-                      class="avatar-sm rounded-circle d-flex justify-content-center align-items-center bg-label-primary me-2"><i
-                        class="bx bx-mobile-alt"></i></span>Electronics</span></td>
-                <td><span>5829</span></td>
-                <td><span>$263.49</span></td>
-                <td><span>587</span></td>
-                <td><span class="badge bg-label-warning" text-capitalized="">Scheduled</span></td>
-                <td class="dtr-hidden">
-                  <div class="d-inline-block text-nowrap"><button class="btn btn-sm btn-icon"><i
-                        class="bx bx-edit"></i></button><button class="btn btn-sm btn-icon dropdown-toggle hide-arrow"
-                      data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded me-2"></i></button>
-                    <div class="dropdown-menu dropdown-menu-end m-0"><a href="javascript:0;"
-                        class="dropdown-item">View</a><a href="javascript:0;" class="dropdown-item">Suspend</a></div>
-                  </div>
-                </td>
-              </tr>
-              <tr class="odd">
-                <td class="sorting_1">
-                  <div class="d-flex justify-content-start align-items-center product-name">
-                    <div class="avatar-wrapper">
-                      <div class="avatar avatar me-2 rounded-2 bg-label-secondary"><img
-                          src="../../../assets/admin/img/ecommerce-images/product-15.png" alt="Product-15"
-                          class="rounded-2">
-                      </div>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="text-body text-nowrap mb-0">Apple iPad</h6><small
-                        class="text-muted text-truncate d-none d-sm-block">10.2-inch Retina Display, 64GB</small>
-                    </div>
-                  </div>
-                </td>
-                <td><span class="text-truncate d-flex align-items-center"><span
-                      class="avatar-sm rounded-circle d-flex justify-content-center align-items-center bg-label-primary me-2"><i
-                        class="bx bx-mobile-alt"></i></span>Electronics</span></td>
-                <td><span>35946</span></td>
-                <td><span>$248.39</span></td>
-                <td><span>468</span></td>
-                <td><span class="badge bg-label-success" text-capitalized="">Publish</span></td>
-                <td class="dtr-hidden">
-                  <div class="d-inline-block text-nowrap"><button class="btn btn-sm btn-icon"><i
-                        class="bx bx-edit"></i></button><button class="btn btn-sm btn-icon dropdown-toggle hide-arrow"
-                      data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded me-2"></i></button>
-                    <div class="dropdown-menu dropdown-menu-end m-0"><a href="javascript:0;"
-                        class="dropdown-item">View</a><a href="javascript:0;" class="dropdown-item">Suspend</a></div>
-                  </div>
-                </td>
-              </tr>
-              <tr class="even">
-                <td class="sorting_1">
-                  <div class="d-flex justify-content-start align-items-center product-name">
-                    <div class="avatar-wrapper">
-                      <div class="avatar avatar me-2 rounded-2 bg-label-secondary"><img
-                          src="../../../assets/admin/img/ecommerce-images/product-5.png" alt="Product-5"
-                          class="rounded-2"></div>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="text-body text-nowrap mb-0">Apple Watch Series 7</h6><small
-                        class="text-muted text-truncate d-none d-sm-block">Starlight Aluminum Case with Starlight Sport
-                        Band.</small>
-                    </div>
-                  </div>
-                </td>
-                <td><span class="text-truncate d-flex align-items-center"><span
-                      class="avatar-sm rounded-circle d-flex justify-content-center align-items-center bg-label-secondary me-2"><i
-                        class="bx bxs-watch"></i></span>Accessories</span></td>
-                <td><span>46658</span></td>
-                <td><span>$799</span></td>
-                <td><span>851</span></td>
-                <td><span class="badge bg-label-warning" text-capitalized="">Scheduled</span></td>
-                <td class="dtr-hidden">
-                  <div class="d-inline-block text-nowrap"><button class="btn btn-sm btn-icon"><i
-                        class="bx bx-edit"></i></button><button class="btn btn-sm btn-icon dropdown-toggle hide-arrow"
-                      data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded me-2"></i></button>
-                    <div class="dropdown-menu dropdown-menu-end m-0"><a href="javascript:0;"
-                        class="dropdown-item">View</a><a href="javascript:0;" class="dropdown-item">Suspend</a></div>
-                  </div>
-                </td>
-              </tr>
-              <tr class="odd">
-                <td class="sorting_1">
-                  <div class="d-flex justify-content-start align-items-center product-name">
-                    <div class="avatar-wrapper">
-                      <div class="avatar avatar me-2 rounded-2 bg-label-secondary"><img
-                          src="../../../assets/admin/img/ecommerce-images/product-16.png" alt="Product-16"
-                          class="rounded-2">
-                      </div>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="text-body text-nowrap mb-0">BANGE Anti Theft Backpack</h6><small
-                        class="text-muted text-truncate d-none d-sm-block">Smart Business Laptop Fits 15.6 Inch
-                        Notebook</small>
-                    </div>
-                  </div>
-                </td>
-                <td><span class="text-truncate d-flex align-items-center"><span
-                      class="avatar-sm rounded-circle d-flex justify-content-center align-items-center bg-label-secondary me-2"><i
-                        class="bx bxs-watch"></i></span>Accessories</span></td>
-                <td><span>41867</span></td>
-                <td><span>$79.99</span></td>
-                <td><span>519</span></td>
-                <td><span class="badge bg-label-danger" text-capitalized="">Inactive</span></td>
-                <td class="dtr-hidden">
-                  <div class="d-inline-block text-nowrap"><button class="btn btn-sm btn-icon"><i
-                        class="bx bx-edit"></i></button><button class="btn btn-sm btn-icon dropdown-toggle hide-arrow"
-                      data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded me-2"></i></button>
-                    <div class="dropdown-menu dropdown-menu-end m-0"><a href="javascript:0;"
-                        class="dropdown-item">View</a><a href="javascript:0;" class="dropdown-item">Suspend</a></div>
-                  </div>
-                </td>
-              </tr>
-              <tr class="even">
-                <td class="sorting_1">
-                  <div class="d-flex justify-content-start align-items-center product-name">
-                    <div class="avatar-wrapper">
-                      <div class="avatar avatar me-2 rounded-2 bg-label-secondary"><img
-                          src="../../../assets/admin/img/ecommerce-images/product-18.png" alt="Product-18"
-                          class="rounded-2">
-                      </div>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="text-body text-nowrap mb-0">Canon EOS Rebel T7</h6><small
-                        class="text-muted text-truncate d-none d-sm-block">18-55mm Lens | Built-in Wi-Fi | 24.1 MP CMOS
-                        Sensor</small>
-                    </div>
-                  </div>
-                </td>
-                <td><span class="text-truncate d-flex align-items-center"><span
-                      class="avatar-sm rounded-circle d-flex justify-content-center align-items-center bg-label-primary me-2"><i
-                        class="bx bx-mobile-alt"></i></span>Electronics</span></td>
-                <td><span>63474</span></td>
-                <td><span>$399</span></td>
-                <td><span>810</span></td>
-                <td><span class="badge bg-label-warning" text-capitalized="">Scheduled</span></td>
-                <td class="dtr-hidden">
-                  <div class="d-inline-block text-nowrap"><button class="btn btn-sm btn-icon"><i
-                        class="bx bx-edit"></i></button><button class="btn btn-sm btn-icon dropdown-toggle hide-arrow"
-                      data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded me-2"></i></button>
-                    <div class="dropdown-menu dropdown-menu-end m-0"><a href="javascript:0;"
-                        class="dropdown-item">View</a><a href="javascript:0;" class="dropdown-item">Suspend</a></div>
-                  </div>
-                </td>
-              </tr>
-              <tr class="odd">
-                <td class="sorting_1">
-                  <div class="d-flex justify-content-start align-items-center product-name">
-                    <div class="avatar-wrapper">
-                      <div class="avatar avatar me-2 rounded-2 bg-label-secondary"><img
-                          src="../../../assets/admin/img/ecommerce-images/product-3.png" alt="Product-3"
-                          class="rounded-2"></div>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="text-body text-nowrap mb-0">Dohioue Wall Clock</h6><small
-                        class="text-muted text-truncate d-none d-sm-block">Modern 10 Inch Battery Operated Wall
-                        Clocks</small>
-                    </div>
-                  </div>
-                </td>
-                <td><span class="text-truncate d-flex align-items-center"><span
-                      class="avatar-sm rounded-circle d-flex justify-content-center align-items-center bg-label-warning me-2"><i
-                        class="bx bx-home-alt"></i></span>Household</span></td>
-                <td><span>29540</span></td>
-                <td><span>$16.34</span></td>
-                <td><span>804</span></td>
-                <td><span class="badge bg-label-success" text-capitalized="">Publish</span></td>
+                <td>
+                    {{ product.categoryName }}</td>
+                <td><span>{{ product.sku }}</span></td>
+                <td><span>{{ product.price | currency:'USD':'symbol'  }}</span></td>
+                <td><span>{{ product.quantity }}</span></td>
+                <td>{{ product.availability }}</td>
                 <td class="dtr-hidden">
                   <div class="d-inline-block text-nowrap"><button class="btn btn-sm btn-icon"><i
                         class="bx bx-edit"></i></button><button class="btn btn-sm btn-icon dropdown-toggle hide-arrow"
@@ -274,10 +82,7 @@
             </tbody>
           </table>
           <div class="row mx-2">
-            <div class="col-sm-12 col-md-6">
-              <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Displaying 1 to
-                7 of 100 entries</div>
-            </div>
+
             <!-- phan trang -->
 
           </div>

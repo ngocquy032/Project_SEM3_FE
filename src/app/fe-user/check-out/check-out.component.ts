@@ -38,7 +38,13 @@ export class CheckOutComponent {
   order(): void {
     if (this.selectedMethod != 'vnpay') {
       console.log('thanh toan tien mat');
+      const orderData = {
+        user: this.dataUser,
+        items: this.cartList,
+        totalAmount: this.calculateCartTotal(),
+      };
 
+      console.log('orderData', orderData);
 
     } else {
       console.log('thanh toan vn pay');

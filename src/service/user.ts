@@ -15,6 +15,10 @@ import { LoginModel, LoginParam, RegisterModel } from "src/app/fe-user/users/log
     return this.http.post<LoginParam>(`${this.Url}/LoginUsers`, loginData);
   }
 
+  logInAdmin(loginData: LoginModel): Observable<any> {
+    return this.http.post<LoginParam>(`${this.Url}/LoginAdmin`, loginData);
+  }
+
   register(registerData: RegisterModel): Observable<any> {
     return this.http.post(this.Url, registerData);
   }

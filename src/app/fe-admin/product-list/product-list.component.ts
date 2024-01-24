@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductService } from 'src/service/products';
 
 @Component({
   selector: 'app-product-list',
@@ -18,6 +20,25 @@ import { Component } from '@angular/core';
     '../../../assets/admin/vendor/libs/select2/select2.css'
   ]
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
+  products: any[] = [];
+
+  constructor(
+    private productService: ProductService,
+    private router: Router
+  ) { }
+
+  ngOnInit(): void {
+    this.getProduct()
+  }
+
+  getProduct() {
+    this.productService.getProduct().subscribe(product => {
+      this.products = product;
+      console.log('products', this.products);
+    });
+  }
+
+
 
 }

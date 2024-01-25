@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CategorierService } from 'src/service/categories';
 import { CategoryModel } from './category.model';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-category-list',
@@ -31,13 +32,17 @@ import { CategoryModel } from './category.model';
 export class CategoryListComponent implements OnInit {
   listCategori: any[] = [];
   formAddCategory: FormGroup;
+  selectedCategory: any;
+  filterCategory: any[] = [];
+  searchTerm: string = '';
   constructor(
     private categoriService: CategorierService,
     private FormBuilder: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.formAddCategory = FormBuilder.group({
       nameCategory: ['', Validators.required],
-      desccription: ['', Validators.required],
     })
   }
 
@@ -47,15 +52,27 @@ export class CategoryListComponent implements OnInit {
 
   getCategori() {
     this.categoriService.getCategorie().subscribe(category => {
+      this.filterCategory = category
       this.listCategori = category;
     })
+  }
+
+  searchCategoryByName() {
+    // Lọc danh sách sản phẩm dựa trên tên
+    this.filterCategory = this.listCategori.filter(category =>
+      category.nameCategory.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { category: this.searchTerm},
+      queryParamsHandling: 'merge',
+    });
   }
 
   addCategory() {
     if (this.formAddCategory.valid) {
       const categoryData: CategoryModel = this.formAddCategory.value;
-      console.log('categoryData', categoryData);
-
       this.categoriService.addCategorie(categoryData).subscribe(
         response => {
           // Xử lý phản hồi thành công từ API (nếu cần)
@@ -87,8 +104,8 @@ export class CategoryListComponent implements OnInit {
     }
   }
 
-  updateCategory(){
-
+  updateCategory(categoryId: number): void {
+    this.router.navigate(['/admin/updateCategory', categoryId]);
   }
 
 }

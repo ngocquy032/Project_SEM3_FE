@@ -17,8 +17,8 @@
               <div class="single-widget learts-mb-40" style="margin-top: 20px;">
                 <div class="widget-search">
                   <form action="#">
-                    <input type="text" placeholder="Search Category....">
-                    <button><i class="fas fa-search"></i></button>
+                    <input type="text" placeholder="Search Category...." [(ngModel)]="searchTerm" name="searchTerm">
+                    <button (click)="searchCategoryByName()"><i class="fas fa-search"></i></button>
                   </form>
                 </div>
               </div>
@@ -26,7 +26,6 @@
             <div class="d-flex justify-content-start justify-content-md-end align-items-baseline">
               <div
                 class="dt-action-buttons d-flex align-items-start align-items-md-center justify-content-sm-center mb-3 mb-sm-0 gap-3 pt-0">
-
                 <div class="dt-buttons"><button class="dt-button add-new btn btn-primary ms-2" tabindex="0"
                     aria-controls="DataTables_Table_0" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasEcommerceCategoryList"><span><i class="bx bx-plus me-0 me-sm-1"></i>Add
@@ -45,20 +44,23 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="odd" *ngFor="let category of listCategori">
+              <tr class="odd" *ngFor="let category of filterCategory">
                 <td class="sorting_1">
                   <div class="d-flex align-items-center">
                     <div class="d-flex flex-column justify-content-center"><span
                         class="text-body text-wrap fw-medium">{{ category.nameCategory }}</span><span
-                        class="text-muted text-truncate mb-0 d-none d-sm-block"></span></div>
+                        class="text-muted text-truncate mb-0 d-none d-sm-block"></span>
+                    </div>
                   </div>
                 </td>
-
                 <td>
                   <div class="d-flex align-items-sm-center justify-content-sm-center">
                     <button (click)="deleteCategory(category.categoryId)"
-                      class="btn btn-sm btn-icon delete-record me-2"><i class="bx bx-trash"></i></button>
-                    <button (click)="updateCategory()" class="btn btn-sm btn-icon"><i class="bx bx-edit"></i></button>
+                      class="btn btn-sm btn-icon delete-record me-2"><i class="bx bx-trash"></i>
+                    </button>
+                    <button (click)="updateCategory(category.categoryId)" class="btn btn-sm btn-icon"><i
+                        class="bx bx-edit"></i>
+                    </button>
                   </div>
                 </td>
               </tr>
@@ -89,13 +91,6 @@
 
           <!-- Description -->
           <div class="mb-3">
-            <div class="mb-3 fv-plugins-icon-container">
-              <label class="form-label" for="ecommerce-category-title">Description</label>
-              <input type="text" class="form-control" id="ecommerce-category-title"
-                placeholder="Enter category desccription" name="categoryTitle" aria-label="category title"
-                formControlName="desccription">
-            </div>
-
             <div class="mb-3">
               <button type="submit" (click)="addCategory()"
                 class="btn btn-primary me-sm-3 me-1 data-submit">Add</button>

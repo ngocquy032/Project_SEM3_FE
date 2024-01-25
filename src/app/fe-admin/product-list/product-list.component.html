@@ -29,8 +29,7 @@
               <div
                 class="dt-action-buttons d-flex align-items-start align-items-md-center justify-content-sm-center mb-3 mb-sm-0">
                 <div class="dt-buttons d-flex flex-wrap">
-                   <button class="dt-button add-new btn btn-primary" tabindex="0"
-                   routerLink="/admin/productAdd"
+                  <button class="dt-button add-new btn btn-primary" tabindex="0" routerLink="/admin/productAdd"
                     aria-controls="DataTables_Table_0" type="button"><span><i class="bx bx-plus me-0 me-sm-1"></i><span
                         class="d-none d-sm-inline-block">Add Product</span></span>
                   </button>
@@ -42,29 +41,31 @@
             id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" style="width: 1211px;">
             <thead>
               <tr>
-                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                  style="width: 387px;" aria-label="product: activate to sort column descending" aria-sort="ascending">
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 387px;"
+                  aria-label="product: activate to sort column descending" aria-sort="ascending">
                   product</th>
-                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                  style="width: 119px;" aria-label="category: activate to sort column ascending">category</th>
-                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                  style="width: 41px;" aria-label="sku: activate to sort column ascending">sku</th>
-                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                  style="width: 69px;" aria-label="price: activate to sort column ascending">price</th>
-                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                  style="width: 31px;" aria-label="qty: activate to sort column ascending">qty</th>
-                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                  style="width: 89px;" aria-label="status: activate to sort column ascending">status</th>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 119px;"
+                  aria-label="category: activate to sort column ascending">category</th>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 41px;"
+                  aria-label="sku: activate to sort column ascending">sku</th>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 69px;"
+                  aria-label="price: activate to sort column ascending">price</th>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 31px;"
+                  aria-label="qty: activate to sort column ascending">qty</th>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 89px;"
+                  aria-label="status: activate to sort column ascending">status</th>
                 <th rowspan="1" colspan="1" style="width: 0px;" aria-label="Actions">Actions</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="odd" *ngFor="let product of filteredProducts | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+              <tr class="odd"
+                *ngFor="let product of filteredProducts | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
                 <td class="sorting_1">
                   <div class="d-flex justify-content-start align-items-center product-name">
                     <div class="avatar-wrapper">
                       <div class="avatar avatar me-2 rounded-2 bg-label-secondary"><img
-                          src="../../../assets/images/imgProject/{{ product.path }}" alt="Product-9" class="rounded-2"></div>
+                          src="../../../assets/images/imgProject/{{ product.path }}" alt="Product-9" class="rounded-2">
+                      </div>
                     </div>
                     <div class="d-flex flex-column">
                       <h6 class="text-body text-nowrap mb-0">{{ product.title }}</h6>
@@ -81,8 +82,10 @@
                   <div class="d-inline-block text-nowrap"><button class="btn btn-sm btn-icon"><i
                         class="bx bx-edit"></i></button><button class="btn btn-sm btn-icon dropdown-toggle hide-arrow"
                       data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded me-2"></i></button>
-                    <div class="dropdown-menu dropdown-menu-end m-0"><a href="javascript:0;"
-                        class="dropdown-item">View</a><a href="javascript:0;" class="dropdown-item">Suspend</a></div>
+                    <div class="dropdown-menu dropdown-menu-end m-0">
+                      <a href="javascript:0;" class="dropdown-item">View   </a>
+                      <a href="javascript:0;" class="dropdown-item">Delete</a>
+                    </div>
                   </div>
                 </td>
               </tr>

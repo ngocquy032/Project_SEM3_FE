@@ -1,0 +1,17 @@
+.updateCategory{
+  margin-top: 20px;
+}
+
+.updateCategory button{
+  background-color: #696cff;
+  background: #696cff;
+  border-radius: 10px;
+  border: 1px #696cff;
+}
+
+.updateCategory button:hover{
+  background-color: #5354b5;
+}
+
+
+

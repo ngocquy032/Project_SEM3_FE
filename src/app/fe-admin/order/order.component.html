@@ -1,0 +1,415 @@
+<!--Content Start-->
+<div class="content-wrapper">
+  <!-- Content -->
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="py-3 mb-4">
+      <span class="text-muted fw-light">eCommerce /</span> Order List
+    </h4>
+
+    <!-- Order List Table -->
+    <div class="card">
+      <div class="card-datatable table-responsive">
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+          <div class="card-header d-flex flex-column flex-md-row align-items-start align-items-md-center">
+            <div class="ms-n2">
+              <div class="single-widget learts-mb-40" style="margin-top: 20px;">
+                <div class="widget-search">
+                  <form action="#">
+                    <input type="text" placeholder="Search Category....">
+                    <button><i class="fas fa-search"></i></button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <table class="datatables-order table border-top dataTable no-footer dtr-column" id="DataTables_Table_0"
+            aria-describedby="DataTables_Table_0_info" style="width: 1387px;">
+            <thead>
+              <tr>
+                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                  style="width: 64px;" aria-label="order: activate to sort column ascending">order</th>
+                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                  style="width: 148px;" aria-label="date: activate to sort column descending" aria-sort="ascending">date
+                </th>
+                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                  style="width: 296px;" aria-label="customers: activate to sort column ascending">customers</th>
+                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                  style="width: 121px;" aria-label="payment: activate to sort column ascending">payment</th>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                  style="width: 156px;" aria-label="status: activate to sort column ascending">status</th>
+                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                  style="width: 153px;" aria-label="method: activate to sort column ascending">method</th>
+                <th rowspan="1" colspan="1" style="width: 79px;" aria-label="Actions">Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="odd">
+                <td><a routerLink="/admin/orderDetails"><span class="fw-medium">#6979</span></a></td>
+                <td class="sorting_1"><span class="text-nowrap">Apr 15, 2023, 10:21</span></td>
+                <td>
+                  <div class="d-flex justify-content-start align-items-center order-name text-nowrap">
+                    <div class="avatar-wrapper">
+                      <div class="avatar me-2"><img src="../../../assets/admin/img/avatars/20.png" alt="Avatar"
+                          class="rounded-circle"></div>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <h6 class="m-0"><a href="#" class="text-body">Cristine Easom</a></h6><small
+                        class="text-muted">ceasomw@theguardian.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <h6 class="mb-0 w-px-100 text-warning"><i class="bx bxs-circle fs-tiny me-2"></i>Pending</h6>
+                </td>
+                <td><span class="badge px-2 bg-label-success" text-capitalized="">Delivered</span></td>
+                <td>
+                  <div class="d-flex align-items-center text-nowrap"><img
+                      src="../../../assets/admin/img/icons/payments/mastercard.png" alt="mastercard" class="me-2"
+                      width="16"><span><i class="bx bx-dots-horizontal-rounded"></i>2356</span></div>
+                </td>
+                <td>
+                  <div class="d-flex justify-content-sm-center align-items-sm-center"><button
+                      class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i
+                        class="bx bx-dots-vertical-rounded"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end m-0"><a routerLink="/admin/orderDetails"
+                        class="dropdown-item">View</a><a href="javascript:0;"
+                        class="dropdown-item delete-record">Delete</a></div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td><a routerLink="/admin/orderDetails"><span class="fw-medium">#6624</span></a></td>
+                <td class="sorting_1"><span class="text-nowrap">Apr 17, 2023, 6:43 </span></td>
+                <td>
+                  <div class="d-flex justify-content-start align-items-center order-name text-nowrap">
+                    <div class="avatar-wrapper">
+                      <div class="avatar me-2"><span class="avatar-initial rounded-circle bg-label-primary">FS</span>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <h6 class="m-0"><a href="#" class="text-body">Fayre Screech</a></h6><small
+                        class="text-muted">fscreechs@army.mil</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <h6 class="mb-0 w-px-100 text-danger"><i class="bx bxs-circle fs-tiny me-2"></i>Failed</h6>
+                </td>
+                <td><span class="badge px-2 bg-label-success" text-capitalized="">Delivered</span></td>
+                <td>
+                  <div class="d-flex align-items-center text-nowrap"><img
+                      src="../../../assets/admin/img/icons/payments/mastercard.png" alt="mastercard" class="me-2"
+                      width="16"><span><i class="bx bx-dots-horizontal-rounded"></i>2077</span></div>
+                </td>
+                <td>
+                  <div class="d-flex justify-content-sm-center align-items-sm-center"><button
+                      class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i
+                        class="bx bx-dots-vertical-rounded"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end m-0"><a routerLink="/admin/orderDetails"
+                        class="dropdown-item">View</a><a href="javascript:0;"
+                        class="dropdown-item delete-record">Delete</a></div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td><a routerLink="/admin/orderDetails"><span class="fw-medium">#9305</span></a></td>
+                <td class="sorting_1"><span class="text-nowrap">Apr 17, 2023, 8:05 </span></td>
+                <td>
+                  <div class="d-flex justify-content-start align-items-center order-name text-nowrap">
+                    <div class="avatar-wrapper">
+                      <div class="avatar me-2"><span class="avatar-initial rounded-circle bg-label-dark">PP</span></div>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <h6 class="m-0"><a href="#" class="text-body">Pauline Pfaffe</a></h6><small
+                        class="text-muted">ppfaffe1i@wikia.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <h6 class="mb-0 w-px-100 text-secondary"><i class="bx bxs-circle fs-tiny me-2"></i>Cancelled</h6>
+                </td>
+                <td><span class="badge px-2 bg-label-primary" text-capitalized="">Out for Delivery</span></td>
+                <td>
+                  <div class="d-flex align-items-center text-nowrap"><img
+                      src="../../../assets/admin/img/icons/payments/paypal.png" alt="paypal" class="me-2"
+                      width="16" ><span><i class="bx bx-dots-horizontal-rounded"></i>@gmail.com</span></div>
+                </td>
+                <td>
+                  <div class="d-flex justify-content-sm-center align-items-sm-center"><button
+                      class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i
+                        class="bx bx-dots-vertical-rounded"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end m-0"><a routerLink="/admin/orderDetails"
+                        class="dropdown-item">View</a><a href="javascript:0;"
+                        class="dropdown-item delete-record">Delete</a></div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td><a routerLink="/admin/orderDetails"><span class="fw-medium">#8005</span></a></td>
+                <td class="sorting_1"><span class="text-nowrap">Apr 22, 2023, 3:01 </span></td>
+                <td>
+                  <div class="d-flex justify-content-start align-items-center order-name text-nowrap">
+                    <div class="avatar-wrapper">
+                      <div class="avatar me-2"><img src="../../../assets/admin/img/avatars/17.png" alt="Avatar"
+                          class="rounded-circle"></div>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <h6 class="m-0"><a href="#" class="text-body">Maurits Nealey</a></h6><small
+                        class="text-muted">mnealeyf@japanpost.jp</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <h6 class="mb-0 w-px-100 text-success"><i class="bx bxs-circle fs-tiny me-2"></i>Paid</h6>
+                </td>
+                <td><span class="badge px-2 bg-label-warning" text-capitalized="">Dispatched</span></td>
+                <td>
+                  <div class="d-flex align-items-center text-nowrap"><img
+                      src="../../../assets/admin/img/icons/payments/mastercard.png" alt="mastercard" class="me-2"
+                      width="16"><span><i class="bx bx-dots-horizontal-rounded"></i>1555</span></div>
+                </td>
+                <td>
+                  <div class="d-flex justify-content-sm-center align-items-sm-center"><button
+                      class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i
+                        class="bx bx-dots-vertical-rounded"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end m-0"><a routerLink="/admin/orderDetails"
+                        class="dropdown-item">View</a><a href="javascript:0;"
+                        class="dropdown-item delete-record">Delete</a></div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td><a routerLink="/admin/orderDetails"><span class="fw-medium">#5859</span></a></td>
+                <td class="sorting_1"><span class="text-nowrap">Apr 29, 2023, 9:52 </span></td>
+                <td>
+                  <div class="d-flex justify-content-start align-items-center order-name text-nowrap">
+                    <div class="avatar-wrapper">
+                      <div class="avatar me-2"><span class="avatar-initial rounded-circle bg-label-primary">EV</span>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <h6 class="m-0"><a href="#" class="text-body">Eydie Vogelein</a></h6><small
+                        class="text-muted">evogelein2g@forbes.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <h6 class="mb-0 w-px-100 text-secondary"><i class="bx bxs-circle fs-tiny me-2"></i>Cancelled</h6>
+                </td>
+                <td><span class="badge px-2 bg-label-primary" text-capitalized="">Out for Delivery</span></td>
+                <td>
+                  <div class="d-flex align-items-center text-nowrap"><img
+                      src="../../../assets/admin/img/icons/payments/paypal.png" alt="paypal" class="me-2"
+                      width="16"><span><i class="bx bx-dots-horizontal-rounded"></i>@gmail.com</span></div>
+                </td>
+                <td>
+                  <div class="d-flex justify-content-sm-center align-items-sm-center"><button
+                      class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i
+                        class="bx bx-dots-vertical-rounded"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end m-0"><a routerLink="/admin/orderDetails"
+                        class="dropdown-item">View</a><a href="javascript:0;"
+                        class="dropdown-item delete-record">Delete</a></div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td><a routerLink="/admin/orderDetails"><span class="fw-medium">#8114</span></a></td>
+                <td class="sorting_1"><span class="text-nowrap">Apr 8, 2023, 3:39 </span></td>
+                <td>
+                  <div class="d-flex justify-content-start align-items-center order-name text-nowrap">
+                    <div class="avatar-wrapper">
+                      <div class="avatar me-2"><img src="../../../assets/admin/img/avatars/20.png" alt="Avatar"
+                          class="rounded-circle"></div>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <h6 class="m-0"><a href="#" class="text-body">Ulysses Goodlife</a></h6>
+                      <small class="text-muted">ugoodlife2p@blogger.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <h6 class="mb-0 w-px-100 text-danger"><i class="bx bxs-circle fs-tiny me-2"></i>Failed</h6>
+                </td>
+                <td><span class="badge px-2 bg-label-primary" text-capitalized="">Out for Delivery</span></td>
+                <td>
+                  <div class="d-flex align-items-center text-nowrap"><img
+                      src="../../../assets/admin/img/icons/payments/mastercard.png" alt="mastercard" class="me-2"
+                      width="16"><span><i class="bx bx-dots-horizontal-rounded"></i>4509</span></div>
+                </td>
+                <td>
+                  <div class="d-flex justify-content-sm-center align-items-sm-center"><button
+                      class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i
+                        class="bx bx-dots-vertical-rounded"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end m-0"><a routerLink="/admin/orderDetails"
+                        class="dropdown-item">View</a><a href="javascript:0;"
+                        class="dropdown-item delete-record">Delete</a></div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td><a routerLink="/admin/orderDetails"><span class="fw-medium">#6890</span></a></td>
+                <td class="sorting_1"><span class="text-nowrap">Aug 1, 2022, 7:24 </span></td>
+                <td>
+                  <div class="d-flex justify-content-start align-items-center order-name text-nowrap">
+                    <div class="avatar-wrapper">
+                      <div class="avatar me-2"><img src="../../../assets/admin/img/avatars/9.png" alt="Avatar"
+                          class="rounded-circle"></div>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <h6 class="m-0"><a href="#" class="text-body">Etienne Duke</a></h6><small
+                        class="text-muted">eduke1z@dell.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <h6 class="mb-0 w-px-100 text-secondary"><i class="bx bxs-circle fs-tiny me-2"></i>Cancelled</h6>
+                </td>
+                <td><span class="badge px-2 bg-label-info" text-capitalized="">Ready to Pickup</span></td>
+                <td>
+                  <div class="d-flex align-items-center text-nowrap"><img
+                      src="../../../assets/admin/img/icons/payments/mastercard.png" alt="mastercard" class="me-2"
+                      width="16"><span><i class="bx bx-dots-horizontal-rounded"></i>3507</span></div>
+                </td>
+                <td>
+                  <div class="d-flex justify-content-sm-center align-items-sm-center"><button
+                      class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i
+                        class="bx bx-dots-vertical-rounded"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end m-0"><a routerLink="/admin/orderDetails"
+                        class="dropdown-item">View</a><a href="javascript:0;"
+                        class="dropdown-item delete-record">Delete</a></div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td><a routerLink="/admin/orderDetails"><span class="fw-medium">#5911</span></a></td>
+                <td class="sorting_1"><span class="text-nowrap">Aug 14, 2022, 3:26 </span></td>
+                <td>
+                  <div class="d-flex justify-content-start align-items-center order-name text-nowrap">
+                    <div class="avatar-wrapper">
+                      <div class="avatar me-2"><span class="avatar-initial rounded-circle bg-label-dark">HM</span></div>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <h6 class="m-0"><a href="#" class="text-body">Hilliard Merck</a></h6><small
+                        class="text-muted">hmerck2n@printfriendly.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <h6 class="mb-0 w-px-100 text-secondary"><i class="bx bxs-circle fs-tiny me-2"></i>Cancelled</h6>
+                </td>
+                <td><span class="badge px-2 bg-label-success" text-capitalized="">Delivered</span></td>
+                <td>
+                  <div class="d-flex align-items-center text-nowrap"><img
+                      src="../../../assets/admin/img/icons/payments/paypal.png" alt="paypal" class="me-2"
+                      width="16"><span><i class="bx bx-dots-horizontal-rounded"></i>@gmail.com</span></div>
+                </td>
+                <td>
+                  <div class="d-flex justify-content-sm-center align-items-sm-center"><button
+                      class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i
+                        class="bx bx-dots-vertical-rounded"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end m-0"><a routerLink="/admin/orderDetails"
+                        class="dropdown-item">View</a><a href="javascript:0;"
+                        class="dropdown-item delete-record">Delete</a></div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td><a routerLink="/admin/orderDetails"><span class="fw-medium">#5531</span></a></td>
+                <td class="sorting_1"><span class="text-nowrap">Aug 20, 2022, 3:21 </span></td>
+                <td>
+                  <div class="d-flex justify-content-start align-items-center order-name text-nowrap">
+                    <div class="avatar-wrapper">
+                      <div class="avatar me-2"><img src="../../../assets/admin/img/avatars/13.png" alt="Avatar"
+                          class="rounded-circle"></div>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <h6 class="m-0"><a href="#" class="text-body">Cletus Arias</a></h6><small
+                        class="text-muted">carias21@rambler.ru</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <h6 class="mb-0 w-px-100 text-danger"><i class="bx bxs-circle fs-tiny me-2"></i>Failed</h6>
+                </td>
+                <td><span class="badge px-2 bg-label-warning" text-capitalized="">Dispatched</span></td>
+                <td>
+                  <div class="d-flex align-items-center text-nowrap"><img
+                      src="../../../assets/admin/img/icons/payments/mastercard.png" alt="mastercard" class="me-2"
+                      width="16"><span><i class="bx bx-dots-horizontal-rounded"></i>5851</span></div>
+                </td>
+                <td>
+                  <div class="d-flex justify-content-sm-center align-items-sm-center"><button
+                      class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i
+                        class="bx bx-dots-vertical-rounded"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end m-0"><a routerLink="/admin/orderDetails"
+                        class="dropdown-item">View</a><a href="javascript:0;"
+                        class="dropdown-item delete-record">Delete</a></div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td><a routerLink="/admin/orderDetails"><span class="fw-medium">#8044</span></a></td>
+                <td class="sorting_1"><span class="text-nowrap">Aug 22, 2022, 6:36 </span></td>
+                <td>
+                  <div class="d-flex justify-content-start align-items-center order-name text-nowrap">
+                    <div class="avatar-wrapper">
+                      <div class="avatar me-2"><img src="../../../assets/admin/img/avatars/5.png" alt="Avatar"
+                          class="rounded-circle"></div>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <h6 class="m-0"><a href="#" class="text-body">Nowell Cornford</a></h6><small
+                        class="text-muted">ncornfordn@sogou.com</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <h6 class="mb-0 w-px-100 text-secondary"><i class="bx bxs-circle fs-tiny me-2"></i>Cancelled</h6>
+                </td>
+                <td><span class="badge px-2 bg-label-primary" text-capitalized="">Out for Delivery</span></td>
+                <td>
+                  <div class="d-flex align-items-center text-nowrap"><img
+                      src="../../../assets/admin/img/icons/payments/paypal.png" alt="paypal" class="me-2"
+                      width="16"><span><i class="bx bx-dots-horizontal-rounded"></i>@gmail.com</span></div>
+                </td>
+                <td>
+                  <div class="d-flex justify-content-sm-center align-items-sm-center"><button
+                      class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i
+                        class="bx bx-dots-vertical-rounded"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end m-0"><a routerLink="/admin/orderDetails"
+                        class="dropdown-item">View</a><a href="javascript:0;"
+                        class="dropdown-item delete-record">Delete</a></div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / Content -->
+  <div class="content-backdrop fade"></div>
+</div>
+<!--Content End-->
+<script src="../../../../assets/admin/admin/vendor/js/helpers.js"></script>
+<script src="../../../../assets/admin/admin/vendor/js/template-customizer.js"></script>
+<script src="../../../../assets/admin/admin/js/config.js"></script>
+
+<!--Core JS-->
+<!-- build:js assets/vendor/js/core.js -->
+<script src="../../../../assets/admin/admin/vendor/libs/jquery/jquery.js"></script>
+<script src="../../../../assets/admin/admin/vendor/libs/popper/popper.js"></script>
+<script src="../../../../assets/admin/admin/vendor/js/bootstrap.js"></script>
+<script src="../../../../assets/admin/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="../../../../assets/admin/admin/vendor/libs/hammer/hammer.js"></script>
+<script src="../../../../assets/admin/admin/vendor/libs/i18n/i18n.js"></script>
+<script src="../../../../assets/admin/admin/vendor/libs/typeahead-js/typeahead.js"></script>
+<script src="../../../../assets/admin/admin/vendor/js/menu.js"></script>
+<!-- endbuild -->
+<!-- Vendors JS -->
+<script src="../../../../assets/admin/admin/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+<!-- Main JS -->
+<script src="../../../../assets/admin/admin/js/main.js"></script>
+<!-- Page JS -->
+<script src="../../../../assets/admin/admin/js/app-ecommerce-order-list.js"></script>

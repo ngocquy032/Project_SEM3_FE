@@ -26,6 +26,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSliderModule } from 'ngx-slider-v2';
 import { LoginAdminComponent } from './fe-admin/login-admin/login-admin.component';
 import { CategoryListComponent } from './fe-admin/category-list/category-list.component';
+import { OrderComponent } from './fe-admin/order/order.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { CategoryListComponent } from './fe-admin/category-list/category-list.co
     ProductAddComponent,
     LoginAdminComponent,
     CategoryListComponent,
+    OrderComponent,
 
   ],
   imports: [

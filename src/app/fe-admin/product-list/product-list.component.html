@@ -16,7 +16,14 @@
         <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
           <div class="card-header d-flex border-top rounded-0 flex-wrap py-md-0">
             <div class="me-5 ms-n2 pe-5">
-              <div id="DataTables_Table_0_filter" class="dataTables_filter"><label></label></div>
+              <div class="single-widget learts-mb-40" style="margin-top: 20px;">
+                <div class="widget-search">
+                  <form action="#">
+                    <input type="text" placeholder="Search products...." [(ngModel)]="searchTerm" name="searchTerm">
+                    <button (click)="searchProductByName()"><i class="fas fa-search"></i></button>
+                  </form>
+                </div>
+              </div>
             </div>
             <div class="d-flex justify-content-start justify-content-md-end align-items-baseline">
               <div
@@ -52,7 +59,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="odd" *ngFor="let product of products | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+              <tr class="odd" *ngFor="let product of filteredProducts | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
                 <td class="sorting_1">
                   <div class="d-flex justify-content-start align-items-center product-name">
                     <div class="avatar-wrapper">

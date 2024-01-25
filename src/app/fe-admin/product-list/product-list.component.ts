@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/service/products';
 
 @Component({
@@ -24,24 +24,42 @@ export class ProductListComponent implements OnInit {
   products: any[] = [];
   currentPage: number = 1;
   itemsPerPage: number = 5;
+  filteredProducts: any[] = [];
+  searchTerm: string = '';
   constructor(
     private productService: ProductService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.getProduct()
+    this.getProduct();
   }
 
   getProduct() {
     this.productService.getProduct().subscribe(product => {
+      this.filteredProducts = product;
       this.products = product;
-      console.log('products', this.products);
     });
   }
 
   pageChanged(newPage: number) {
     this.currentPage = newPage;
+  }
+
+
+  searchProductByName() {
+    // Lọc danh sách sản phẩm dựa trên tên
+    this.filteredProducts = this.products.filter(product =>
+      product.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+    // console.log('filteredProducts', this.filteredProducts);
+
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { product: this.searchTerm},
+      queryParamsHandling: 'merge',
+    });
   }
 
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { OrdersService } from 'src/service/order';
 import { UserService } from 'src/service/user';
 
@@ -13,13 +14,16 @@ export class CheckOutComponent {
   selectedMethod: string = 'cash'; // Set default selected method to 'cash'
   cartList: any[] = [];
   dataUser: any = {};
+  items: any[] = [];
+  notes: string = '';
   orderForm: FormGroup;
   discountAmount: number = 0;
-
+  paymentSuccess = false;
   constructor(
     private userService: UserService,
     private formBuilder: FormBuilder,
-    private orderService: OrdersService
+    private orderService: OrdersService,
+    private router: Router
   ) {
     this.orderForm = this.formBuilder.group({
       couponCode: ['']
@@ -36,19 +40,109 @@ export class CheckOutComponent {
 
 
   order(): void {
-    if (this.selectedMethod != 'vnpay') {
-      console.log('thanh toan tien mat');
-      const orderData = {
-        user: this.dataUser,
-        items: this.cartList,
-        totalAmount: this.calculateCartTotal(),
-      };
 
-      console.log('orderData', orderData);
+    if (this.calculateCartTotal() === 0) {
+      alert('There are no products to purchase, please add products to cart');
+      this.router.navigate(['/shop']);
 
     } else {
-      console.log('thanh toan vn pay');
+      if (this.selectedMethod != 'vnpay') {
+
+        console.log('thanh toan tien mat');
+        let totalAmount = 0;
+        for (const item of this.cartList) {
+          totalAmount += item.subtotal;
+        }
+
+        const orderData = {
+          firstName: this.dataUser.firstName,
+          lastName: this.dataUser.lastName,
+          userID: this.dataUser.userId,
+          address: this.dataUser.streetAddress,
+          email: this.dataUser.email,
+          phone: this.dataUser.phone,
+          amount: totalAmount,
+          orderDescription: 'aaaa',
+          orderType: 'Cash',
+          country: this.dataUser.country,
+          town: this.dataUser.town,
+          notes: this.notes,
+          district: this.dataUser.district,
+          orderDetails: this.cartList.map(item => ({
+            productId: item.productId,
+            quantity: item.quantity,
+            price: item.productCart.price,
+            originPrice: item.productCart.price,
+            total: item.subtotal
+          })),
+          totalAmount: this.calculateCartTotal(),
+
+        };
+
+        this.orderService.sendOrder(orderData).subscribe(
+          respone => {
+            console.log('respone', respone);
+            this.router.navigate(['']);
+            alert('thanh toan thanh cong');
+            localStorage.removeItem('cart');
+
+
+          }, error => {
+            console.error('Error adding category', error);
+          });
+
+        console.log(orderData);
+
+      } else {
+        console.log('vnpay');
+
+        let totalAmount = 0;
+        for (const item of this.cartList) {
+          totalAmount += item.subtotal;
+        }
+        const orderData = {
+          firstName: this.dataUser.firstName,
+          lastName: this.dataUser.lastName,
+          userID: this.dataUser.userId,
+          address: this.dataUser.streetAddress,
+          email: this.dataUser.email,
+          phone: this.dataUser.phone,
+          amount: totalAmount * 24000,
+          orderDescription: 'aaaa',
+          orderType: 'Vnpay',
+          country: this.dataUser.country,
+          town: this.dataUser.town,
+          notes: this.notes,
+          district: this.dataUser.district,
+          orderDetails: this.cartList.map(item => ({
+            productId: item.productId,
+            quantity: item.quantity,
+            price: item.productCart.price,
+            originPrice: item.productCart.price,
+            total: item.subtotal
+          })),
+          // totalAmount: this.calculateCartTotal() * 23000,
+
+        };
+        this.orderService.orderVnPay(orderData).subscribe(
+          response => {
+            // Kiểm tra nếu phản hồi không phải là một đối tượng JSON
+            if (typeof response !== 'object' || response === null) {
+              console.log('Response is not a valid JSON:', response);
+              window.location.href = response;
+              localStorage.removeItem('cart');
+            }
+            // Nếu phản hồi là một đối tượng JSON, bạn có thể console.log nó hoặc xử lý theo cách khác tùy thuộc vào nhu cầu của bạn
+            console.log('Parsed JSON:', response);
+          },
+          error => {
+            console.error('Error:', error);
+          }
+        );
+        console.log(orderData);
+      }
     }
+
   }
 
   checkCode(): void {

@@ -56,16 +56,8 @@
           <input type="text" placeholder="House number and street name" [(ngModel)]="dataUser.streetAddress" name="streetAddress">
         </div>
         <div class="col-12 learts-mb-20">
-          <label for="bdAddress2" class="sr-only">Apartment, suite, unit etc. (optional)</label>
-          <input type="text"  placeholder="Apartment, suite, unit etc. (optional) ">
-        </div>
-        <div class="col-12 learts-mb-20">
-          <label for="bdPostcode">Postcode / ZIP (optional)</label>
-          <input type="text" >
-        </div>
-        <div class="col-12 learts-mb-20">
           <label for="bdOrderNote">Order Notes (optional)</label>
-          <textarea  placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+          <textarea  placeholder="Notes about your order, e.g. special notes for delivery." [(ngModel)]="notes" name="notes" ></textarea>
         </div>
       </div>
     </form>
@@ -74,20 +66,6 @@
     </div>
     <div class="row learts-mb-n30">
       <div class="col-lg-6 order-lg-2 learts-mb-30">
-
-        <div class="checkout-coupon">
-          <p class="coupon-toggle">Have a coupon? <a href="#checkout-coupon-form" data-bs-toggle="collapse">Click here
-              to enter your code</a></p>
-          <div id="checkout-coupon-form" class="collapse">
-            <div class="coupon-form">
-              <p>If you have a coupon code, please apply it below.</p>
-              <form [formGroup]="orderForm" class="learts-mb-n10">
-                <input formControlName="couponCode" class="learts-mb-10" type="text" placeholder="Coupon code" >
-                <button (click)="checkCode()" class="btn btn-dark btn-outline-hover-dark learts-mb-10">apply coupon</button>
-              </form>
-            </div>
-          </div>
-        </div>
 
         <div class="order-review">
           <table class="table">
@@ -109,10 +87,6 @@
               <tr class="subtotal">
                 <th>Subtotal</th>
                 <td><span>{{ calculateCartSubtotal() | currency:'USD':'symbol' }}</span></td>
-              </tr>
-              <tr class="subtotal">
-                <th>Sale</th>
-                <td><span>{{ discountAmount | currency:'USD':'symbol' }}</span></td>
               </tr>
               <tr class="total">
                 <th>Total</th>

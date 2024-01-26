@@ -1,0 +1,103 @@
+<!--Content Start-->
+<div class="content-wrapper">
+  <!-- Content -->
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="py-3 mb-4">
+      <span class="text-muted fw-light">eCommerce /</span> Order List
+    </h4>
+
+    <!-- Order List Table -->
+    <div class="card">
+      <div class="card-datatable table-responsive">
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+          <div class="card-header d-flex flex-column flex-md-row align-items-start align-items-md-center">
+            <div class="ms-n2">
+              <div class="single-widget learts-mb-40" style="margin-top: 20px;">
+                <div class="widget-search">
+                  <form action="#">
+                    <input type="text" placeholder="Search Category....">
+                    <button><i class="fas fa-search"></i></button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <table class="datatables-order table border-top dataTable no-footer dtr-column" id="DataTables_Table_0"
+            aria-describedby="DataTables_Table_0_info" style="width: 1387px;">
+            <thead>
+              <tr>
+                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                  style="width: 64px;" aria-label="order: activate to sort column ascending">order</th>
+
+                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                  style="width: 296px;" aria-label="customers: activate to sort column ascending">customers</th>
+                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                  style="width: 121px;" aria-label="payment: activate to sort column ascending">payment</th>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                  style="width: 156px;" aria-label="status: activate to sort column ascending">status</th>
+
+                <th rowspan="1" colspan="1" style="width: 79px;" aria-label="Actions">Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="odd" *ngFor="let category of listOrder" >
+                <td><a routerLink="/admin/orderDetails"><span class="fw-medium">#{{ category.orderId }}</span></a></td>
+                <!-- <td class="sorting_1"><span class="text-nowrap">Apr 15, 2023, 10:21</span></td> -->
+                <td>
+                  <div class="d-flex justify-content-start align-items-center order-name text-nowrap">
+                    <div class="avatar-wrapper">
+                    </div>
+                    <div class="d-flex flex-column">
+                      <h6 class="m-0"><a href="#" class="text-body">{{ category.lastName }}</a></h6><small
+                        class="text-muted">{{ category.email }}</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <h6 class="mb-0 w-px-100 "><i class="bx bxs-circle fs-tiny me-2"></i>{{ category.paymentType }}</h6>
+                </td>
+                <td><span class="badge px-2 bg-label-warning" text-capitalized="">{{ category.orderStatus }}</span></td>
+
+                <td>
+                  <div class="d-flex justify-content-sm-center align-items-sm-center"><button
+                      class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i
+                        class="bx bx-dots-vertical-rounded"></i></button>
+                    <div class="dropdown-menu dropdown-menu-end m-0"><a routerLink="/admin/orderDetails"
+                        class="dropdown-item">View</a><a href="javascript:0;"
+                        class="dropdown-item delete-record">Delete</a></div>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / Content -->
+  <div class="content-backdrop fade"></div>
+</div>
+<!--Content End-->
+<script src="../../../assets/admin/admin/vendor/js/helpers.js"></script>
+<script src="../../../assets/admin/admin/vendor/js/template-customizer.js"></script>
+<script src="../../../assets/admin/admin/js/config.js"></script>
+
+<!--Core JS-->
+<!-- build:js assets/vendor/js/core.js -->
+<script src="../../../assets/admin/admin/vendor/libs/jquery/jquery.js"></script>
+<script src="../../../assets/admin/admin/vendor/libs/popper/popper.js"></script>
+<script src="../../../assets/admin/admin/vendor/js/bootstrap.js"></script>
+<script src="../../../assets/admin/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="../../../assets/admin/admin/vendor/libs/hammer/hammer.js"></script>
+<script src="../../../assets/admin/admin/vendor/libs/i18n/i18n.js"></script>
+<script src="../../../assets/admin/admin/vendor/libs/typeahead-js/typeahead.js"></script>
+<script src="../../../assets/admin/admin/vendor/js/menu.js"></script>
+<!-- endbuild -->
+<!-- Vendors JS -->
+<script src="../../../assets/admin/admin/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+<!-- Main JS -->
+<script src="../../../assets/admin/admin/js/main.js"></script>
+<!-- Page JS -->
+<script src="../../../assets/admin/admin/js/app-ecommerce-order-list.js"></script>

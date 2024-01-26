@@ -82,7 +82,13 @@ export class ShoppingCartComponent implements OnInit {
   checkOut(){
 
     if(this.authService.isLoggedIn()){
-      this.router.navigate(['/checkOut'])
+      if(this.total === 0){
+        alert('There are no products to purchase, please add products to cart');
+        this.router.navigate(['/shop'])
+      }else{
+
+        this.router.navigate(['/checkOut'])
+      }
     }else{
       alert('You are not logged in, please log in to continue');
       this.router.navigate(['/login']);

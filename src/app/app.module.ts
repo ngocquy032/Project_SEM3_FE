@@ -27,6 +27,7 @@ import { NgxSliderModule } from 'ngx-slider-v2';
 import { LoginAdminComponent } from './fe-admin/login-admin/login-admin.component';
 import { CategoryListComponent } from './fe-admin/category-list/category-list.component';
 import { OrderComponent } from './fe-admin/order/order.component';
+import { UserListComponent } from './fe-admin/user-list/user-list.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { OrderComponent } from './fe-admin/order/order.component';
     LoginAdminComponent,
     CategoryListComponent,
     OrderComponent,
+    UserListComponent,
 
   ],
   imports: [

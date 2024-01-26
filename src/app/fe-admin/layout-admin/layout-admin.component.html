@@ -393,12 +393,12 @@ c0 27 -4 49 -8 49 -5 0 -17 -18 -27 -41z" />
               </li>
 
 
-              <li class="menu-item" [class.open]="isOrderMenuOpen">
+              <li class="menu-item active open" [class.open]="isOrderMenuOpen">
                 <a href="javascript:void(0);" class="menu-link menu-toggle" (click)="toggleOrderMenu()">
                   <div class="text-truncate" data-i18n="Orders">Orders</div>
                 </a>
-                <ul class="menu-sub" *ngIf="isOrderMenuOpen">
-                  <li class="menu-item">
+                <ul class="menu-sub" *ngIf="isOrderMenuOpen" >
+                  <li class="menu-item" routerLinkActive="active">
                     <a routerLink="/admin/order" class="menu-link">
                       <div class="text-truncate" data-i18n="Order List">Order List</div>
                     </a>
@@ -417,6 +417,11 @@ c0 27 -4 49 -8 49 -5 0 -17 -18 -27 -41z" />
                   </li>
                 </ul>
               </li>
+              <li class="menu-item" routerLinkActive="active" >
+                <a routerLink="/admin/userList" class="menu-link">
+                  <div class="text-truncate" data-i18n="Customers">User</div>
+                </a>
+                </li>
               <li class="menu-item">
                 <a href="javascript:void(0);" class="menu-link">
                   <div class="text-truncate" data-i18n="Feed Back">Feed Back</div>

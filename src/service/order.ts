@@ -7,7 +7,11 @@ import { Observable, catchError, of } from "rxjs";
 }) export class OrdersService{
   constructor(private http: HttpClient){}
   private Url = 'https://arts-be1.azurewebsites.net/api/Orders';
-  private UrlVnPay = 'https://arts-be1.azurewebsites.net/api/VnpayPayment'
+
+  // private Url = 'https://localhost:7055/api/Orders';
+  // private UrlVnPay = 'https://arts-be1.azurewebsites.net/api/VnpayPayment';
+  private UrlVnPay = 'https://localhost:7055/api/VnpayPayment';
+
   sendOrder(orderData: any): Observable<any> {
     return this.http.post<any>(this.Url, orderData);
   }

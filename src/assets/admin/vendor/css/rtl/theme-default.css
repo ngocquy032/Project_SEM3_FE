@@ -1822,7 +1822,7 @@ html:not(.layout-menu-collapsed) .bg-menu-theme .menu-inner .menu-item .menu-lin
 }
 
 .bg-menu-theme .menu-inner>.menu-item.active:before {
-  background: #696cff
+  /* background: #696cff */
 }
 
 .bg-menu-theme .menu-sub>.menu-item>.menu-link:before {

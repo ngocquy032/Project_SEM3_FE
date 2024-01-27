@@ -26,22 +26,22 @@
             aria-describedby="DataTables_Table_0_info" style="width: 1387px;">
             <thead>
               <tr>
-                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                  style="width: 64px;" aria-label="order: activate to sort column ascending">order</th>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 64px;"
+                  aria-label="order: activate to sort column ascending">order</th>
 
-                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                  style="width: 296px;" aria-label="customers: activate to sort column ascending">customers</th>
-                <th  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                  style="width: 121px;" aria-label="payment: activate to sort column ascending">payment</th>
-                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                  style="width: 156px;" aria-label="status: activate to sort column ascending">status</th>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 296px;"
+                  aria-label="customers: activate to sort column ascending">customers</th>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 121px;"
+                  aria-label="payment: activate to sort column ascending">payment</th>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 156px;"
+                  aria-label="status: activate to sort column ascending">status</th>
 
                 <th rowspan="1" colspan="1" style="width: 79px;" aria-label="Actions">Actions
                 </th>
               </tr>
             </thead>
             <tbody>
-              <tr class="odd" *ngFor="let category of listOrder" >
+              <tr class="odd" *ngFor="let category of listOrder">
                 <td><a routerLink="/admin/orderDetails"><span class="fw-medium">#{{ category.orderId }}</span></a></td>
                 <!-- <td class="sorting_1"><span class="text-nowrap">Apr 15, 2023, 10:21</span></td> -->
                 <td>
@@ -63,9 +63,12 @@
                   <div class="d-flex justify-content-sm-center align-items-sm-center"><button
                       class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i
                         class="bx bx-dots-vertical-rounded"></i></button>
-                    <div class="dropdown-menu dropdown-menu-end m-0"><a routerLink="/admin/orderDetails"
-                        class="dropdown-item">View</a><a href="javascript:0;"
-                        class="dropdown-item delete-record">Delete</a></div>
+                    <div class="dropdown-menu dropdown-menu-end m-0">
+                      <a routerLink="/admin/orderDetails" class="dropdown-item">View
+                      </a>
+                      <a href="javascript:0;" class="dropdown-item delete-record">Update
+                      </a>
+                    </div>
                   </div>
                 </td>
               </tr>

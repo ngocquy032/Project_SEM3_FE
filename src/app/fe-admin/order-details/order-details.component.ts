@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-order',
-  templateUrl: './order.component.html',
+  selector: 'app-order-details',
+  templateUrl: './order-details.component.html',
   styleUrls: [
-    './order.component.css',
+    './order-details.component.css',
     '../../../assets/admin/vendor/css/rtl/core.css',
     '../../../assets/admin/vendor/css/rtl/theme-default.css',
     '../../../assets/admin/vendor/fonts/boxicons.css',
@@ -20,8 +20,8 @@ import { Component } from '@angular/core';
     '../../../assets/admin/vendor/libs/sweetalert2/sweetalert2.css',
     '../../../assets/admin/vendor/libs/@form-validation/umd/styles/index.min.css',
     '../../../assets/admin/vendor/libs/select2/select2.css'
-]
+  ]
 })
-export class OrderComponent {
+export class OrderDetailsComponent {
 
 }

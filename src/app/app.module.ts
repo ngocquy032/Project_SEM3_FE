@@ -27,7 +27,7 @@ import { NgxSliderModule } from 'ngx-slider-v2';
 import { LoginAdminComponent } from './fe-admin/login-admin/login-admin.component';
 import { CategoryListComponent } from './fe-admin/category-list/category-list.component';
 import { OrderComponent } from './fe-admin/order/order.component';
-
+import { OrderDetailsComponent } from './fe-admin/order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +53,7 @@ import { OrderComponent } from './fe-admin/order/order.component';
     LoginAdminComponent,
     CategoryListComponent,
     OrderComponent,
+    OrderDetailsComponent,
 
   ],
   imports: [

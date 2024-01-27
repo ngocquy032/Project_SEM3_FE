@@ -373,7 +373,7 @@ c0 27 -4 49 -8 49 -5 0 -17 -18 -27 -41z" />
                 <a href="javascript:void(0);" class="menu-link menu-toggle" (click)="toggleProductsMenu()">
                   <div class="text-truncate" data-i18n="Products">Products</div>
                 </a>
-                <ul class="menu-sub" *ngIf="isProductsMenuOpen">
+                <ul class="menu-sub" >
                   <li class="menu-item" routerLinkActive="active">
                     <a routerLink="/admin/productList" class="menu-link">
                       <div class="text-truncate" data-i18n="Product List">Product List</div>
@@ -397,7 +397,7 @@ c0 27 -4 49 -8 49 -5 0 -17 -18 -27 -41z" />
                 <a href="javascript:void(0);" class="menu-link menu-toggle" (click)="toggleOrderMenu()">
                   <div class="text-truncate" data-i18n="Orders">Orders</div>
                 </a>
-                <ul class="menu-sub" *ngIf="isOrderMenuOpen">
+                <ul class="menu-sub" >
                   <li class="menu-item">
                     <a routerLink="/admin/order" class="menu-link">
                       <div class="text-truncate" data-i18n="Order List">Order List</div>
@@ -409,18 +409,13 @@ c0 27 -4 49 -8 49 -5 0 -17 -18 -27 -41z" />
                 <a href="javascript:void(0);" class="menu-link menu-toggle" (click)="toggleCustomersMenu()">
                   <div class="text-truncate" data-i18n="Customers">Customer</div>
                 </a>
-                <ul class="menu-sub" *ngIf="isCustomersMenuOpen">
+                <ul class="menu-sub" >
                   <li class="menu-item">
                     <a href="#" class="menu-link">
                       <div class="text-truncate" data-i18n="Customers Details">Customers Details</div>
                     </a>
                   </li>
                 </ul>
-              </li>
-              <li class="menu-item">
-                <a href="javascript:void(0);" class="menu-link">
-                  <div class="text-truncate" data-i18n="Feed Back">Feed Back</div>
-                </a>
               </li>
             </ul>
           </li>
@@ -552,9 +547,9 @@ c0 27 -4 49 -8 49 -5 0 -17 -18 -27 -41z" />
 
   <!-- Main JS -->
 
-  <script src="../../../assets/admin/js/main.js"></script>
+  <script src="/src/assets/admin/js/main.js"></script>
 
   <!-- Page JS -->
-  <script src="../../../assets/admin/js/app-ecommerce-dashboard.js"></script>
+  <script src="/src/assets/admin/js/app-ecommerce-dashboard.js"></script>
 
 </body>

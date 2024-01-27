@@ -22,6 +22,7 @@ import { AuthService } from 'src/service/auth.service';
 import { AuthAdminService } from 'src/service/authAdmin.service';
 import { CategoryListComponent } from './fe-admin/category-list/category-list.component';
 import { OrderComponent } from './fe-admin/order/order.component';
+import { OrderDetailsComponent } from './fe-admin/order-details/order-details.component';
 const routes: Routes = [
   {
     path: '', component: MasterLayoutComponent,
@@ -84,6 +85,9 @@ const routes: Routes = [
       },
       {
         path: 'order', component: OrderComponent
+      },
+      {
+        path: 'orderDetails', component: OrderDetailsComponent
       }
     ]
   },

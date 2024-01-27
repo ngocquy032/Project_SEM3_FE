@@ -28,7 +28,7 @@ import { LoginAdminComponent } from './fe-admin/login-admin/login-admin.componen
 import { CategoryListComponent } from './fe-admin/category-list/category-list.component';
 import { UpdateCategoryComponent } from './fe-admin/update-category/update-category.component';
 import { OrderComponent } from './fe-admin/order/order.component';
-
+import { OrderDetailsComponent } from './fe-admin/order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +55,7 @@ import { OrderComponent } from './fe-admin/order/order.component';
     CategoryListComponent,
     UpdateCategoryComponent,
     OrderComponent,
+    OrderDetailsComponent,
 
   ],
   imports: [

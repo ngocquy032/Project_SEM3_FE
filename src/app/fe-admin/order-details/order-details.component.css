@@ -1,0 +1,9 @@
+.col-12.col-lg-8 {
+  flex: 0 0 66.66667%;
+  background-color: #f8f9fa;
+}
+
+.col-12.col-lg-4 {
+  flex: 0 0 33.33333%;
+  background-color: #f8f9fa;
+}

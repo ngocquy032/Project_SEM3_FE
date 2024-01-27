@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { OrdersService } from 'src/service/order';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-order',
-  templateUrl: './order.component.html',
+  selector: 'app-order-details',
+  templateUrl: './order-details.component.html',
   styleUrls: [
-    './order.component.css',
+    './order-details.component.css',
     '../../../assets/admin/vendor/css/rtl/core.css',
     '../../../assets/admin/vendor/css/rtl/theme-default.css',
     '../../../assets/admin/vendor/fonts/boxicons.css',
@@ -21,24 +20,8 @@ import { OrdersService } from 'src/service/order';
     '../../../assets/admin/vendor/libs/sweetalert2/sweetalert2.css',
     '../../../assets/admin/vendor/libs/@form-validation/umd/styles/index.min.css',
     '../../../assets/admin/vendor/libs/select2/select2.css'
-]
+  ]
 })
-export class OrderComponent implements OnInit {
-  listOrder: any[] = []
-  constructor(
-    private orderService: OrdersService
-  ){}
-
-  ngOnInit(): void {
-    this.getOrder();
-  }
-
-  getOrder(){
-    this.orderService.getOrder().subscribe( order =>{
-      this.listOrder = order
-    })
-  }
-
-
+export class OrderDetailsComponent {
 
 }

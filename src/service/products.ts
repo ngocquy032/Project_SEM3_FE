@@ -7,18 +7,23 @@ import { Observable } from "rxjs";
   providedIn: 'root'
 }) export class ProductService {
   constructor(private http: HttpClient) { }
-  private Url = 'https://arts-be1.azurewebsites.net/api/Products';
-  private urlAdd = 'https://localhost:7055/api/Products'
+  private Url = 'https://arts-be1.azurewebsites.net/api/Products/productDTO';
+  private urlProduct = 'https://arts-be1.azurewebsites.net/api/Products'
 
   getProduct(): Observable<any[]> {
-    return this.http.get<any[]>(this.Url);
+    return this.http.get<any[]>(this.urlProduct);
   }
   getProductById(productId: string): Observable<any> {
-    const productUrl = `${this.Url}/${productId}`;
+    const productUrl = `${this.urlProduct}/${productId}`;
     return this.http.get<any>(productUrl);
   }
   addProduct(productData: any): Observable<any> {
-    return this.http.post<any[]>(this.urlAdd, productData);
+    return this.http.post<any[]>(this.urlProduct, productData);
+  }
+
+  deleteProduct(productId: number): Observable<void> {
+    const url = `${this.urlProduct}/${productId}`; // Thay đường dẫn API xóa category
+    return this.http.delete<void>(url);
   }
 
 }

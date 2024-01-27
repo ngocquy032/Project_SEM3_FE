@@ -38,7 +38,7 @@ export class ProductListComponent implements OnInit {
 
   getProduct() {
     this.productService.getProduct().subscribe(product => {
-      this.filteredProducts = product;
+      this.filteredProducts = product.reverse();
       this.products = product;
     });
   }
@@ -46,7 +46,21 @@ export class ProductListComponent implements OnInit {
   pageChanged(newPage: number) {
     this.currentPage = newPage;
   }
-
+  deleteProduct(productId: number) {
+    if (confirm('Are you sure you want to delete')) {
+      this.productService.deleteProduct(productId).subscribe(
+        () => {
+          // Xóa thành công, làm những gì đó nếu cần
+          console.log('Product deleted successfully');
+          this.getProduct();
+        },
+        (error) => {
+          // Xử lý lỗi nếu có
+          console.error('Error deleting category:', error);
+        }
+      );
+    }
+  }
 
   searchProductByName() {
     // Lọc danh sách sản phẩm dựa trên tên

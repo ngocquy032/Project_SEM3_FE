@@ -1,0 +1,189 @@
+<!--Content Start-->
+<div class="content-wrapper">
+  <!-- Content -->
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <!-- Users List Table -->
+    <div class="card">
+      <div class="card-datatable table-responsive">
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+          <div class="row mx-2">
+
+            <div class="col-md-10">
+
+
+
+              <div class="dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-end flex-md-row flex-column mb-3 mb-md-0">
+                <div class="me-5 ms-n2 pe-5">
+                  <div class="single-widget learts-mb-40" style="margin-top: 20px;">
+                    <!-- <div class="widget-search">
+                      <form action="#">
+                        <input type="text" placeholder="Search products...." name="searchTerm">
+                        <button ><i class="fas fa-search"></i></button>
+                      </form>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="dt-buttons"> <button class="dt-button add-new btn btn-primary" tabindex="0"
+                    aria-controls="DataTables_Table_0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasAddUser"><span><i class="bx bx-plus me-0 me-sm-1"></i><span
+                        class="d-none d-sm-inline-block">Add New User</span></span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <table class="datatables-users table border-top dataTable no-footer dtr-column" id="DataTables_Table_0"
+            aria-describedby="DataTables_Table_0_info" style="width: 1387px;">
+            <thead>
+              <tr>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 102px;"
+                  aria-label="User: activate to sort column ascending" aria-sort="descending">UserId
+                </th>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;"
+                  aria-label="User: activate to sort column ascending" aria-sort="descending">User
+                </th>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 352px;"
+                  aria-label="User: activate to sort column ascending" aria-sort="descending">Email
+                </th>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 200px;"
+                  aria-label="Role: activate to sort column ascending">Level</th>
+                <th rowspan="1" colspan="1" style="width: 170px;" aria-label="Actions">Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="odd" *ngFor="let user of userList">
+                <td class="sorting_1">
+                  <div class="d-flex justify-content-start align-items-center user-name">
+                    <div class="d-flex flex-column">
+                      <a class="text-body text-truncate">
+                        <span class="fw-medium">#{{ user.userId }}</span>
+                      </a>
+                    </div>
+                  </div>
+                </td>
+                <td class="sorting_1">
+                  <div class="d-flex justify-content-start align-items-center user-name">
+                    <div class="d-flex flex-column">
+                      <a class="text-body text-truncate">
+                        <span class="fw-medium">{{ user.name }}</span>
+                      </a>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span class="text-truncate d-flex align-items-center">
+                    <span class="badge badge-center rounded-pill bg-label-primary w-px-30 h-px-30 me-2">
+                    </span>{{ user.email }}</span>
+                </td>
+                <td>{{ user.level }}</td>
+                <td>
+                  <div class="d-inline-block text-nowrap">
+                    <button class="btn btn-sm btn-icon">
+                      <i class="bx bx-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                      <i class="bx bx-dots-vertical-rounded me-2"> </i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end m-0">
+                      <a class="dropdown-item">View</a>
+                      <a (click)="deteteUser(user.userId)" class="dropdown-item">Delete</a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Offcanvas to add new user -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasAddUser" aria-labelledby="offcanvasAddUserLabel">
+        <div class="offcanvas-header">
+          <h5 id="offcanvasAddUserLabel" class="offcanvas-title">Add User</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body mx-0 flex-grow-0">
+          <form class="add-new-user pt-0 fv-plugins-bootstrap5 fv-plugins-framework" id="addNewUserForm"
+            onsubmit="return false" novalidate="novalidate">
+            <div class="mb-3 fv-plugins-icon-container">
+              <label class="form-label" for="add-user-fullname">Full Name</label>
+              <input type="text" class="form-control" id="add-user-fullname" placeholder="John Doe" name="userFullname"
+                aria-label="John Doe">
+              <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+            </div>
+            <div class="mb-3 fv-plugins-icon-container">
+              <label class="form-label" for="add-user-email">Email</label>
+              <input type="text" id="add-user-email" class="form-control" placeholder="john.doe@example.com"
+                aria-label="john.doe@example.com" name="userEmail">
+              <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="add-user-contact">Contact</label>
+              <input type="text" id="add-user-contact" class="form-control phone-mask" placeholder="+1 (609) 988-44-11"
+                aria-label="john.doe@example.com" name="userContact">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="add-user-company">Company</label>
+              <input type="text" id="add-user-company" class="form-control" placeholder="Web Developer"
+                aria-label="jdoe1" name="companyName">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="user-role">User Role</label>
+              <select id="user-role" class="form-select">
+                <option value="subscriber">Subscriber</option>
+                <option value="editor">Editor</option>
+                <option value="maintainer">Maintainer</option>
+                <option value="author">Author</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+            <div class="mb-4">
+              <label class="form-label" for="user-plan">Select Plan</label>
+              <select id="user-plan" class="form-select">
+                <option value="basic">Basic</option>
+                <option value="enterprise">Enterprise</option>
+                <option value="company">Company</option>
+                <option value="team">Team</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Submit</button>
+            <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="offcanvas">Cancel</button>
+            <input type="hidden">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / Content -->
+  <div class="content-backdrop fade"></div>
+</div>
+<!--Content end-->
+
+
+<script src="../../../../assets/admin/admin/vendor/js/helpers.js"></script>
+<script src="../../../../assets/admin/admin/vendor/js/template-customizer.js"></script>
+<script src="../../../../assets/admin/admin/js/config.js"></script>
+
+<!--Core JS-->
+<!-- build:js assets/vendor/js/core.js -->
+<script src="../../../../assets/admin/admin/vendor/libs/jquery/jquery.js"></script>
+<script src="../../../../assets/admin/admin/vendor/libs/popper/popper.js"></script>
+<script src="../../../../assets/admin/admin/vendor/js/bootstrap.js"></script>
+<script src="../../../../assets/admin/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="../../../../assets/admin/admin/vendor/libs/hammer/hammer.js"></script>
+<script src="../../../../assets/admin/admin/vendor/libs/i18n/i18n.js"></script>
+<script src="../../../../assets/admin/admin/vendor/libs/typeahead-js/typeahead.js"></script>
+<script src="../../../../assets/admin/admin/vendor/js/menu.js"></script>
+<!-- endbuild -->
+<!-- Vendors JS -->
+<script src="../../../assets/admin/vendor/libs/moment/moment.js"></script>
+<script src="../../../assets/admin/admin/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+<script src="../../../assets/admin/vendor/libs/select2/select2.css"></script>
+<script src="../../../assets/admin/vendor/libs/@form-validation/umd/bundle/popular.min.js"></script>
+<script src="../../../assets/admin/vendor/libs/@form-validation/umd/plugin-auto-focus/index.min.js"></script>
+<script src="../../../assets/admin/vendor/libs/@form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+<script src="../../../assets/admin/vendor/libs/cleavejs/cleave.js"></script>
+<script src="../../../assets/admin/vendor/libs/cleavejs/cleave-phone.js"></script>
+<!-- Main JS -->
+<script src="../../../assets/admin/js/main.js"></script>
+<!-- Page JS -->
+<script src="../../../assets/admin/js/app-user-list.js"></script>

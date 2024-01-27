@@ -31,4 +31,9 @@ import { LoginModel, LoginParam, RegisterModel } from "src/app/fe-user/users/log
     return this.http.get(this.Url);
   }
 
+  deleteUser(userId: number): Observable<void> {
+    const url = `${this.Url}/${userId}`; // Thay đường dẫn API xóa category
+    return this.http.delete<void>(url);
+  }
+
 }

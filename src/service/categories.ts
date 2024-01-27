@@ -20,19 +20,17 @@ import { CategoryModel } from "src/app/fe-admin/category-list/category.model";
   }
 
   deleteCategory(categoryId: number): Observable<void> {
-    const url = `${this.UrlCategories}/${categoryId}`; // Thay đường dẫn API xóa category
+    const url = `${this.UrlCategories}/${categoryId}`;
     return this.http.delete<void>(url);
   }
 
-  updateCategory(categoryId: number, categoryData: CategoryModel): Observable<CategoryModel> {
-    const url = `${this.UrlCategories}/${categoryId}`;
-    return this.http.put<CategoryModel>(url, categoryData);
+  updateCategory(categoryItem: CategoryModel): Observable<CategoryModel> {
+    const url = `${this.UrlCategories}/${categoryItem.categoryId}`;
+    return this.http.put<CategoryModel>(url, categoryItem);
   }
 
   getCategoryById(categoryId: number): Observable<CategoryModel> {
     const url = `${this.UrlCategories}/${categoryId}`;
     return this.http.get<CategoryModel>(url);
   }
-
-
 }

@@ -41,11 +41,14 @@
             id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" style="width: 1211px;">
             <thead>
               <tr>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 37px;"
+                  aria-label="product: activate to sort column descending" aria-sort="ascending">
+                  productId</th>
                 <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 387px;"
                   aria-label="product: activate to sort column descending" aria-sort="ascending">
                   product</th>
-                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 119px;"
-                  aria-label="category: activate to sort column ascending">category</th>
+                <!-- <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 119px;"
+                  aria-label="category: activate to sort column ascending">category</th> -->
                 <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 41px;"
                   aria-label="sku: activate to sort column ascending">sku</th>
                 <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 69px;"
@@ -60,20 +63,22 @@
             <tbody>
               <tr class="odd"
                 *ngFor="let product of filteredProducts | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+                  <td>#{{ product.productId }}</td>
                 <td class="sorting_1">
                   <div class="d-flex justify-content-start align-items-center product-name">
                     <div class="avatar-wrapper">
-                      <div class="avatar avatar me-2 rounded-2 bg-label-secondary"><img
-                          src="../../../assets/images/imgProject/{{ product.path }}" alt="Product-9" class="rounded-2">
-                      </div>
+                      <!-- <div class="avatar avatar me-2 rounded-2 bg-label-secondary"><img
+                          src="../../../assets/images/imgProject/{{ product.path }}" alt="" class="rounded-2">
+                      </div> -->
                     </div>
                     <div class="d-flex flex-column">
                       <h6 class="text-body text-nowrap mb-0">{{ product.title }}</h6>
                     </div>
                   </div>
                 </td>
-                <td>
-                  {{ product.categoryName }}</td>
+                <!-- <td>
+                  {{ product.categoryName }}
+                </td> -->
                 <td><span>{{ product.sku }}</span></td>
                 <td><span>{{ product.price | currency:'USD':'symbol' }}</span></td>
                 <td><span>{{ product.quantity }}</span></td>
@@ -84,7 +89,7 @@
                       data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded me-2"></i></button>
                     <div class="dropdown-menu dropdown-menu-end m-0">
                       <a href="javascript:0;" class="dropdown-item">View   </a>
-                      <a href="javascript:0;" class="dropdown-item">Delete</a>
+                      <a (click)="deleteProduct(product.productId)" class="dropdown-item">Delete</a>
                     </div>
                   </div>
                 </td>

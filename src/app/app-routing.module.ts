@@ -24,6 +24,7 @@ import { CategoryListComponent } from './fe-admin/category-list/category-list.co
 import { UpdateCategoryComponent } from './fe-admin/update-category/update-category.component';
 import { OrderComponent } from './fe-admin/order/order.component';
 import { OrderDetailsComponent } from './fe-admin/order-details/order-details.component';
+import { UserListComponent } from './fe-admin/user-list/user-list.component';
 const routes: Routes = [
   {
     path: '', component: MasterLayoutComponent,
@@ -92,6 +93,10 @@ const routes: Routes = [
       },
       {
         path: 'orderDetails', component: OrderDetailsComponent
+      },
+      {
+        path: 'userList', component: UserListComponent
+
       }
 
     ]

@@ -9,31 +9,46 @@ import { CategorierService } from 'src/service/categories';
   styleUrls: ['./update-category.component.css']
 })
 export class UpdateCategoryComponent implements OnInit {
-  categoryId: number | undefined;
-  categoryName: string | undefined;
+  categoryId!: number;
+  categoryName: string = '';
 
-
-   constructor(
+  constructor(
     private route: ActivatedRoute,
-     private categorierService: CategorierService,
-     private router: Router
-    ) { }
+    private categorierService: CategorierService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.categoryId = +params['categoryId'];
-      // this.loadCategory(this.categoryId);
-    })
-
+      this.categoryId = +params['id'];
+      this.getCategoryDetails(this.categoryId);
+    });
   }
 
-  // loadCategory(categoryId: number): void {
-  //   this.categorierService.getCategoryById(categoryId).subscribe(category => {
-  //     this.category = category;
-  //   });
-  // }
+  getCategoryDetails(categoryId: number): void {
+    this.categorierService.getCategoryById(categoryId).subscribe((data: any) => {
+      this.categoryName = data.nameCategory;
+    });
+  }
+  Cancle(){
+    this.router.navigate(['/admin/categoryList']);
+  }
+
   Update(): void {
 
-  }
+    const data: CategoryModel = {
+      categoryId: this.categoryId,
+      nameCategory: this.categoryName
+    };
+    console.log('data', data);
 
+    if(confirm('Are you sure you want to update ')){
+      this.categorierService.updateCategory(data).subscribe(
+        (datasuscce: any)=>{
+          console.log('Category updated successfully.', datasuscce);
+          this.router.navigate(['/admin/categoryList']);
+        }
+      )
+    }
+  }
 }

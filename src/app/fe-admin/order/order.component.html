@@ -29,10 +29,12 @@
                 <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 64px;"
                   aria-label="order: activate to sort column ascending">order</th>
 
-                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 296px;"
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 200px;"
                   aria-label="customers: activate to sort column ascending">customers</th>
                 <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 121px;"
                   aria-label="payment: activate to sort column ascending">payment</th>
+                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 121px;"
+                  aria-label="payment: activate to sort column ascending">total</th>
                 <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 156px;"
                   aria-label="status: activate to sort column ascending">status</th>
 
@@ -56,6 +58,9 @@
                 </td>
                 <td>
                   <h6 class="mb-0 w-px-100 "><i class="bx bxs-circle fs-tiny me-2"></i>{{ category.paymentType }}</h6>
+                </td>
+                <td>
+                  <h6 class="mb-0 w-px-100 ">{{ category.total }}</h6>
                 </td>
                 <td><span class="badge px-2 bg-label-warning" text-capitalized="">{{ category.orderStatus }}</span></td>
 

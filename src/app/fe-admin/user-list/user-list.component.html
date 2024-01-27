@@ -105,46 +105,31 @@
           <form class="add-new-user pt-0 fv-plugins-bootstrap5 fv-plugins-framework" id="addNewUserForm"
             onsubmit="return false" novalidate="novalidate">
             <div class="mb-3 fv-plugins-icon-container">
-              <label class="form-label" for="add-user-fullname">Full Name</label>
-              <input type="text" class="form-control" id="add-user-fullname" placeholder="John Doe" name="userFullname"
-                aria-label="John Doe">
+              <label class="form-label" for="add-user-fullname">Name</label>
+              <input type="text" class="form-control" placeholder="John Doe" >
               <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
             </div>
             <div class="mb-3 fv-plugins-icon-container">
               <label class="form-label" for="add-user-email">Email</label>
-              <input type="text" id="add-user-email" class="form-control" placeholder="john.doe@example.com"
-                aria-label="john.doe@example.com" name="userEmail">
+              <input type="text"  class="form-control" placeholder="john.doe@example.com">
               <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
             </div>
             <div class="mb-3">
-              <label class="form-label" for="add-user-contact">Contact</label>
-              <input type="text" id="add-user-contact" class="form-control phone-mask" placeholder="+1 (609) 988-44-11"
-                aria-label="john.doe@example.com" name="userContact">
+              <label class="form-label" for="add-user-contact">Phone</label>
+              <input type="text"  class="form-control phone-mask" placeholder="+1 (609) 988-44-11">
             </div>
             <div class="mb-3">
-              <label class="form-label" for="add-user-company">Company</label>
-              <input type="text" id="add-user-company" class="form-control" placeholder="Web Developer"
-                aria-label="jdoe1" name="companyName">
+              <label class="form-label" for="add-user-contact">Password</label>
+              <input type="password"  class="form-control phone-mask" placeholder="Password">
             </div>
             <div class="mb-3">
-              <label class="form-label" for="user-role">User Role</label>
+              <label class="form-label" for="user-role">Select Level</label>
               <select id="user-role" class="form-select">
-                <option value="subscriber">Subscriber</option>
-                <option value="editor">Editor</option>
-                <option value="maintainer">Maintainer</option>
-                <option value="author">Author</option>
-                <option value="admin">Admin</option>
+                <option value="user">admin</option>
+                <option value="admin">user</option>
               </select>
             </div>
-            <div class="mb-4">
-              <label class="form-label" for="user-plan">Select Plan</label>
-              <select id="user-plan" class="form-select">
-                <option value="basic">Basic</option>
-                <option value="enterprise">Enterprise</option>
-                <option value="company">Company</option>
-                <option value="team">Team</option>
-              </select>
-            </div>
+
             <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Submit</button>
             <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="offcanvas">Cancel</button>
             <input type="hidden">

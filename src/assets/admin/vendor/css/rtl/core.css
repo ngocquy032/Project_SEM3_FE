@@ -24220,9 +24220,9 @@ html:not(.layout-menu-fixed) .menu-inner-shadow {
     transform: translateY(-50%) rotate(-45deg)
 }
 
-.menu-item.open:not(.menu-item-closing)>.menu-toggle::after {
+/* .menu-item.open:not(.menu-item-closing)>.menu-toggle::after {
     transform: translateY(-50%) rotate(135deg)
-}
+} */
 
 [dir=rtl] .menu-item.open:not(.menu-item-closing)>.menu-toggle::after {
     transform: translateY(-50%) rotate(-135deg)

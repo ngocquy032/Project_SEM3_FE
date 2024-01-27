@@ -11,10 +11,17 @@ import { Observable } from "rxjs";
   private urlProduct = 'https://arts-be1.azurewebsites.net/api/Products'
 
   getProduct(): Observable<any[]> {
-    return this.http.get<any[]>(this.urlProduct);
+    return this.http.get<any[]>(this.Url);
   }
+  // getProductDTO(): Observable<any[]> {
+  //   return this.http.get<any[]>(this.Url);
+  // }
+  // getProductByIdDTO(productId: string): Observable<any> {
+  //   const productUrl = `${this.Url}/${productId}`;
+  //   return this.http.get<any>(productUrl);
+  // }
   getProductById(productId: string): Observable<any> {
-    const productUrl = `${this.urlProduct}/${productId}`;
+    const productUrl = `${this.Url}/${productId}`;
     return this.http.get<any>(productUrl);
   }
   addProduct(productData: any): Observable<any> {

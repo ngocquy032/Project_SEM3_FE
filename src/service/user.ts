@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { UserModel } from "src/app/fe-admin/user-list/user.model";
 import { LoginModel, LoginParam, RegisterModel } from "src/app/fe-user/users/log-in/login.model";
 
 
@@ -36,4 +37,12 @@ import { LoginModel, LoginParam, RegisterModel } from "src/app/fe-user/users/log
     return this.http.delete<void>(url);
   }
 
+  updateUser(userInfo: UserModel): Observable<UserModel> {
+    const url = `${this.Url}/${userInfo.userId}`;
+    return this.http.put<UserModel>(url, userInfo )
+}
+getUserById(userId: number): Observable<UserModel> {
+  const url = `${this.Url}/${userId}`;
+  return this.http.get<UserModel>(url);
+}
 }

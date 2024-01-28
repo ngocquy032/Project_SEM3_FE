@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/service/user';
+import { FormBuilder, FormGroup, Validator } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserModel } from './user.model';
 
 @Component({
   selector: 'app-user-list',
@@ -18,13 +21,18 @@ import { UserService } from 'src/service/user';
     '../../../assets/admin/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css',
     '../../../assets/admin/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css',
     '../../../assets/admin/vendor/libs/select2/select2.css',
+    '../../../assets/admin/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css',
+    '../../../assets/admin/vendor/libs/sweetalert2/sweetalert2.css',
     '../../../assets/admin/vendor/libs/@form-validation/umd/styles/index.min.css'
   ]
 })
 export class UserListComponent implements OnInit {
   userList: any[] = [];
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router,
+    private route: ActivatedRoute
+
   ) { }
 
   ngOnInit(): void {
@@ -49,5 +57,7 @@ export class UserListComponent implements OnInit {
       );
     }
   }
-
+  updateUser(userId: number): void {
+    this.router.navigate(['/admin/editUser', userId]);
+  }
 }

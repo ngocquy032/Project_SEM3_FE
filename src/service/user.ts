@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { AddUserModel } from "src/app/fe-admin/user-list/user-list.model";
 import { LoginModel, LoginParam, RegisterModel } from "src/app/fe-user/users/log-in/login.model";
 
 
@@ -35,5 +36,10 @@ import { LoginModel, LoginParam, RegisterModel } from "src/app/fe-user/users/log
     const url = `${this.Url}/${userId}`; // Thay đường dẫn API xóa category
     return this.http.delete<void>(url);
   }
+
+    // ----crudadmin----
+    addUser(user: AddUserModel): Observable<any> {
+      return this.http.post<any>(this.Url, user);
+    }
 
 }

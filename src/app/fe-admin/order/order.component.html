@@ -44,7 +44,7 @@
             </thead>
             <tbody>
               <tr class="odd" *ngFor="let category of listOrder">
-                <td><a routerLink="/admin/orderDetails"><span class="fw-medium">#{{ category.orderId }}</span></a></td>
+                <td><a ><span class="fw-medium">#{{ category.orderId }}</span></a></td>
                 <!-- <td class="sorting_1"><span class="text-nowrap">Apr 15, 2023, 10:21</span></td> -->
                 <td>
                   <div class="d-flex justify-content-start align-items-center order-name text-nowrap">
@@ -60,7 +60,14 @@
                   <h6 class="mb-0 w-px-100 "><i class="bx bxs-circle fs-tiny me-2"></i>{{ category.paymentType }}</h6>
                 </td>
                 <td>
-                  <h6 class="mb-0 w-px-100 ">{{ category.total }}</h6>
+                  <h6 class="mb-0 w-px-100 ">
+                    <ng-container *ngIf="category.paymentType === 'Cash'">
+                      {{ category.amount | currency:'USD':'symbol' }}
+                    </ng-container>
+                    <ng-container *ngIf="category.paymentType === 'Vnpay'">
+                      {{ category.amount | currency:'VND':'symbol-narrow':'1.0-0' }}
+                    </ng-container>
+                  </h6>
                 </td>
                 <td><span class="badge px-2 bg-label-warning" text-capitalized="">{{ category.orderStatus }}</span></td>
 
@@ -69,7 +76,7 @@
                       class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i
                         class="bx bx-dots-vertical-rounded"></i></button>
                     <div class="dropdown-menu dropdown-menu-end m-0">
-                      <a routerLink="/admin/orderDetails" class="dropdown-item">View
+                      <a (click)="orderDetails(category.orderId)" class="dropdown-item">View
                       </a>
                       <a href="javascript:0;" class="dropdown-item delete-record">Update
                       </a>

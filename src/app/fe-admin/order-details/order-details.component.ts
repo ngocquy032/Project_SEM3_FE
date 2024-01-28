@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { OrdersService } from 'src/service/order';
 
 @Component({
   selector: 'app-order-details',
@@ -22,6 +24,33 @@ import { Component } from '@angular/core';
     '../../../assets/admin/vendor/libs/select2/select2.css'
   ]
 })
-export class OrderDetailsComponent {
+export class OrderDetailsComponent implements OnInit {
+  orderData: any;
+  constructor(
+    private router: Router,
+    private orderService: OrdersService,
+    private route: ActivatedRoute,
+  ) { }
+
+  ngOnInit(): void {
+
+    this.route.params.subscribe(params => {
+      const orderId = params['id'];
+      this.getOrderDetails(orderId);
+    });
+  }
+
+  getOrderDetails(orderId:number) {
+    this.orderService.getOrderById(orderId).subscribe(
+      (data: any) => {
+        this.orderData = data;
+        console.log('orderData', this.orderData);
+
+      },
+      error => {
+        console.log('Error loading order details:', error);
+      }
+    );
+  }
 
 }

@@ -11,6 +11,7 @@ import { Observable, catchError, of } from "rxjs";
   // private Url = 'https://localhost:7055/api/Orders';
   // private UrlVnPay = 'https://arts-be1.azurewebsites.net/api/VnpayPayment';
   private UrlVnPay = 'https://localhost:7055/api/VnpayPayment';
+  private UrlAdmin = 'https://arts-be1.azurewebsites.net/api/Orders/orderDTO';
 
   sendOrder(orderData: any): Observable<any> {
     return this.http.post<any>(this.Url, orderData);
@@ -34,9 +35,13 @@ import { Observable, catchError, of } from "rxjs";
     );
   }
 
-
   getOrder(): Observable<any>{
-    return this.http.get<any []>(this.Url)
+    return this.http.get<any []>(this.UrlAdmin)
+  }
+
+  getOrderById(orderId: number): Observable<any> {
+    const orderUrl = `${this.UrlAdmin}/${orderId}`;
+    return this.http.get<any>(orderUrl);
   }
 
 }

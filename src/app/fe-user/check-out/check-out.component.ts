@@ -52,6 +52,7 @@ export class CheckOutComponent {
         let totalAmount = 0;
         for (const item of this.cartList) {
           totalAmount += item.subtotal;
+
         }
 
         const orderData = {
@@ -70,12 +71,13 @@ export class CheckOutComponent {
           district: this.dataUser.district,
           orderDetails: this.cartList.map(item => ({
             productId: item.productId,
+            title: item.productCart.title,
             quantity: item.quantity,
             price: item.productCart.price,
             originPrice: item.productCart.price,
             total: item.subtotal
           })),
-          totalAmount: this.calculateCartTotal(),
+          // totalAmount: this.calculateCartTotal(),
 
         };
 
@@ -116,6 +118,7 @@ export class CheckOutComponent {
           district: this.dataUser.district,
           orderDetails: this.cartList.map(item => ({
             productId: item.productId,
+            title: item.productCart.title,
             quantity: item.quantity,
             price: item.productCart.price,
             originPrice: item.productCart.price,

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/service/user';
+import { AddUserModel } from './user-list.model';
+import { window } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -23,17 +27,53 @@ import { UserService } from 'src/service/user';
 })
 export class UserListComponent implements OnInit {
   userList: any[] = [];
+  userForm!: FormGroup;
+
   constructor(
-    private userService: UserService
-  ) { }
+    private userService: UserService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {
+    this.userForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['',Validators.required],
+      password: ['', Validators.required],
+      level: ['user', Validators.required],
+    });
+  }
 
   ngOnInit(): void {
-    this.getUser()
+    this.getUser();
+
   }
   getUser() {
     this.userService.getUserData().subscribe(users => {
       this.userList = users;
     });
+  }
+
+  addUser(): void {
+    if (this.userForm.valid) {
+      const newUser: AddUserModel = this.userForm.value;
+
+      console.log('newUser', newUser);
+
+      this.userService.addUser(newUser).subscribe(
+        (response) => {
+          console.log('response', response);
+
+          this.userForm.reset();
+          alert('Successful added, please to continue.');
+          // this.router.navigate(['admin/userList']);
+          location.reload();
+        },
+        (error) => {
+          console.error('Lỗi đăng ký', error);
+        }
+      )
+
+    }
   }
 
   deteteUser( userId: number){

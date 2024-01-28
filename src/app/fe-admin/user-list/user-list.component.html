@@ -12,7 +12,8 @@
 
 
 
-              <div class="dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-end flex-md-row flex-column mb-3 mb-md-0">
+              <div
+                class="dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-end flex-md-row flex-column mb-3 mb-md-0">
                 <div class="me-5 ms-n2 pe-5">
                   <div class="single-widget learts-mb-40" style="margin-top: 20px;">
                     <!-- <div class="widget-search">
@@ -102,35 +103,34 @@
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body mx-0 flex-grow-0">
-          <form class="add-new-user pt-0 fv-plugins-bootstrap5 fv-plugins-framework" id="addNewUserForm"
-            onsubmit="return false" novalidate="novalidate">
+          <form [formGroup]="userForm" class="add-new-user pt-0 fv-plugins-bootstrap5 fv-plugins-framework"
+            id="addNewUserForm" novalidate="novalidate">
             <div class="mb-3 fv-plugins-icon-container">
               <label class="form-label" for="add-user-fullname">Name</label>
-              <input type="text" class="form-control" placeholder="John Doe" >
-              <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+              <input type="text" class="form-control" placeholder="New Name" formControlName="name" required>
             </div>
             <div class="mb-3 fv-plugins-icon-container">
               <label class="form-label" for="add-user-email">Email</label>
-              <input type="text"  class="form-control" placeholder="john.doe@example.com">
-              <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+              <input type="text" class="form-control" placeholder="user@example.com" formControlName="email" required>
             </div>
             <div class="mb-3">
               <label class="form-label" for="add-user-contact">Phone</label>
-              <input type="text"  class="form-control phone-mask" placeholder="+1 (609) 988-44-11">
+              <input type="text" class="form-control phone-mask" placeholder="+84 x xxx xxx" formControlName="phone">
             </div>
             <div class="mb-3">
               <label class="form-label" for="add-user-contact">Password</label>
-              <input type="password"  class="form-control phone-mask" placeholder="Password">
+              <input type="password" class="form-control password" placeholder="Password" formControlName="password"
+                required>
             </div>
             <div class="mb-3">
               <label class="form-label" for="user-role">Select Level</label>
-              <select id="user-role" class="form-select">
-                <option value="user">admin</option>
-                <option value="admin">user</option>
+              <select id="user-role" class="form-select" formControlName="level" required>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
               </select>
             </div>
 
-            <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Submit</button>
+            <button type="submit" (click)="addUser()" class="btn btn-primary me-sm-3 me-1 data-submit">Submit</button>
             <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="offcanvas">Cancel</button>
             <input type="hidden">
           </form>

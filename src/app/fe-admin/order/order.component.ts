@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OrdersService } from 'src/service/order';
 
 @Component({
@@ -26,7 +27,8 @@ import { OrdersService } from 'src/service/order';
 export class OrderComponent implements OnInit {
   listOrder: any[] = []
   constructor(
-    private orderService: OrdersService
+    private orderService: OrdersService,
+    private router: Router
   ){}
 
   ngOnInit(): void {
@@ -39,6 +41,9 @@ export class OrderComponent implements OnInit {
     })
   }
 
+  orderDetails(orderId: number){
+    this.router.navigate(['admin/orderDetails',orderId]);
 
+  }
 
 }

@@ -88,8 +88,6 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
 
-
-
   decreaseQuantity() {
     if (this.quantity > 1) {
       this.quantity--;

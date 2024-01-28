@@ -9,9 +9,9 @@
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3">
 
       <div class="d-flex flex-column justify-content-center">
-        <h5 class="mb-1 mt-3">Order #32543 <span class="badge bg-label-success me-2 ms-2">Paid</span> <span
-            class="badge bg-label-info">Ready to Pickup</span></h5>
-        <p class="text-body">Aug 17, <span id="orderYear">2024</span>, 5:48 (ET)</p>
+        <h5 class="mb-1 mt-3">Order #{{ orderData.orderId }} <span
+            class="badge bg-label-warning">{{ orderData.orderStatus }}</span></h5>
+        <!-- <p class="text-body">Aug 17, <span id="orderYear">2024</span>, 5:48 (ET)</p> -->
       </div>
     </div>
     <!-- Order Details Table -->
@@ -28,26 +28,26 @@
                 style="width: 916px;">
                 <thead>
                   <tr>
-                    <th class="w-50 sorting_disabled" rowspan="1" colspan="1" style="width: 353px;"
+                    <th class="w-50 sorting_disabled" rowspan="1" colspan="1" style="width: 33px;"
+                    aria-label="products">productId</th>
+                    <th class="w-50 sorting_disabled" rowspan="1" colspan="1" style="width: 200px;"
                       aria-label="products">products</th>
-                    <th class="w-25 sorting_disabled" rowspan="1" colspan="1" style="width: 153px;" aria-label="price">
+                    <th class="w-25 sorting_disabled" rowspan="1" colspan="1" style="width: 180px;" aria-label="price">
                       price</th>
-                    <th class="w-25 sorting_disabled" rowspan="1" colspan="1" style="width: 143px;" aria-label="qty">qty
+                    <th class="w-25 sorting_disabled" rowspan="1" colspan="1" style="width: 160px;" aria-label="qty">qty
                     </th>
-                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 53px;" aria-label="total">total
+                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 100px;" aria-label="total">total
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="odd">
+                    <td>#1</td>
                     <td class="sorting_1">
                       <div class="d-flex justify-content-start align-items-center text-nowrap">
-                        <div class="avatar-wrapper">
-                          <div class="avatar me-2"><img src="../../../assets/admin/img/products/woodenchair.png"
-                              alt="product-Wooden Chair" class="rounded-2"></div>
-                        </div>
+
                         <div class="d-flex flex-column">
-                          <h6 class="text-body mb-0">Wooden Chair</h6><small class="text-muted">Material: Wooden</small>
+                          <h6 class="text-body mb-0">Wooden Chair</h6>
                         </div>
                       </div>
                     </td>
@@ -55,60 +55,6 @@
                     <td><span class="text-body">2</span></td>
                     <td>
                       <h6 class="mb-0">$1682</h6>
-                    </td>
-                  </tr>
-                  <tr class="even">
-                    <td class="sorting_1">
-                      <div class="d-flex justify-content-start align-items-center text-nowrap">
-                        <div class="avatar-wrapper">
-                          <div class="avatar me-2"><img src="../../../assets/admin/img/products/oneplus.png"
-                              alt="product-Oneplus 10" class="rounded-2"></div>
-                        </div>
-                        <div class="d-flex flex-column">
-                          <h6 class="text-body mb-0">Oneplus 10</h6><small class="text-muted">Storage:128gb</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td><span>$896</span></td>
-                    <td><span class="text-body">3</span></td>
-                    <td>
-                      <h6 class="mb-0">$2688</h6>
-                    </td>
-                  </tr>
-                  <tr class="odd">
-                    <td class="sorting_1">
-                      <div class="d-flex justify-content-start align-items-center text-nowrap">
-                        <div class="avatar-wrapper">
-                          <div class="avatar me-2"><img src="../../../assets/admin/img/products/nikejordan.png"
-                              alt="product-Nike Jordan" class="rounded-2"></div>
-                        </div>
-                        <div class="d-flex flex-column">
-                          <h6 class="text-body mb-0">Nike Jordan</h6><small class="text-muted">Size:8UK</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td><span>$392</span></td>
-                    <td><span class="text-body">1</span></td>
-                    <td>
-                      <h6 class="mb-0">$392</h6>
-                    </td>
-                  </tr>
-                  <tr class="even">
-                    <td class="sorting_1">
-                      <div class="d-flex justify-content-start align-items-center text-nowrap">
-                        <div class="avatar-wrapper">
-                          <div class="avatar me-2"><img src="../../../assets/admin/img/products/facecream.png"
-                              alt="product-Face cream" class="rounded-2"></div>
-                        </div>
-                        <div class="d-flex flex-column">
-                          <h6 class="text-body mb-0">Face cream</h6><small class="text-muted">Gender:Women</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td><span>$813</span></td>
-                    <td><span class="text-body">2</span></td>
-                    <td>
-                      <h6 class="mb-0">$1626</h6>
                     </td>
                   </tr>
                 </tbody>
@@ -137,61 +83,35 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-4" >
+      <div class="col-12 col-lg-4">
         <div class="card mb-4">
-          <div class="card-header">
-            <h6 class="card-title m-0">Customer details</h6>
-          </div>
+
           <div class="card-body">
-            <div class="d-flex justify-content-start align-items-center mb-4">
-              <div class="avatar me-2">
-                <img src="../../../assets/admin/img/avatars/1.png" alt="Avatar" class="rounded-circle">
-              </div>
-              <div class="d-flex flex-column">
-                <a href="app-user-view-account.html" class="text-body text-nowrap">
-                  <h6 class="mb-0">Shamus Tuttle</h6>
-                </a>
-                <small class="text-muted">Customer ID: #58909</small>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start align-items-center mb-4">
-              <span
-                class="avatar rounded-circle bg-label-success me-2 d-flex align-items-center justify-content-center"><i
-                  class="bx bx-cart-alt bx-sm lh-sm"></i></span>
-              <h6 class="text-body text-nowrap mb-0">12 Orders</h6>
-            </div>
             <div class="d-flex justify-content-between">
-              <h6>Contact info</h6>
-              <h6><a href=" javascript:void(0)" data-bs-toggle="modal" data-bs-target="#editUser"></a></h6>
+              <h2 class="card-title" >Contact info</h2>
             </div>
-            <p class=" mb-1">Email: Shamus889@yahoo.com</p>
-            <p class=" mb-0">Mobile: +1 (609) 972-22-22</p>
-          </div>
-        </div>
-
-        <div class="card mb-4">
-          <div class="card-header d-flex justify-content-between">
-            <h6 class="card-title m-0">Shipping address</h6>
-            <h6 class="m-0"><a href=" javascript:void(0)" data-bs-toggle="modal"
-                data-bs-target="#addNewAddress"></a></h6>
-          </div>
-          <div class="card-body">
-            <p class="mb-0">45 Roker Terrace <br>Latheronwheel <br>KW5 8NW,London <br>UK</p>
+            <p class=" ">FirstName: {{ orderData.firstName }}</p>
+            <p class=" ">LastName: {{ orderData.lastName }}</p>
+            <p class=" ">Email: {{ orderData.email }}</p>
+            <p class=" ">Mobile: {{ orderData.phone }}</p>
+            <p class=" ">PaymentType: {{ orderData.paymentType }}</p>
+            <p class=" ">Notes: {{ orderData.notes }}</p>
           </div>
         </div>
         <div class="card mb-4">
           <div class="card-header d-flex justify-content-between">
-            <h6 class="card-title m-0">Billing address</h6>
-            <h6 class="m-0"><a href=" javascript:void(0)" data-bs-toggle="modal"
-                data-bs-target="#addNewAddress"></a></h6>
+            <h2 class="card-title m-0">Shipping address</h2>
+            <h6 class="m-0"><a href=" javascript:void(0)" data-bs-toggle="modal" data-bs-target="#addNewAddress"></a>
+            </h6>
           </div>
           <div class="card-body">
-            <p class="mb-4">45 Roker Terrace <br>Latheronwheel <br>KW5 8NW,London <br>UK</p>
-            <h6 class="mb-0 pb-2">Mastercard</h6>
-            <p class="mb-0">Card Number: ******4291</p>
+            <p class="">StreetAdress: {{ orderData.streetAdress }}</p>
+            <p class="">District: {{ orderData.district }}</p>
+            <p class="">City: {{ orderData.town }}</p>
+            <p class="">Country: {{ orderData.country }}</p>
           </div>
-
         </div>
+
       </div>
     </div>
 
@@ -256,22 +176,22 @@
               <div class="col-12 col-md-6">
                 <label class="form-label" for="modalEditUserCountry">Country</label>
                 <div class="position-relative">
-                    <select id="modalEditUserCountry" name="modalEditUserCountry" class="form-select">
-                        <option value="">Select</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Bangladesh">Bangladesh</option>
-                        <option value="Belarus">Belarus</option>
-                        <option value="Brazil">Brazil</option>
-                        <option value="Canada">Canada</option>
-                        <option value="China">China</option>
-                        <option value="France">France</option>
-                        <option value="Germany">Germany</option>
-                        <option value="India">India</option>
-                        <option value="India">VietNam</option>
-                        <!-- Các option khác -->
-                    </select>
+                  <select id="modalEditUserCountry" name="modalEditUserCountry" class="form-select">
+                    <option value="">Select</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Belarus">Belarus</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Canada">Canada</option>
+                    <option value="China">China</option>
+                    <option value="France">France</option>
+                    <option value="Germany">Germany</option>
+                    <option value="India">India</option>
+                    <option value="India">VietNam</option>
+                    <!-- Các option khác -->
+                  </select>
                 </div>
-            </div>
+              </div>
               <div class="col-12">
                 <label class="switch">
                   <input type="checkbox" class="switch-input">
@@ -357,22 +277,22 @@
               <div class="col-12 col-md-6">
                 <label class="form-label" for="modalEditUserCountry">Country</label>
                 <div class="position-relative">
-                    <select id="modalEditUserCountry" name="modalEditUserCountry" class="form-select">
-                        <option value="">Select</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Bangladesh">Bangladesh</option>
-                        <option value="Belarus">Belarus</option>
-                        <option value="Brazil">Brazil</option>
-                        <option value="Canada">Canada</option>
-                        <option value="China">China</option>
-                        <option value="France">France</option>
-                        <option value="Germany">Germany</option>
-                        <option value="India">India</option>
-                        <option value="India">VietNam</option>
-                        <!-- Các option khác -->
-                    </select>
+                  <select id="modalEditUserCountry" name="modalEditUserCountry" class="form-select">
+                    <option value="">Select</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Belarus">Belarus</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Canada">Canada</option>
+                    <option value="China">China</option>
+                    <option value="France">France</option>
+                    <option value="Germany">Germany</option>
+                    <option value="India">India</option>
+                    <option value="India">VietNam</option>
+                    <!-- Các option khác -->
+                  </select>
                 </div>
-            </div>
+              </div>
               <div class="col-12 ">
                 <label class="form-label" for="modalAddressAddress1">Address Line 1</label>
                 <input type="text" id="modalAddressAddress1" name="modalAddressAddress1" class="form-control"

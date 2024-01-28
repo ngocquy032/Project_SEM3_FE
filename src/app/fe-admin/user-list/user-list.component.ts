@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/service/user';
 import { AddUserModel } from './user-list.model';
 import { window } from 'rxjs';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserModel } from './user.model';
 
 @Component({
   selector: 'app-user-list',
@@ -22,6 +23,8 @@ import { Router } from '@angular/router';
     '../../../assets/admin/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css',
     '../../../assets/admin/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css',
     '../../../assets/admin/vendor/libs/select2/select2.css',
+    '../../../assets/admin/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css',
+    '../../../assets/admin/vendor/libs/sweetalert2/sweetalert2.css',
     '../../../assets/admin/vendor/libs/@form-validation/umd/styles/index.min.css'
   ]
 })
@@ -32,7 +35,8 @@ export class UserListComponent implements OnInit {
   constructor(
     private userService: UserService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.userForm = this.fb.group({
       name: ['', Validators.required],
@@ -89,5 +93,7 @@ export class UserListComponent implements OnInit {
       );
     }
   }
-
+  updateUser(userId: number): void {
+    this.router.navigate(['/admin/editUser', userId]);
+  }
 }

@@ -30,6 +30,7 @@ import { UpdateCategoryComponent } from './fe-admin/update-category/update-categ
 import { OrderComponent } from './fe-admin/order/order.component';
 import { OrderDetailsComponent } from './fe-admin/order-details/order-details.component';
 import { UserListComponent } from './fe-admin/user-list/user-list.component';
+import { EditUserComponent } from './fe-admin/edit-user/edit-user.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { UserListComponent } from './fe-admin/user-list/user-list.component';
     OrderComponent,
     OrderDetailsComponent,
     UserListComponent,
+    EditUserComponent,
 
   ],
   imports: [

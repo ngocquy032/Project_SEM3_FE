@@ -3,7 +3,7 @@
   <!-- Content -->
   <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="py-3 mb-4">
-      <span class="text-muted fw-light">eCommerce /</span> Order Details
+      <span class="text-muted fw-light" routerLink="/admin/order">Orders /</span> Order Details
     </h4>
 
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3">
@@ -41,20 +41,20 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="odd">
-                    <td>#1</td>
+                  <tr class="odd" *ngFor="let orderDetail of orderData.ordersDetails">
+                    <td>#{{ orderDetail.productId }}</td>
                     <td class="sorting_1">
                       <div class="d-flex justify-content-start align-items-center text-nowrap">
 
                         <div class="d-flex flex-column">
-                          <h6 class="text-body mb-0">Wooden Chair</h6>
+                          <h6 class="text-body mb-0">{{ orderDetail.title }}</h6>
                         </div>
                       </div>
                     </td>
-                    <td><span>$841</span></td>
-                    <td><span class="text-body">2</span></td>
+                    <td><span>${{ orderDetail.price }}</span></td>
+                    <td><span class="text-body">{{ orderDetail.quantity }}</span></td>
                     <td>
-                      <h6 class="mb-0">$1682</h6>
+                      <h6 class="mb-0">${{ orderDetail.total }}</h6>
                     </td>
                   </tr>
                 </tbody>
@@ -64,19 +64,21 @@
               <div class="order-calculations">
                 <div class="d-flex justify-content-between mb-2">
                   <span class="w-px-100">Subtotal:</span>
-                  <span class="text-heading">$6398</span>
-                </div>
-                <div class="d-flex justify-content-between mb-2">
-                  <span class="w-px-100">Discount:</span>
-                  <span class="text-heading mb-0">$22</span>
-                </div>
-                <div class="d-flex justify-content-between mb-2">
-                  <span class="w-px-100">Tax:</span>
-                  <span class="text-heading">$30</span>
+                  <ng-container *ngIf="orderData.paymentType === 'Cash'">
+                    {{ orderData.amount | currency:'USD':'symbol' }}
+                  </ng-container>
+                  <ng-container *ngIf="orderData.paymentType === 'Vnpay'">
+                    {{ orderData.amount | currency:'VND':'symbol-narrow':'1.0-0' }}
+                  </ng-container>
                 </div>
                 <div class="d-flex justify-content-between">
                   <h6 class="w-px-100 mb-0">Total:</h6>
-                  <h6 class="mb-0">$6450</h6>
+                  <ng-container *ngIf="orderData.paymentType === 'Cash'">
+                    {{ orderData.amount | currency:'USD':'symbol' }}
+                  </ng-container>
+                  <ng-container *ngIf="orderData.paymentType === 'Vnpay'">
+                    {{ orderData.amount | currency:'VND':'symbol-narrow':'1.0-0' }}
+                  </ng-container>
                 </div>
               </div>
             </div>

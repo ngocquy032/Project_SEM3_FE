@@ -3,7 +3,7 @@
   <!-- Content -->
   <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="py-3 mb-4">
-      <span class="text-muted fw-light">eCommerce /</span> Order List
+      <span class="text-muted fw-light"></span> Order List
     </h4>
 
     <!-- Order List Table -->
@@ -44,7 +44,7 @@
             </thead>
             <tbody>
               <tr class="odd" *ngFor="let category of listOrder">
-                <td><a ><span class="fw-medium">#{{ category.orderId }}</span></a></td>
+                <td><a><span class="fw-medium">#{{ category.orderId }}</span></a></td>
                 <!-- <td class="sorting_1"><span class="text-nowrap">Apr 15, 2023, 10:21</span></td> -->
                 <td>
                   <div class="d-flex justify-content-start align-items-center order-name text-nowrap">
@@ -69,7 +69,9 @@
                     </ng-container>
                   </h6>
                 </td>
-                <td><span class="badge px-2 bg-label-warning" text-capitalized="">{{ category.orderStatus }}</span></td>
+                <td>
+                  <span class="badge px-2 bg-label-warning" text-capitalized="">{{ category.orderStatus }}</span>
+                </td>
 
                 <td>
                   <div class="d-flex justify-content-sm-center align-items-sm-center"><button

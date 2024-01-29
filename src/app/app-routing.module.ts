@@ -26,6 +26,7 @@ import { OrderComponent } from './fe-admin/order/order.component';
 import { OrderDetailsComponent } from './fe-admin/order-details/order-details.component';
 import { UserListComponent } from './fe-admin/user-list/user-list.component';
 import { EditUserComponent } from './fe-admin/edit-user/edit-user.component';
+import { UpdateOrderComponent } from './fe-admin/update-order/update-order.component';
 const routes: Routes = [
   {
     path: '', component: MasterLayoutComponent,
@@ -100,6 +101,9 @@ const routes: Routes = [
       },
       {
         path: 'editUser/:id', component: EditUserComponent
+      },
+      {
+        path: 'updateOrder/:id', component: UpdateOrderComponent
       }
 
     ]

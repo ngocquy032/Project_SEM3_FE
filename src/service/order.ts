@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, catchError, of } from "rxjs";
+import { OrderStatusModel } from "src/app/fe-admin/update-order/update-order.model";
 
 @Injectable({
   providedIn: 'root'
@@ -43,5 +44,15 @@ import { Observable, catchError, of } from "rxjs";
     const orderUrl = `${this.UrlAdmin}/${orderId}`;
     return this.http.get<any>(orderUrl);
   }
+
+  getOrderStatusById(orderId: number): Observable<any> {
+    const orderUrl = `${this.Url}/${orderId}`;
+    return this.http.get<any>(orderUrl);
+  }
+  updateOrderStatus(orderInfo: OrderStatusModel): Observable<OrderStatusModel> {
+    const url = `${this.Url}/${orderInfo.orderId}`;
+    return this.http.put<OrderStatusModel>(url, orderInfo)
+  }
+
 
 }

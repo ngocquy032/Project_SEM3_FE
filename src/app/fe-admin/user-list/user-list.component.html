@@ -78,17 +78,15 @@
                 </td>
                 <td>{{ user.level }}</td>
                 <td>
-                  <div class="d-inline-block text-nowrap">
-                    <button (click)="updateUser(user.userId)" class="btn btn-sm btn-icon">
-                      <i class="bx bx-edit"></i>
+                  <div class="d-flex align-items-sm-center justify-content-sm-center">
+                    <button class="btn btn-sm btn-icon"><i class="fa fa-eye" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                      <i class="bx bx-dots-vertical-rounded me-2"> </i>
+                    <button (click)="updateUser(user.userId)" class="btn btn-sm btn-icon"><i class="bx bx-edit"></i>
                     </button>
-                    <div class="dropdown-menu dropdown-menu-end m-0">
-                      <a class="dropdown-item">View</a>
-                      <a (click)="deteteUser(user.userId)" class="dropdown-item">Delete</a>
-                    </div>
+
+                    <button (click)="deteteUser(user.userId)" class="btn btn-sm btn-icon delete-record me-2"><i
+                        class="bx bx-trash"></i>
+                    </button>
                   </div>
                 </td>
               </tr>

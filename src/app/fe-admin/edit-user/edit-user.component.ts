@@ -22,13 +22,28 @@ import { ActivatedRoute, Router } from '@angular/router';
     '../../../assets/admin/vendor/libs/sweetalert2/sweetalert2.css',
     '../../../assets/admin/vendor/libs/@form-validation/umd/styles/index.min.css',
     '../../../assets/admin/vendor/libs/select2/select2.css'
-]
+  ]
 })
 export class EditUserComponent implements OnInit {
   userId!: number;
-  userName: string = '';
-  userEmail: string = '';
-  userPhone!: number;
+  name: string = '';
+  email: string = '';
+  phone!: string;
+
+  streetAddress: string = '';
+  avatar: string = '';
+  description: string = '';
+  postcodeZip: string = '';
+  level: string = '';
+  country: string = '';
+  town: string = '';
+  district: string = '';
+  lastName: string = '';
+  firstName: string = '';
+  password: string = '';
+  blogComments: any[] = [];
+  blogs: any[] = [];
+  orders: any[] = [];
 
   constructor(
     private userService: UserService,
@@ -43,33 +58,67 @@ export class EditUserComponent implements OnInit {
     });
   }
   getUser(userId: number): void {
-    this.userService.getUserById(userId).subscribe((data: any) => {
-      this.userName = data.name;
-      this.userEmail = data.email;
-      this.userPhone = data.phone;
-      // console.log('data', data);
+    this.userService.getUserById(userId).subscribe((data: UserModel) => {
+      this.name = data.name;
+      this.email = data.email;
+      this.phone = data.phone ? data.phone.toString() : '';
+      // Assign additional fields from UserModel
+      this.streetAddress = data.streetAddress || '';
+      this.avatar = data.avatar || '';
+      this.description = data.description || '';
+      this.postcodeZip = data.postcodeZip || '';
+      this.level = data.level || '';
+      this.country = data.country || '';
+      this.town = data.town || '';
+      this.district = data.district || '';
+      this.lastName = data.lastName || '';
+      this.firstName = data.firstName || '';
+      this.password = data.password || '';
+      this.blogComments = data.blogComments || [];
+      this.blogs = data.blogs || [];
+      this.orders = data.orders || [];
     });
-
   }
-  Cancle(){
+
+
+  Cancle() {
     this.router.navigate(['/admin/userList']);
   }
 
   Update(): void {
-
-    const data: UserModel = {
+    const updatedUserData: UserModel = {
       userId: this.userId,
-      name: this.userName,
-      email: this.userEmail,
-      phone: this.userPhone
+      name: this.name,
+      email: this.email,
+      phone: this.phone,
+      // Assign additional fields from UserModel
+      streetAddress: this.streetAddress,
+      avatar: this.avatar,
+      description: this.description,
+      postcodeZip: this.postcodeZip,
+      level: this.level,
+      country: this.country,
+      town: this.town,
+      district: this.district,
+      lastName: this.lastName,
+      firstName: this.firstName,
+      password: this.password,
+      blogComments: this.blogComments,
+      blogs: this.blogs,
+      orders: this.orders
     };
-    if(confirm('Are you sure you want to edit? ')) {
-      this.userService.updateUser(data).subscribe(
-        (datasuccess: any)=>{
+    if(confirm('are you want to update?')){
+
+      this.userService.updateUser(updatedUserData).subscribe(
+        (data: any) => {
           alert('User updated successfully!');
           this.router.navigate(['/admin/userList']);
+        },
+        (error: any) => {
+          console.error('An error occurred:', error);
+          // Handle error
         }
-      )
+      );
     }
   }
 }

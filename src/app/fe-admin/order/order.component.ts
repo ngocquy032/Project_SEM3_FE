@@ -45,5 +45,8 @@ export class OrderComponent implements OnInit {
     this.router.navigate(['admin/orderDetails',orderId]);
 
   }
+  updateOrder(orderId: number){
+    this.router.navigate(['admin/updateOrder', orderId]);
+  }
 
 }

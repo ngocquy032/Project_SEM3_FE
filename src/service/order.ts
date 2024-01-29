@@ -8,11 +8,10 @@ import { OrderStatusModel } from "src/app/fe-admin/update-order/update-order.mod
 }) export class OrdersService{
   constructor(private http: HttpClient){}
   private Url = 'https://arts-be1.azurewebsites.net/api/Orders';
-
-  // private Url = 'https://localhost:7055/api/Orders';
-  // private UrlVnPay = 'https://arts-be1.azurewebsites.net/api/VnpayPayment';
+// private UrlVnPay = 'https://arts-be1.azurewebsites.net/api/VnpayPayment';
   private UrlVnPay = 'https://localhost:7055/api/VnpayPayment';
   private UrlAdmin = 'https://arts-be1.azurewebsites.net/api/Orders/orderDTO';
+  private urlOrderByIdUser = 'https://localhost:7055/api/Orders/getOrder'
 
   sendOrder(orderData: any): Observable<any> {
     return this.http.post<any>(this.Url, orderData);
@@ -55,4 +54,10 @@ import { OrderStatusModel } from "src/app/fe-admin/update-order/update-order.mod
   }
 
 
+  getOrdersByUserId(userId: number): Observable<any[]> {
+    const url = `${this.urlOrderByIdUser}/${userId}`;
+    return this.http.get<any[]>(url);
+  }
+
 }
+

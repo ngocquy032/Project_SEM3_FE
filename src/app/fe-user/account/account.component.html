@@ -25,7 +25,7 @@
         <div class="myaccount-tab-list nav">
           <a href="#dashboad" class="active" data-bs-toggle="tab">Account Details <i class="far fa-user"></i></a>
           <a href="#orders" data-bs-toggle="tab">Orders <i class="far fa-file-alt"></i></a>
-          <a href="#account-info" data-bs-toggle="tab">Update Password <i class="far fa-user"></i></a>
+
           <a (click)="logOut()">Logout <i class="far fa-sign-out-alt"></i></a>
         </div>
       </div>
@@ -46,42 +46,13 @@
                         <input type="" value="{{ userInfo?.name }}">
                       </div>
                     </div>
-                    <div class="col-md-6 col-12 learts-mb-30">
-                      <div class="single-input-item">
-                        <label for="last-name">Phone <abbr class="required">*</abbr></label>
-                        <input type="text" value="{{ userInfo?.phone }}">
-                      </div>
-                    </div>
-
-                    <div class="col-md-6 col-12 learts-mb-30">
-                      <div class="single-input-item">
-                        <label for="first-name"> Country <abbr class="required">*</abbr></label>
-                        <input type="" value="{{ userInfo?.country }}">
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-12 learts-mb-30">
-                      <div class="single-input-item">
-                        <label for="last-name">City <abbr class="required">*</abbr></label>
-                        <input type="text" value="{{ userInfo?.town }}">
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-12 learts-mb-30">
-                      <div class="single-input-item">
-                        <label for="first-name"> District <abbr class="required">*</abbr></label>
-                        <input type="" value="{{ userInfo?.district }}">
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-12 learts-mb-30">
-                      <div class="single-input-item">
-                        <label for="last-name">Street address <abbr class="required">*</abbr></label>
-                        <input type="text" value="{{ userInfo?.streetAddress }}">
-                      </div>
-                    </div>
+                    
 
                     <div class="col-12 learts-mb-30">
                       <label for="email">Email Addres <abbr class="required">*</abbr></label>
                       <input value="{{ userInfo?.email }}">
                     </div>
+                  
 
                   </div>
                 </form>
@@ -92,40 +63,37 @@
           <!-- Single Tab Content End -->
 
           <!-- Single Tab Content Start -->
-          <div class="tab-pane fade " id="orders">
+          <!-- Single Tab Content Start -->
+          <!-- Single Tab Content Start -->
+          <!-- Single Tab Content Start -->
+          <!-- Single Tab Content Start -->
+          <div class="tab-pane fade" id="orders">
             <div class="myaccount-content order">
               <div class="table-responsive">
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>Order</th>
-                      <th>Date</th>
-                      <th>Status</th>
-                      <th>Total</th>
-                      <th>Action</th>
+                      <th>OrderId</th>
+                      <th>Amount</th>
+                      <th>PaymentType</th>
+                      <th>OrderStatus</th>
+                   
+
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Aug 22, 2018</td>
-                      <td>Pending</td>
-                      <td>$3000</td>
-                      <td><a href="shopping-cart.html">View</a></td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>July 22, 2018</td>
-                      <td>Approved</td>
-                      <td>$200</td>
-                      <td><a href="shopping-cart.html">View</a></td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>June 12, 2017</td>
-                      <td>On Hold</td>
-                      <td>$990</td>
-                      <td><a href="shopping-cart.html">View</a></td>
+                    <tr *ngFor="let order of orders">
+                      <td>#{{ order.orderId }}</td>
+                      <td> <ng-container *ngIf="order.paymentType === 'Cash'">
+                          {{ order.amount | currency:'USD':'symbol' }}
+                        </ng-container>
+                        <ng-container *ngIf="order.paymentType === 'Vnpay'">
+                          {{ order.amount | currency:'VND':'symbol-narrow':'1.0-0' }}
+                        </ng-container>
+                      </td>
+                      <td>{{ order.paymentType }}</td>
+                      <td>{{ order.orderStatus}}</td>
+                      <!-- <td><a href="#">View</a></td> -->
                     </tr>
                   </tbody>
                 </table>
@@ -134,50 +102,10 @@
           </div>
           <!-- Single Tab Content End -->
 
-          <!-- Single Tab Content Start -->
-          <div class="tab-pane fade" id="account-info">
-            <div class="myaccount-content account-details">
-              <div class="account-details-form">
-                <form [formGroup]="passwordChangeForm">
-                  <div class="row learts-mb-n30">
+          <!-- Single Tab Content End -->
 
-                    <div class="col-12 learts-mb-30 learts-mt-30">
-                      <fieldset>
-                        <legend>Password change</legend>
-                        <div class="row learts-mb-n30">
-                          <div class="col-12 learts-mb-30">
-                            <label for="current-pwd">Current password </label>
-                            <input type="password" formControlName="current_pwd">
-                            <div class="color-p">
-                              <p>{{ msgCurrentPassword }}</p>
-                            </div>
-                          </div>
-                          <div class="col-12 learts-mb-30">
-                            <label for="new-pwd">New password </label>
-                            <input type="password" formControlName="new_pwd">
-                            <div class="color-p">
-                              <p>{{ msgPassword }}</p>
-                            </div>
-                          </div>
-                          <div class="col-12 learts-mb-30">
-                            <label for="confirm-pwd">Confirm new password</label>
-                            <input type="password" formControlName="confirm_pwd">
-                            <div class="color-p">
-                              <p>{{ msgRepassword }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </fieldset>
-                    </div>
-                    <div class="col-12 learts-mb-30">
-                      <button (click)="changePassword()" class="btn btn-dark btn-outline-hover-dark">Save
-                        Changes</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div> <!-- Single Tab Content End -->
+          <!-- Single Tab Content Start -->
+          <!-- Single Tab Content End -->
         </div>
       </div> <!-- My Account Tab Content End -->
     </div>

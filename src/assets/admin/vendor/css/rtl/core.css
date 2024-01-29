@@ -4430,7 +4430,9 @@ fieldset:disabled .btn {
     margin-bottom: 0;
     color: var(--bs-card-cap-color);
     background-color: var(--bs-card-cap-bg);
-    border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color)
+    border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-top: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    margin-top: 0;
 }
 
 .card-header:first-child {
@@ -13532,7 +13534,7 @@ button.list-group-item-gray.active {
     display: flex;
     width: 100%;
     align-items: center;
-    flex-wrap: wrap
+    flex-wrap: wrap;
 }
 
 .card-header.card-header-elements {

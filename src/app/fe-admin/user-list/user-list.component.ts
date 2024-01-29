@@ -56,6 +56,9 @@ export class UserListComponent implements OnInit {
       this.userList = users;
     });
   }
+  userDetails(userId: number){
+    this.router.navigate(['/admin/userDetails', userId])
+  }
 
   addUser(): void {
     if (this.userForm.valid) {

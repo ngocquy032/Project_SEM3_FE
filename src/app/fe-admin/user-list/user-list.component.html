@@ -45,9 +45,9 @@
                 <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 352px;"
                   aria-label="User: activate to sort column ascending" aria-sort="descending">Email
                 </th>
-                <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 200px;"
-                  aria-label="Role: activate to sort column ascending">Level</th>
-                <th rowspan="1" colspan="1" style="width: 170px;" aria-label="Actions">Actions
+                <!-- <th tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 200px;"
+                  aria-label="Role: activate to sort column ascending">Level</th> -->
+                <th rowspan="1" colspan="1" style="width: 200px;" aria-label="Actions">Actions
                 </th>
               </tr>
             </thead>
@@ -76,10 +76,10 @@
                     <span class="badge badge-center rounded-pill bg-label-primary w-px-30 h-px-30 me-2">
                     </span>{{ user.email }}</span>
                 </td>
-                <td>{{ user.level }}</td>
+                <!-- <td>{{ user.level }}</td> -->
                 <td>
                   <div class="d-flex align-items-sm-center justify-content-sm-center">
-                    <button class="btn btn-sm btn-icon"><i class="fa fa-eye" aria-hidden="true"></i>
+                    <button (click)="userDetails(user.userId)" class="btn btn-sm btn-icon"><i class="fa fa-eye" aria-hidden="true"></i>
                     </button>
                     <button (click)="updateUser(user.userId)" class="btn btn-sm btn-icon"><i class="bx bx-edit"></i>
                     </button>

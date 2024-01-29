@@ -39,13 +39,19 @@
                     <div class="avatar-wrapper">
                     </div>
                     <div class="d-flex flex-column">
-                      <h6 class="m-0"><a href="#" class="text-body">{{ category.lastName }}</a></h6><small
+                      <h6 class="m-0"><a  class="text-body">{{ category.lastName }}</a></h6><small
                         class="text-muted">{{ category.email }}</small>
                     </div>
                   </div>
                 </td>
                 <td>
-                  <h6 class="mb-0 w-px-100 "><i class="bx bxs-circle fs-tiny me-2"></i>{{ category.paymentType }}</h6>
+                  <!-- <h6 class="mb-0 w-px-100 "><i class="bx bxs-circle fs-tiny me-2"></i>{{ category.paymentType }}</h6> -->
+                  <h6 class="mb-0 w-px-100 ">
+                    <i class="fa-solid fa-money-bill" *ngIf="category.paymentType === 'Cash'"></i>
+                    <i class="fa-regular fa-credit-card" *ngIf="category.paymentType === 'Vnpay'"></i>
+                    {{ category.paymentType }}
+                  </h6>
+
                 </td>
                 <td>
                   <h6 class="mb-0 w-px-100 ">
@@ -58,20 +64,11 @@
                   </h6>
                 </td>
                 <td>
-                  <span class="badge px-2 bg-label-warning" text-capitalized="">{{ category.orderStatus }}</span>
+                  <!-- <span class="badge px-2 bg-label-warning" text-capitalized="">{{ category.orderStatus }}</span> -->
+                  <span [ngClass]="{'badge px-2 bg-label-warning': category.orderStatus !== 'Confirm', 'badge px-2 bg-label-success': category.orderStatus === 'Confirm'}" text-capitalized="">{{ category.orderStatus }}</span>
                 </td>
 
                 <td>
-                  <!-- <div class="d-flex justify-content-sm-center align-items-sm-center"><button
-                      class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i
-                        class="bx bx-dots-vertical-rounded"></i></button>
-                    <div class="dropdown-menu dropdown-menu-end m-0">
-                      <a (click)="orderDetails(category.orderId)" class="dropdown-item">View
-                      </a>
-                      <a (click)="updateOrder(category.orderId)" class="dropdown-item delete-record">Update
-                      </a>
-                    </div>
-                  </div> -->
                   <div class="d-flex align-items-sm-center justify-content-sm-center">
                     <button (click)="updateOrder(category.orderId)" class="btn btn-sm btn-icon"><i
                         class="bx bx-edit"></i>
@@ -88,42 +85,6 @@
         </div>
       </div>
     </div>
-    <!--Edit Order-->
-    <div class="modal fade" id="editOrder" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-simple modal-edit-user">
-        <div class="modal-content p-3 p-md-5">
-          <div class="modal-body">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            <div class="text-center mb-4">
-              <h3>Edit Order Information</h3>
-              <p>Updating user details will receive a privacy audit.</p>
-            </div>
-            <form id="editUserForm" class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" onsubmit="return false"
-              novalidate="novalidate">
-              <div class="col-12 col-md-6">
-                <label class="form-label" for="modalEditUserOrderStatus">Status</label>
-                <select id="modalEditUserOrderStatus" name="modalEditUserOrderStatus" class="form-select"
-                  aria-label="Default select example">
-                  <option selected="">Status</option>
-                  <option value="1">Delivered</option>
-                  <option value="2">Out For Delivery</option>
-                  <option value="3">Dispatched</option>
-                  <option value="3">Ready To Pickup</option>
-                </select>
-              </div>
-              <div class="col-12 text-center">
-                <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
-                <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="modal"
-                  aria-label="Close">Cancel</button>
-              </div>
-              <input type="hidden">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--/Edit Order-->
-
   </div>
   <!-- / Content -->
   <div class="content-backdrop fade"></div>

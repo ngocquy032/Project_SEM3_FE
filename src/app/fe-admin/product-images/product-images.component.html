@@ -1,0 +1,78 @@
+<!-- Helpers -->
+<script src="/src/assets/admin/vendor/js/helpers.js"></script>
+<!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+<!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
+<script src="/src/assets/admin/vendor/js/template-customizer.js"></script>
+<!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+<script src="/src/assets/admin/js/config.js"></script>
+<!--Content-->
+<div class="container-xxl flex-grow-1 container-p-y">
+
+  <h4 class="py-3 mb-4">
+    <span class="text-muted fw-light">eCommerce /</span><span> Manager Images</span>
+  </h4>
+
+  <!-- Media -->
+  <div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h5 class="mb-0 card-title">Media</h5>
+      <button (click)="addImages()" class="btn btn-primary">Save Images</button>
+    </div>
+
+    <div class="card-body">
+
+      <div class="row">
+        <div class="col-md-4" *ngFor="let image of productImages">
+          <div class="image-container">
+            <img [src]="image.path" alt="Product Image" class="img-thumbnail">
+          </div>
+          <!-- Bạn có thể hiển thị thông tin khác về hình ảnh ở đây -->
+          <button (click)="deleteImage(image)" class="btn btn-danger btn-sm">Delete Image</button>
+        </div>
+
+      <form action="/upload" class="dropzone needsclick dz-clickable" id="dropzone-basic">
+        <input class="addProduct" type="file" id="fileInput" style="display: none;" (change)="handleFileSelect($event)"
+          #fileInputRef>
+        <div class="dz-message needsclick my-5">
+          <p class="fs-4 note needsclick my-2">Drag and drop your image here</p>
+          <small class="text-muted d-block fs-6 my-2">or</small>
+          <span class="note needsclick btn bg-label-primary d-inline" (click)="fileInputRef.click()">Browse
+            image</span>
+
+          <div *ngIf="selectedFiles.length > 0" class="d-flex flex-wrap">
+            <div *ngFor="let file of selectedFiles" class="m-2">
+              <div class="image-container">
+                <img [src]="file.dataUrl" alt="Selected Image" class="img-thumbnail">
+              </div>
+              <p class="fs-6 my-2">{{ file.name }}</p>
+              <div class="delete-button">
+                <button class="btn btn-danger btn-sm" (click)="removeFile(file)">Remove file</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+  <!-- /Media -->
+
+  <!-- Core JS -->
+  <script src="/src/assets/admin/vendor/libs/jquery/jquery.js"></script>
+  <script src="/src/assets/admin/vendor/libs/popper/popper.js"></script>
+  <script src="/src/assets/admin/vendor/js/bootstrap.js"></script>
+  <script src="/src/assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+  <script src="/src/assets/admin/vendor/libs/hammer/hammer.js"></script>
+  <script src="/src/assets/admin/vendor/libs/i18n/i18n.js"></script>
+  <script src="/src/assets/admin/vendor/libs/typeahead-js/typeahead.js"></script>
+  <script src="/src/assets/admin/vendor/js/menu.js"></script>
+  <script src="/src/assets/admin/vendor/libs/quill/katex.js"></script>
+  <script src="/src/assets/admin/vendor/libs/quill/quill.js"></script>
+  <script src="/src/assets/admin/vendor/libs/select2/select2.js"></script>
+  <script src="/src/assets/admin/vendor/libs/dropzone/dropzone.js"></script>
+  <script src="/src/assets/admin/vendor/libs/jquery-repeater/jquery-repeater.js"></script>
+  <script src="/src/assets/admin/vendor/libs/flatpickr/flatpickr.js"></script>
+  <script src="/src/assets/admin/vendor/libs/tagify/tagify.js"></script>
+  <script src="/src/assets/admin/js/main.js"></script>
+  <script src="/src/assets/admin/js/app-ecommerce-product-add.js"></script>

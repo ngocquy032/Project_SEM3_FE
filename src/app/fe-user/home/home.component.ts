@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   }
 
   getProduct() {
-    this.productService.getProduct().subscribe(product => {
+    this.productService.getProductDTO().subscribe(product => {
       this.newProducts = product.slice(0, 8);
       this.productSales = product.slice(18, 26);
       this.productBestSallers = product.slice(9, 17);
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/productDetails', productId]);
   }
   addWishift(productId: any) {
-    this.productService.getProductById(productId).subscribe(productToAdd => {
+    this.productService.getProductByIdDTO(productId).subscribe(productToAdd => {
       if (productToAdd) {
         const localStorageData = localStorage.getItem('wishlist');
         let currentWishlist: any[] = [];
@@ -61,8 +61,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  addCart(productId: string) {
-    this.productService.getProductById(productId).subscribe(productToAdd => {
+  addCart(productId: number) {
+    this.productService.getProductByIdDTO(productId).subscribe(productToAdd => {
       if (productToAdd) {
         const localStorageData = localStorage.getItem('cart');
         let currentCart: any[] = [];

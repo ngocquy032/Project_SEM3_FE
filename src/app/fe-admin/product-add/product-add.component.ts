@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CategorierService } from 'src/service/categories';
 import { ProductService } from 'src/service/products';
 
@@ -33,7 +34,8 @@ export class ProductAddComponent implements OnInit {
   constructor(
     private categoriService: CategorierService,
     private FormBuilder: FormBuilder,
-    private productService: ProductService
+    private productService: ProductService,
+    private router: Router
   ) {
     this.productForm = FormBuilder.group({
       productCode: [''],
@@ -71,6 +73,8 @@ export class ProductAddComponent implements OnInit {
           console.log('Product added successfully:', response);
           alert('add product sussce.')
           this.productForm.reset();
+          this.router.navigate(['/admin/productDetails', response.productId])
+
         },
         error => {
           console.error('Error adding product:', error);

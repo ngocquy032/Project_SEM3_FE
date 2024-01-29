@@ -32,6 +32,10 @@ import { OrderDetailsComponent } from './fe-admin/order-details/order-details.co
 import { UserListComponent } from './fe-admin/user-list/user-list.component';
 import { EditUserComponent } from './fe-admin/edit-user/edit-user.component';
 import { UpdateOrderComponent } from './fe-admin/update-order/update-order.component';
+import { ProductViewComponent } from './fe-admin/product-view/product-view.component';
+import { EditProductComponent } from './fe-admin/edit-product/edit-product.component';
+import { ProductImagesComponent } from './fe-admin/product-images/product-images.component';
+import { UserDetailsComponent } from './fe-admin/user-details/user-details.component';
 
 
 @NgModule({
@@ -63,6 +67,10 @@ import { UpdateOrderComponent } from './fe-admin/update-order/update-order.compo
     UserListComponent,
     EditUserComponent,
     UpdateOrderComponent,
+    ProductViewComponent,
+    EditProductComponent,
+    ProductImagesComponent,
+    UserDetailsComponent,
 
   ],
   imports: [

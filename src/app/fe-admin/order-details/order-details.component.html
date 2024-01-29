@@ -9,8 +9,9 @@
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3">
 
       <div class="d-flex flex-column justify-content-center">
-        <h5 class="mb-1 mt-3">Order #{{ orderData.orderId }} <span
-            class="badge bg-label-warning">{{ orderData.orderStatus }}</span></h5>
+        <h5 class="mb-1 mt-3">Order #{{ orderData.orderId }}
+          <span [ngClass]="{'badge px-2 bg-label-warning': orderData.orderStatus !== 'Confirm', 'badge px-2 bg-label-success': orderData.orderStatus === 'Confirm'}" text-capitalized="">{{ orderData.orderStatus }}</span>
+        </h5>
         <!-- <p class="text-body">Aug 17, <span id="orderYear">2024</span>, 5:48 (ET)</p> -->
       </div>
     </div>
@@ -29,7 +30,7 @@
                 <thead>
                   <tr>
                     <th class="w-50 sorting_disabled" rowspan="1" colspan="1" style="width: 33px;"
-                    aria-label="products">productId</th>
+                      aria-label="products">productId</th>
                     <th class="w-50 sorting_disabled" rowspan="1" colspan="1" style="width: 200px;"
                       aria-label="products">products</th>
                     <th class="w-25 sorting_disabled" rowspan="1" colspan="1" style="width: 180px;" aria-label="price">
@@ -82,6 +83,12 @@
                 </div>
               </div>
             </div>
+            <div class="col-12 text-center">
+              <button (click)="Cancle()" type="reset" class="btn btn-primary me-sm-3 me-1"  data-bs-dismiss="modal"
+                aria-label="Close">Cancel</button>
+              <button type="submit" (click)="Update(orderData.orderId)" class="btn btn-primary me-sm-3 me-1">Update</button>
+
+            </div>
           </div>
         </div>
       </div>
@@ -90,7 +97,7 @@
 
           <div class="card-body">
             <div class="d-flex justify-content-between">
-              <h2 class="card-title" >Contact info</h2>
+              <h2 class="card-title">Contact info</h2>
             </div>
             <p class=" ">FirstName: {{ orderData.firstName }}</p>
             <p class=" ">LastName: {{ orderData.lastName }}</p>

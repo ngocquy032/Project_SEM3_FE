@@ -58,7 +58,7 @@ export class ShopComponent implements OnInit {
   }
 
   getProduct() {
-    this.productService.getProduct().subscribe(product => {
+    this.productService.getProductDTO().subscribe(product => {
       this.filteredProducts = product;
       this.products = product;
     });
@@ -107,7 +107,7 @@ export class ShopComponent implements OnInit {
   }
 
   addWishift(productId: any) {
-    this.productService.getProductById(productId).subscribe(productToAdd => {
+    this.productService.getProductByIdDTO(productId).subscribe(productToAdd => {
       if (productToAdd) {
         const localStorageData = localStorage.getItem('wishlist');
         let currentWishlist: any[] = [];
@@ -131,8 +131,8 @@ export class ShopComponent implements OnInit {
     });
   }
 
-  addCart(productId: string) {
-    this.productService.getProductById(productId).subscribe(productToAdd => {
+  addCart(productId: number) {
+    this.productService.getProductByIdDTO(productId).subscribe(productToAdd => {
       if (productToAdd) {
         const localStorageData = localStorage.getItem('cart');
         let currentCart: any[] = [];

@@ -11,7 +11,6 @@
   <h4 class="py-3 mb-4">
     <span class="text-muted fw-light">eCommerce /</span><span> Add Product</span>
   </h4>
-  <form [formGroup]="productForm">
     <div class="app-ecommerce">
 
 
@@ -19,13 +18,12 @@
       <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
 
         <div class="d-flex flex-column justify-content-center">
-          <h4 class="mb-1 mt-3">Add a new Product</h4>
-          <p class="text-muted">Orders placed across your store</p>
+          <h4 class="mb-1 mt-3">Edit your Product</h4>
         </div>
         <div class="d-flex align-content-center flex-wrap gap-3">
-          <button (click)="clearInput()" class="btn btn-label-secondary">Discard</button>
+          <button class="btn btn-label-secondary">Discard</button>
 
-          <button (click)="addProduct()" type="submit" class="btn btn-primary">Publish product</button>
+          <button type="submit" class="btn btn-primary">Update Product</button>
         </div>
 
       </div>
@@ -37,7 +35,7 @@
           <!-- Product Information -->
           <div class="card mb-4">
             <div class="card-header">
-              <h5 class="card-tile mb-0">Product information</h5>
+              <h5 class="card-tile mb-0">Product update</h5>
             </div>
             <div class="card-body">
               <div class="mb-3">
@@ -87,7 +85,35 @@
               </div>
             </div>
           </div>
-
+          <!-- /Product Information -->
+          <!-- Media -->
+           <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <h5 class="mb-0 card-title">Edit Media</h5>
+            </div>
+            <div class="card-body">
+              <form action="/upload" class="dropzone needsclick dz-clickable" id="dropzone-basic">
+                <input class="addProduct" type="file" id="fileInput" style="display: none;"
+                  (change)="handleFileSelect($event)" #fileInputRef>
+                <div class="dz-message needsclick my-5">
+                  <p class="fs-4 note needsclick my-2"> Your img </p>
+                  <span class="note needsclick btn bg-label-primary d-inline" (click)="fileInputRef.click()">Change image now </span>
+                  <div *ngIf="selectedFiles.length > 0" class="d-flex flex-wrap">
+                    <div *ngFor="let file of selectedFiles" class="m-2">
+                      <div class="image-container">
+                        <img [src]="file.dataUrl" alt="Selected Image" class="img-thumbnail">
+                      </div>
+                      <p class="fs-6 my-2">{{ file.name }}</p>
+                      <div class="delete-button">
+                        <button class="btn btn-danger btn-sm" (click)="removeFile(file)">Remove file</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- /Media -->
         </div>
         <!-- /First column -->
         <!-- Second column -->
@@ -114,11 +140,10 @@
                 <label class="form-label mb-1 d-flex justify-content-between align-items-center" for="category-org">
                   <span>Category</span><a routerLink="/admin/categoryList" class="fw-medium">Add new category</a>
                 </label>
-                <select id="category" class="form-select" data-placeholder="Select Category"
-                  (change)="onCategorySelect($event)">
+                <select id="category" class="form-select" data-placeholder="Select Category">
                   <option value="" disabled selected>Select Category</option>
-                  <option *ngFor="let category of categoriList">{{ category.nameCategory }}
-                  </option>
+                  <option value="1">Category List</option>
+
                 </select>
               </div>
             </div>
@@ -129,7 +154,6 @@
       </div>
 
     </div>
-  </form>
 </div>
 <!--End content-->
 <!-- Core JS -->

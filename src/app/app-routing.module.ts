@@ -27,6 +27,10 @@ import { OrderDetailsComponent } from './fe-admin/order-details/order-details.co
 import { UserListComponent } from './fe-admin/user-list/user-list.component';
 import { EditUserComponent } from './fe-admin/edit-user/edit-user.component';
 import { UpdateOrderComponent } from './fe-admin/update-order/update-order.component';
+import { ProductViewComponent } from './fe-admin/product-view/product-view.component';
+import { EditProductComponent } from './fe-admin/edit-product/edit-product.component';
+import { ProductImagesComponent } from './fe-admin/product-images/product-images.component';
+import { UserDetailsComponent } from './fe-admin/user-details/user-details.component';
 const routes: Routes = [
   {
     path: '', component: MasterLayoutComponent,
@@ -79,7 +83,7 @@ const routes: Routes = [
     path: 'admin', component: LayoutAdminComponent, canActivate: [AuthAdminService],
     children: [
       {
-          path: 'productList', component: ProductListComponent, pathMatch: 'full'
+        path: 'productList', component: ProductListComponent, pathMatch: 'full'
       },
       {
         path: 'productAdd', component: ProductAddComponent
@@ -104,6 +108,18 @@ const routes: Routes = [
       },
       {
         path: 'updateOrder/:id', component: UpdateOrderComponent
+      },
+      {
+        path: 'updateProduct', component: EditProductComponent
+      },
+      {
+        path: 'productDetails/:id', component: ProductViewComponent
+      },
+      {
+        path: 'productImages/:id', component: ProductImagesComponent
+      },
+      {
+        path: 'userDetails/:id', component: UserDetailsComponent
       }
 
     ]

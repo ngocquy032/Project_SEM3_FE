@@ -25,14 +25,14 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
 
-  getProductDetails(productId: string): void {
-    this.productService.getProductById(productId).subscribe(product => {
+  getProductDetails(productId: number): void {
+    this.productService.getProductByIdDTO(productId).subscribe(product => {
       this.product = product;
     });
   }
 
   addToCart(productId: any) {
-    this.productService.getProductById(productId).subscribe(productToAdd => {
+    this.productService.getProductByIdDTO(productId).subscribe(productToAdd => {
       if (productToAdd) {
         const localStorageData = localStorage.getItem('cart');
         let currentCart: any[] = [];
@@ -63,8 +63,8 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
 
-  addToWishift(productId: string){
-    this.productService.getProductById(productId).subscribe(productToAdd => {
+  addToWishift(productId: number){
+    this.productService.getProductByIdDTO(productId).subscribe(productToAdd => {
       if (productToAdd) {
         const localStorageData = localStorage.getItem('wishlist');
         let currentWishlist: any[] = [];

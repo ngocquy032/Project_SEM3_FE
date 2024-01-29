@@ -60,7 +60,7 @@ export class WishiftComponent implements OnInit {
   //   }
   // }
   addToCart(productId: any) {
-    this.productService.getProductById(productId).subscribe(productToAdd => {
+    this.productService.getProductByIdDTO(productId).subscribe(productToAdd => {
       if (productToAdd) {
         const cartListString = localStorage.getItem('cart');
         let cartList: any[] = [];

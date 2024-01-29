@@ -1,0 +1,69 @@
+<!-- Edit User Modal -->
+<div class="edituser" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-simple modal-edit-user">
+    <div class="modal-content p-3 p-md-5" style="border-radius: 10px;">
+      <div class="modal-body">
+        <div class="text-center mb-4">
+          <h3>User Details</h3>
+
+        </div>
+        <form class="row g-3 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
+          <div class="row mb-3">
+            <div class="col"><label class="form-label" for="ecommerce-product-barcode">Name</label>
+              <span class="form-control" aria-label="Product Weigth">{{ userData.name }} </span>
+            </div>
+            <div class="col"><label class="form-label" for="ecommerce-product-barcode">Email</label>
+              <span class="form-control">{{ userData.email }}</span>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col"><label class="form-label" for="ecommerce-product-barcode">Phone</label>
+              <span class="form-control" aria-label="Product Weigth"> {{ userData.phone }}</span>
+            </div>
+            <div class="col"><label class="form-label" for="ecommerce-product-barcode">Level</label>
+              <span class="form-control"> {{ userData.level }}</span>
+            </div>
+          </div>
+
+          <div class="col-12 text-center">
+            <button (click)="cancle()" type="reset" class="btn btn-primary me-sm-3 me-1">Cancel</button>
+            <button (click)="update(userData.userId)" type="submit" class="btn btn-primary me-sm-3 me-1">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Edit User Modal -->
+
+
+
+<script src="/src/assets/admin/admin/vendor/js/helpers.js"></script>
+<script src="/src/assets/admin/admin/vendor/js/template-customizer.js"></script>
+<script src="/src/assets/admin/admin/js/config.js"></script>
+
+<!--Core JS-->
+<!-- build:js assets/vendor/js/core.js -->
+<script src="/src/assets/admin/admin/vendor/libs/jquery/jquery.js"></script>
+<script src="/src/assets/admin/admin/vendor/libs/popper/popper.js"></script>
+<script src="/src/assets/admin/admin/vendor/js/bootstrap.js"></script>
+<script src="/src/assets/admin/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="/src/assets/admin/admin/vendor/libs/hammer/hammer.js"></script>
+<script src="/src/assets/admin/admin/vendor/libs/i18n/i18n.js"></script>
+<script src="/src/assets/admin/admin/vendor/libs/typeahead-js/typeahead.js"></script>
+<script src="/src/assets/admin/admin/vendor/js/menu.js"></script>
+<!-- endbuild -->
+<!-- Vendors JS -->
+<script src="/src/assets/admin/vendor/libs/moment/moment.js"></script>
+<script src="/src/assets/admin/admin/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+<script src="/src/assets/admin/vendor/libs/select2/select2.css"></script>
+<script src="/src/assets/admin/vendor/libs/@form-validation/umd/bundle/popular.min.js"></script>
+<script src="/src/assets/admin/vendor/libs/@form-validation/umd/plugin-auto-focus/index.min.js"></script>
+<script src="/src/assets/admin/vendor/libs/@form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+<script src="/src/assets/admin/vendor/libs/cleavejs/cleave.js"></script>
+<script src="/src/assets/admin/vendor/libs/cleavejs/cleave-phone.js"></script>
+<!-- Main JS -->
+<script src="/src/assets/admin/js/main.js"></script>
+<!-- Page JS -->
+<script src="/src/assets/admin/js/app-user-list.js"></script>
+<script src="/src/assets/admin/js/modal-edit-user.js"></script>

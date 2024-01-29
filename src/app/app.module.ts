@@ -31,6 +31,7 @@ import { OrderComponent } from './fe-admin/order/order.component';
 import { OrderDetailsComponent } from './fe-admin/order-details/order-details.component';
 import { UserListComponent } from './fe-admin/user-list/user-list.component';
 import { EditUserComponent } from './fe-admin/edit-user/edit-user.component';
+import { ProductViewComponent } from './fe-admin/product-view/product-view.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { EditUserComponent } from './fe-admin/edit-user/edit-user.component';
     OrderDetailsComponent,
     UserListComponent,
     EditUserComponent,
+    ProductViewComponent,
 
   ],
   imports: [

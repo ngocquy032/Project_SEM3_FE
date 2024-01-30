@@ -37,7 +37,7 @@ export class OrderComponent implements OnInit {
 
   getOrder(){
     this.orderService.getOrder().subscribe( order =>{
-      this.listOrder = order
+      this.listOrder = order.reverse();
     })
   }
 

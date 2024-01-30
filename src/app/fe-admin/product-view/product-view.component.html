@@ -82,7 +82,7 @@
         </div>
         <!-- /Product Information -->
         <!-- Media -->
-        <div class="card mb-4">
+        <!-- <div class="card mb-4">
           <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="mb-0 card-title">Media</h5>
           </div>
@@ -92,20 +92,18 @@
                 <div class="image-container">
                   <img src="../../../assets/images/imgProject/{{ productImages.path }}" alt="Product Image"
                     class="img-thumbnail">
-
-                  <!-- Kiểm tra nếu có ảnh -->
-                  <!-- <ng-container *ngIf="productImages && productImages.length > 0">
+                  <ng-container *ngIf="productImages && productImages.length > 0">
                     <img *ngFor="let image of productImages" [src]="image.path" alt="Product Image"
                       class="img-thumbnail">
-                  </ng-container> -->
-                  <!-- Nếu không có ảnh, hiển thị thông báo -->
-                  <!-- <p *ngIf="!productImages || productImages.length === 0">Ảnh chưa có</p> -->
+                  </ng-container>
+
+                  <p *ngIf="!productImages || productImages.length === 0">Ảnh chưa có</p>
                 </div>
               </div>
             </div>
             <a (click)="manageImages(product.productId)">Manager Images</a>
           </div>
-        </div>
+        </div> -->
         <!-- /Media -->
       </div>
       <!-- /First column -->

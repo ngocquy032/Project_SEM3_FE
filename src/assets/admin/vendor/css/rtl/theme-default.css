@@ -67,7 +67,7 @@
   border-radius: 0 .375rem .375rem 0
 }
 
-.bg-menu-theme .menu-sub>.menu-item>.menu-link:before {
+.bg-menu-theme .list>.menu-item>.menu-link:before {
   content: "";
   position: absolute;
   left: 1.4375rem;

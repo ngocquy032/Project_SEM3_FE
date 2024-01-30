@@ -24199,7 +24199,7 @@ html:not(.layout-menu-fixed) .menu-inner-shadow {
     display: flex
 }
 
-.menu-toggle::after {
+/* .menu-toggle::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -24210,7 +24210,7 @@ html:not(.layout-menu-fixed) .menu-inner-shadow {
     border-bottom: 0;
     border-left: 0;
     transform: translateY(-50%) rotate(45deg)
-}
+} */
 
 .layout-horizontal .menu-toggle::after {
     top: calc(50% - 2px)

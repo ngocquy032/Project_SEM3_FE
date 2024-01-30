@@ -37,7 +37,7 @@ export class ProductListComponent implements OnInit {
   }
 
   getProduct() {
-    this.productService.getProductDTO().subscribe(product => {
+    this.productService.getProduct().subscribe(product => {
       this.filteredProducts = product.reverse();
       this.products = product;
     });

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { ProductService } from 'src/service/products';
 
 @Component({
@@ -31,8 +32,8 @@ export class ProductViewComponent {
   categoriList: any[] = [];
   category: any;
   product: any; // Biến để lưu trữ thông tin sản phẩm
-
   constructor(
+    private changeDetectorRefs: ChangeDetectorRef,
     private router: Router,
     private route: ActivatedRoute,
     private productService: ProductService
@@ -51,6 +52,8 @@ export class ProductViewComponent {
     this.productService.getProductById(productId).subscribe(
       (data: any) => {
         this.product = data;
+        console.log(" this.product", this.product)
+        this.changeDetectorRefs.detectChanges();
         this.getProductCategoryName(data.productCategoryId);
       },
       (error: any) => {

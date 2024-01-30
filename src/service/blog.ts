@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BlogService {
-  private apiUrl = 'https://arts-be1.azurewebsites.net/api/Blogs';
+  private apiUrl = 'https://localhost:7055/api/Blogs';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getBlog(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);

@@ -2,34 +2,38 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/service/products';
+import { ProductImage } from './product-images.model';
 
 @Component({
   selector: 'app-product-images',
   templateUrl: './product-images.component.html',
   styleUrls: ['./product-images.component.css',
-  '../../../assets/admin/vendor/fonts/boxicons.css',
-  '../../../assets/admin/vendor/fonts/fontawesome.css',
-  '../../../assets/admin/vendor/fonts/flag-icons.css',
-  '../../../assets/admin/vendor/css/rtl/core.css',
-  '../../../assets/admin/vendor/css/rtl/theme-default.css',
-  '../../../assets/admin/css/demo.css',
-  '../../../assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.css',
-  '../../../assets/admin/vendor/libs/typeahead-js/typeahead.css',
-  '../../../assets/admin/vendor/libs/quill/typography.css',
-  '../../../assets/admin/vendor/libs/quill/katex.css',
-  '../../../assets/admin/vendor/libs/quill/editor.css',
-  '../../../assets/admin/vendor/libs/select2/select2.css',
-  '../../../assets/admin/vendor/libs/dropzone/dropzone.css',
-  '../../../assets/admin/vendor/libs/flatpickr/flatpickr.css',
-  '../../../assets/admin/vendor/libs/tagify/tagify.css',
-  '../../../assets/admin/vendor/css/boostrap/boostrap.css'
-]
+    '../../../assets/admin/vendor/fonts/boxicons.css',
+    '../../../assets/admin/vendor/fonts/fontawesome.css',
+    '../../../assets/admin/vendor/fonts/flag-icons.css',
+    '../../../assets/admin/vendor/css/rtl/core.css',
+    '../../../assets/admin/vendor/css/rtl/theme-default.css',
+    '../../../assets/admin/css/demo.css',
+    '../../../assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.css',
+    '../../../assets/admin/vendor/libs/typeahead-js/typeahead.css',
+    '../../../assets/admin/vendor/libs/quill/typography.css',
+    '../../../assets/admin/vendor/libs/quill/katex.css',
+    '../../../assets/admin/vendor/libs/quill/editor.css',
+    '../../../assets/admin/vendor/libs/select2/select2.css',
+    '../../../assets/admin/vendor/libs/dropzone/dropzone.css',
+    '../../../assets/admin/vendor/libs/flatpickr/flatpickr.css',
+    '../../../assets/admin/vendor/libs/tagify/tagify.css',
+    '../../../assets/admin/vendor/css/boostrap/boostrap.css'
+  ]
 })
 export class ProductImagesComponent {
   selectedFiles: any[] = [];
   categoriList: any[] = [];
   productId!: number;
-  productImages: any[]= [];
+  base64!: string;
+
+  filename!: string;
+  productImages: any[] = [];
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
@@ -49,8 +53,24 @@ export class ProductImagesComponent {
       this.productImages = images;
     });
   }
+  ItemImage(): ProductImage {
 
-  addImages(){
+    const item = new ProductImage();
+    item.base64 = this.base64
+    item.filename = this.filename
+    item.path = this.filename
+    item.product_id = this.productId
+
+    return item
+  }
+  addImages() {
+
+    let item = this.ItemImage();
+    this.productService.addProductImage(item).subscribe(
+      res => {
+        alert("Upload success")
+      }
+    )
 
   }
 
@@ -64,11 +84,20 @@ export class ProductImagesComponent {
     const fileInput = event.target;
     if (fileInput.files && fileInput.files.length > 0) {
       const files = fileInput.files;
+      var file_name = event.target.files;
       for (let i = 0; i < files.length; i++) {
         const selectedFile = files[i];
         // Sử dụng FileReader để đọc hình ảnh từ tệp đã chọn
         const reader = new FileReader();
+        let base64Str: any;
+        let cat: any;
         reader.onload = (e: any) => {
+          var metaIdx1 = e.target.result.toString().indexOf(';base64,');
+          base64Str = e.target.result.toString().substr(metaIdx1 + 8);
+          this.base64 = base64Str;
+          console.log('base64', this.base64)
+          this.filename = file_name[0].name,
+            console.log('filename', this.filename)
           this.selectedFiles.push({
             name: selectedFile.name,
             dataUrl: e.target.result
@@ -78,6 +107,7 @@ export class ProductImagesComponent {
       }
     }
   }
+
   removeFile(file: any): void {
     const index = this.selectedFiles.indexOf(file);
     if (index !== -1) {

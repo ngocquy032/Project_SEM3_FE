@@ -71,12 +71,12 @@ export class ProductListComponent implements OnInit {
 
     this.router.navigate([], {
       relativeTo: this.route,
-      queryParams: { product: this.searchTerm},
+      queryParams: { product: this.searchTerm },
       queryParamsHandling: 'merge',
     });
   }
 
-  productDetails(productId: number){
+  productDetails(productId: number) {
     this.router.navigate(['/admin/productDetails', productId]);
 
   }

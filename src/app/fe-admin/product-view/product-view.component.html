@@ -90,7 +90,7 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="image-container">
-                  <img src="../../../assets/images/imgProject/{{ productImages.path }}" alt="Product Image"
+                  <img src="{{ product.path }}" alt="Product Image"
                     class="img-thumbnail">
 
                   <!-- Kiểm tra nếu có ảnh -->
@@ -125,7 +125,6 @@
               <label class="form-label" for="ecommerce-product-discount-price">Sale</label>
               <span class="form-control">{{ product.sale | currency:'USD':'symbol' }}</span>
             </div>
-
             <!-- Category -->
             <div class="position-relative">
               <label class="form-label mb-1 d-flex justify-content-between align-items-center" for="category-org">

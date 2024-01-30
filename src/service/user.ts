@@ -11,7 +11,7 @@ import { LoginModel, LoginParam, RegisterModel } from "src/app/fe-user/users/log
 }) export class UserService {
 
   constructor(private http: HttpClient) { }
-  private Url = 'https://arts-be1.azurewebsites.net/api/Users';
+  private Url = 'https://localhost:7055/api/Users';
   logIn(loginData: LoginModel): Observable<any> {
     return this.http.post<LoginParam>(`${this.Url}/LoginUsers`, loginData);
   }

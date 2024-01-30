@@ -28,6 +28,7 @@ export class ProductDetailsComponent implements OnInit {
   getProductDetails(productId: number): void {
     this.productService.getProductByIdDTO(productId).subscribe(product => {
       this.product = product;
+      console.log(" this.productdetal", this.product)
     });
   }
 
@@ -63,7 +64,7 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
 
-  addToWishift(productId: number){
+  addToWishift(productId: number) {
     this.productService.getProductByIdDTO(productId).subscribe(productToAdd => {
       if (productToAdd) {
         const localStorageData = localStorage.getItem('wishlist');

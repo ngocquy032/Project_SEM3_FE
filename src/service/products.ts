@@ -9,10 +9,10 @@ import { ProductImage } from "src/app/fe-admin/product-images/product-images.mod
   providedIn: 'root'
 }) export class ProductService {
   constructor(private http: HttpClient) { }
-  private Url = 'https://arts-be1.azurewebsites.net/api/Products/productDTO';
-  private urlProduct = 'https://arts-be1.azurewebsites.net/api/Products';
-  private UrlCategories = "https://arts-be1.azurewebsites.net/api/Categories";
-  private urlProductImages = 'https://arts-be1.azurewebsites.net/api/ProductImages'
+  private Url = 'https://localhost:7055/api/Products/productDTO';
+  private urlProduct = 'https://localhost:7055/api/Products';
+  private UrlCategories = "https://localhost:7055/api/Categories";
+  private urlProductImages = 'https://localhost:7055/api/ProductImages'
 
   getProductDTO(): Observable<any[]> {
     return this.http.get<any[]>(this.Url);
@@ -26,7 +26,7 @@ import { ProductImage } from "src/app/fe-admin/product-images/product-images.mod
     return this.http.post<any[]>(this.urlProduct, productData);
   }
 
-   getProduct(): Observable<any[]> {
+  getProduct(): Observable<any[]> {
     return this.http.get<any[]>(this.urlProduct);
   }
   getProductById(productId: number): Observable<any> {

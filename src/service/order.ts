@@ -5,13 +5,13 @@ import { OrderStatusModel } from "src/app/fe-admin/update-order/update-order.mod
 
 @Injectable({
   providedIn: 'root'
-}) export class OrdersService{
-  constructor(private http: HttpClient){}
-  private Url = 'https://arts-be1.azurewebsites.net/api/Orders';
-// private UrlVnPay = 'https://arts-be1.azurewebsites.net/api/VnpayPayment';
+}) export class OrdersService {
+  constructor(private http: HttpClient) { }
+  private Url = 'https://localhost:7055/api/Orders';
+  // private UrlVnPay = 'https://arts-be1.azurewebsites.net/api/VnpayPayment';
   private UrlVnPay = 'https://localhost:7055/api/VnpayPayment';
-  private UrlAdmin = 'https://arts-be1.azurewebsites.net/api/Orders/orderDTO';
-  private urlOrderByIdUser = 'https://arts-be1.azurewebsites.net/api/Orders/getOrder'
+  private UrlAdmin = 'https://localhost:7055/api/Orders/orderDTO';
+  private urlOrderByIdUser = 'https://localhost:7055/api/Orders/getOrder'
 
   sendOrder(orderData: any): Observable<any> {
     return this.http.post<any>(this.Url, orderData);
@@ -35,8 +35,8 @@ import { OrderStatusModel } from "src/app/fe-admin/update-order/update-order.mod
     );
   }
 
-  getOrder(): Observable<any>{
-    return this.http.get<any []>(this.UrlAdmin)
+  getOrder(): Observable<any> {
+    return this.http.get<any[]>(this.UrlAdmin)
   }
 
   getOrderById(orderId: number): Observable<any> {

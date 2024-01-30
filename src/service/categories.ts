@@ -9,8 +9,8 @@ import { CategoryModel } from "src/app/fe-admin/category-list/category.model";
   constructor(
     private http: HttpClient
   ) { }
-  private urlProduct =  "https://arts-be1.azurewebsites.net/api/Products"
-  private UrlCategories = "https://arts-be1.azurewebsites.net/api/Categories";
+  private urlProduct = "https://localhost:7055/api/Products"
+  private UrlCategories = "https://localhost:7055/api/Categories";
   getCategorie(): Observable<any[]> {
     return this.http.get<any[]>(this.UrlCategories);
   }

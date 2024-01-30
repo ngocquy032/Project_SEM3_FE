@@ -1,6 +1,8 @@
-export interface ProductImage {
-  productImagesId: number;
-  path: string;
-  description: string;
-  product_id: number;
+export class ProductImage {
+  productImagesId!: number;
+  path!: string;
+  filename!: string;
+  base64!: string;
+  description!: string;
+  product_id!: number;
 }

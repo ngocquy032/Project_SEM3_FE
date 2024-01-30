@@ -41,6 +41,7 @@ export class UpdateOrderComponent implements OnInit {
   user: any = [];
   orderStatus: string = '';
   orderSuccess: string = 'Confirm';
+  orderWating: string = 'Waiting for confirmation'
   selectedOrderStatus: string = '';
   orderId!: number;
   constructor(

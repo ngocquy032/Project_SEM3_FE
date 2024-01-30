@@ -38,4 +38,8 @@ export class MasterLayoutComponent{
       this.router.navigate(['/login']);
     }
   }
+
+  shop(){
+    this.router.navigate(['/shop']);
+  }
 }

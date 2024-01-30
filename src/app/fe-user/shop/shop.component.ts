@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Route, Router } from '@angular/router';
 import { CategorierService } from 'src/service/categories';
 import { ProductService } from 'src/service/products';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Options } from 'ngx-slider-v2';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-shop',
@@ -34,6 +35,11 @@ export class ShopComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
   ngOnInit(): void {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo(1, 0); // Cuộn trang lên đầu mỗi khi có sự kiện NavigationEnd
+      });
 
     this.getCategorie();
     // this.getProduct();

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, Scroll } from '@angular/router';
 import { LogInComponent } from './fe-user/users/log-in/log-in.component';
 import { SigupComponent } from './fe-user/users/sigup/sigup.component';
 import { MasterLayoutComponent } from './fe-user/master-layout/master-layout.component';
@@ -132,7 +132,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'top' })],
+  imports: [RouterModule.forRoot(routes,{
+    scrollPositionRestoration: 'enabled',
+    anchorScrolling: 'enabled',
+    scrollOffset: [0, 64], // Điều chỉnh offset nếu cần thiết
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

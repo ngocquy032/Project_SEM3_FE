@@ -48,7 +48,7 @@ export class CheckOutComponent {
     } else {
       if (this.selectedMethod != 'vnpay') {
 
-        console.log('Cash Payment');
+        console.log('thanh toan tien mat');
         let totalAmount = 0;
         for (const item of this.cartList) {
           totalAmount += item.subtotal;
@@ -85,7 +85,7 @@ export class CheckOutComponent {
           respone => {
             console.log('respone', respone);
             this.router.navigate(['']);
-            alert('Successful payment and waiting for confirmation');
+            alert('thanh toan thanh cong');
             localStorage.removeItem('cart');
 
 
